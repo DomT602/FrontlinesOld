@@ -1,0 +1,101 @@
+class AWClient {
+	tag = "AW";
+	
+	class functions {
+		file = "Client\Functions";
+		class checkGroup {};
+		class checkMap {};
+		class checkNumber {};
+		class checkVehicleAccess {};
+		class clearCargo {};
+		class conditionChecker {};
+		class createMarkers {};
+		class dateToString {};
+		class destroyItem {};
+		class endGame {};
+		class fetchDetails {};
+		class findFrontlineSector {};
+		class findFrontlineSectors {};
+		class findNearestFOB {};
+		class findNearestSector {};
+		class firedMan {};
+		class fuelConsumptionLoop {};
+		class gatherIntel {};
+		class getCaptureRatio {};
+		class getInMan {};
+		class getMissionProgress {};
+		class getOutMan {};
+		class getSectorTypeIndex {};
+		class handleChatMessage {};
+		class isNearFOB {};
+		class isNearSector {};
+		class notify {};
+		class respawn {};
+		class seatSwitchedMan {};
+		class secureLaptop {};
+		class secureUAV {};
+		class setupUAV {};
+	};
+
+	class gui {
+		file = "Client\GUI";
+		class confirmDeploy {};
+		class confirmSecondary {};
+		class deployMenuLBChange {};
+		class guerillaAction {};
+		class guerillaMenuTvChange {};
+		class guerillaOnMouseButtonDown {};
+		class hideMarkers {};
+		class initDeployMenu {};
+		class initGuerillaMenu {};
+		class initRetrieveMenu {};
+		class initSecondaryMenu {};
+		class initSquadMenu {};
+		class initTutorialMenu {};
+		class initZeusMenu {};
+		class manageSquad {};
+		class manualZeusAction {};
+		class secondaryMenuLBChange {};
+		class squadManagementLBChange {};
+		class tutorialMenuLBChange {};
+		class updateUI {};
+	};
+
+	class init {
+		file = "Client\Init";
+		class createAceActions {};
+		class initArsenal {};
+		class initCBAsettings {};
+		class initDiary {};
+		class initialiseObject {};
+		class initLrRadio {};
+		class initSupplyCrate {};
+		class initSwRadios {};
+	};
+
+	class logistics {
+		file = "Client\Logistics";
+		class addResourceAction {};
+		class buildLoop {};
+		class buildMenuTvChange {};
+		class createNewFOB {};
+		class createSupplyCrate {};
+		class factoryMenuLBChange {};
+		class initBuildMenu {};
+		class initFactoryMenu {};
+		class initLogisticsMenu {};
+		class loadCrate {};
+		class logisticsCalculate {};
+		class logisticsBuyNewTruck {};
+		class logisticsComboLBChange {};
+		class logisticsMenuLBChange {};
+		class logisticsStartRoute {};
+		class moveObject {};
+		class recycleObject {};
+		class retrieveSupplies {};
+		class setupBuild {};
+		class startBuild {};
+		class unloadCrate {};
+		class updateFactoryProduction {};
+	};
+};
