@@ -15,7 +15,9 @@ private _action = [
 ] call BIS_fnc_guiMessage;
 
 if (_action) then {
-	AW_fobPositions pushBack (getPosATL _object);
+	private _fobNames = getArray(missionConfigFile >> "Core_Settings" >> "AW_fobDefaultNames");
+	private _index = count AW_fobDetails;
+	AW_fobDetails pushBack [(_fobNames select _index),(getPosATL _object)];
 	deleteVehicle _object;
 
 	AW_canBuild = false;

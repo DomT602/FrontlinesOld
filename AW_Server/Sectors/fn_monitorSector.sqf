@@ -106,11 +106,10 @@ if (_captureRatio > _requiredCaptureRatio) then {
 	};
 
 	if (_sectorIndex isEqualTo 3) then {
-		private _towerArray = nearestObjects [_sectorCentre,["Land_Communication_F","Land_TTowerSmall_2_F","Land_TTowerBig_1_F"],50,true] select {alive _x};;
+		private _towerArray = nearestObjects [_sectorCentre,["Land_Communication_F","Land_TTowerSmall_2_F","Land_TTowerBig_1_F"],50,true] select {alive _x};
 		if (_towerArray isEqualTo []) exitWith {}; //tower destroyed already
 		missionNamespace setVariable [format["AW_%1CapTime",_sector],CBA_missionTime];
-		AW_bluforRadioTowers pushBack _sector;
-		publicVariable "AW_bluforRadioTowers";
+		[_sector,true] call AW_fnc_setTower;
 	} else {
 		if (_sectorIndex isEqualTo 4) then {
 			AW_factorySetup pushBack [_sector,-1,[0,0,0]];

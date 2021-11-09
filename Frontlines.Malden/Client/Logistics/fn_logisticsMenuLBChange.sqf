@@ -11,8 +11,8 @@ params [
 private _display = findDisplay 9643;
 (parseSimpleArray (_control lbData _index)) params ["_from","_to","_truckCount","_startTransitTime","_endTransitTime","_carrying"];
 
-if !("FOB" in _from) then {_from = markerText _from};
-if !("FOB" in _to) then {_to = markerText _to};
+if ("factory" in _from) then {_from = markerText _from};
+if ("factory" in _to) then {_to = markerText _to};
 (_display displayCtrl 1002) ctrlSetText format ["Pickup: %1",_from];
 (_display displayCtrl 1003) ctrlSetText format ["Drop-off: %1",_to];
 (_display displayCtrl 1004) ctrlSetText format ["Trucks assigned: %1",_truckCount];

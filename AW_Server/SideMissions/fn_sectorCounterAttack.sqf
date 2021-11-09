@@ -14,8 +14,7 @@ private _marker = createMarker ["counterAttack",_targetPos];
 _marker setMarkerType "mil_objective";
 _marker setMarkerColor "ColorRed";
 _marker setMarkerText "Enemy Counter-Attack";
-if !(_targetSector in AW_activeSectors) then {
-	AW_activeSectors pushBack _targetSector;
+if ((AW_activeSectors pushBackUnique _targetSector) isNotEqualTo -1) then {
 	publicVariable "AW_activeSectors";
 };
 [format["The enemy have begun a counter-attack at %1.",markerText _targetSector],"failedNotif","Enemy Counter-Attack"] remoteExecCall ["AW_fnc_notify",-2];
@@ -113,10 +112,8 @@ if (_distance < 5000) then {
 					AW_factorySetup deleteAt _factoryIndex;
 					publicVariable "AW_factorySetup";
 				};
-				if (_targetSector in AW_bluforRadioTowers) then {
-					private _towerIndex = AW_radioTowerSectors find _targetSector;
-					AW_bluforRadioTowers deleteAt _towerIndex;
-					publicVariable "AW_bluforRadioTowers";
+				if (_targetSector in AW_radioTowerSectors) then {
+					[_targetSector,false] call AW_fnc_setTower;
 				};
 				deleteMarker _marker;
 				AW_sectorsLost = AW_sectorsLost + 1;

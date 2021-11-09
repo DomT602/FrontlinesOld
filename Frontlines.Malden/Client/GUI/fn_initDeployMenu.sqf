@@ -24,12 +24,12 @@ private _populateListbox = {
 	private _fobRadius = getNumber(missionConfigFile >> "Core_Settings" >> "AW_fobBuildRadius");
 	private _fobNames = getArray(missionConfigFile >> "Core_Settings" >> "AW_fobNames");
 	{
-		private _fobName = _fobNames select _forEachIndex;
-		private _fobPlayerCount = count (_units inAreaArray [_x,_fobRadius,_fobRadius]);
-		_listbox lbAdd format ["%1 - %2 (%3)",_fobName,mapGridPosition _x,_fobPlayerCount];
-		_listbox lbSetData [_forEachIndex,str(_x)];
+		_x params ["_name","_pos"];
+		private _fobPlayerCount = count (_units inAreaArray [_pos,_fobRadius,_fobRadius]);
+		_listbox lbAdd format ["%1 - %2 (%3)",_name,mapGridPosition _pos,_fobPlayerCount];
+		_listbox lbSetData [_forEachIndex,str(_pos)];
 		_listbox lbSetValue [_forEachIndex,0];
-	} forEach AW_fobPositions;
+	} forEach AW_fobDetails;
 
 	if (_showMobileRespawn) then {
 		{

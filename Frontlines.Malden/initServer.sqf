@@ -1,3 +1,4 @@
+#include "\arma3_readme.txt"
 AW_serverReady = false;
 publicVariable "AW_serverReady";
 
@@ -68,6 +69,7 @@ if (_saveArray isEqualTo []) then {
 	[_saveArray] call AW_fnc_loadSave;
 };
 
+AW_bluforTowerCount = 0;
 {
 	[AW_fnc_spawnTower,[_x],5] call CBA_fnc_waitAndExecute;
 } forEach AW_radioTowerSectors;
@@ -77,13 +79,13 @@ addMissionEventHandler ["EntityKilled",{_this call AW_fnc_entityKilled}];
 addMissionEventHandler ["HandleDisconnect",{_this call AW_fnc_handleDisconnect}];
 addMissionEventHandler ["PlayerConnected",{_this call AW_fnc_playerConnected}];
 
-private _fobNames = getArray(missionConfigFile >> "Core_Settings" >> "AW_fobNames");
 {
-	private _marker = createMarker [format["FOBmarker%1",_forEachIndex],_x];
+    _x params ["_name","_pos"];
+	private _marker = createMarker [format["FOBmarker%1",_forEachIndex],_pos];
 	_marker setMarkerType "b_hq";
 	_marker setMarkerSize [1.5,1.5];
-	_marker setMarkerText (_fobNames select _forEachIndex);
-} forEach AW_fobPositions;
+	_marker setMarkerText _name;
+} forEach AW_fobDetails;
 
 [AW_fnc_mainSectorLoop,2] call CBA_fnc_addPerFrameHandler;
 [AW_fnc_mainServerLoop,60,[-1]] call CBA_fnc_addPerFrameHandler;

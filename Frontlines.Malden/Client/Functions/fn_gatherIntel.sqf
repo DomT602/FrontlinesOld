@@ -16,8 +16,7 @@ private _action = [
 		AW_canGatherIntel = false;
 		publicVariable "AW_canGatherIntel";
 
-		private _bluforTowerCount = count AW_bluforRadioTowers;
-		private _intelGained = round ((ln (_bluforTowerCount ^ 2)) + 1);
+		private _intelGained = round ((ln (AW_bluforTowerCount ^ 2)) + 1);
 		[format["You obtained %1 intel from the communications network.",_intelGained]] call AW_fnc_notify;
 		[_intelGained] remoteExecCall ["AW_fnc_adjustIntel",2];
 	},

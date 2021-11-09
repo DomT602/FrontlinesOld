@@ -1,12 +1,12 @@
 class Core_Settings {
-	AW_version = "0.5.0";
+	AW_version = "0.5.1";
 	AW_adminUIDs[] = { //Add admin UIDs here to be auto-assigned zeus and be given all ACE actions for Frontlines
 		"76561198071007604"
 	};
 
 	AW_fobBuildRadius = 100; //Max distance from the main FOB building that the objects can be built
 	AW_maxFobs = 10; //should match number of elements below
-	AW_fobNames[] = {"FOB Alpha", "FOB Bravo", "FOB Charlie", "FOB Delta", "FOB Echo", "FOB Foxtrot", "FOB Golf", "FOB Hotel", "FOB India", "FOB Juliet"};
+	AW_fobDefaultNames[] = {"FOB Alpha", "FOB Bravo", "FOB Charlie", "FOB Delta", "FOB Echo", "FOB Foxtrot", "FOB Golf", "FOB Hotel", "FOB India", "FOB Juliet"};
 	AW_mobileRespawnTimer = 60; //time in seconds to use mobile respawn again
 	AW_startingResources[] = {250,250,250}; //starting resources in format {supplies,fuel,ammo}
 	AW_startingCivRep = 25; //starting percentage civ rep

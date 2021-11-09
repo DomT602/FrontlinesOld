@@ -14,8 +14,9 @@ private _fobBuildingClassname = getText(missionConfigFile >> "Blufor_Setup" >> "
 private _fobBuilding = createVehicle [_fobBuildingClassname,_position];
 _fobBuilding setPosATL _position;
 _fobBuilding addEventHandler ["HandleDamage",{0}];
-AW_fobPositions = [_position];
-publicVariable "AW_fobPositions";
+private _fobNames = getArray(missionConfigFile >> "Core_Settings" >> "AW_fobDefaultNames");
+AW_fobDetails = [[_fobNames select 0,_position]];
+publicVariable "AW_fobDetails";
 
 AW_resourcesAvailable = getArray(missionConfigFile >> "Core_Settings" >> "AW_startingResources");
 publicVariable "AW_resourcesAvailable";
@@ -28,8 +29,6 @@ AW_intel = 0;
 publicVariable "AW_intel";
 AW_bluforSectors = [];
 publicVariable "AW_bluforSectors";
-AW_bluforRadioTowers = [];
-publicVariable "AW_bluforRadioTowers";
 AW_logisticsSetup = [0,0,[]];
 publicVariable "AW_logisticsSetup";
 AW_factorySetup = [];
@@ -60,7 +59,7 @@ AW_civilianVehiclesDestroyed = 0;
 
 AW_sectorDetails = [];
 {
-	AW_sectorDetails pushBack [_x,1,0]; //[sector,garrisonRatio,lostBuildings]
+	AW_sectorDetails pushBack [_x,1,0]; //[sector,garrisonRatio,lostBuildings/radioTower] 0 is radio tower present, -1 is not
 } forEach AW_allSectors;
 
 call AW_fnc_saveGame;

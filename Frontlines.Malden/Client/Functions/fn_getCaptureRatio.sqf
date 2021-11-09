@@ -11,7 +11,7 @@ params [
 if (_radius isEqualType "") then {
 	_radius = (getArray(missionConfigFile >> "Core_Settings" >> "AW_sectorCaptureRadius")) select ([_sector] call AW_fnc_getSectorTypeIndex);
 };
-private _nearEntities = _sectorCentre nearEntities [["CAManBase","Car","Tank","Ship","Helicopter"],_radius];
+private _nearEntities = _sectorCentre nearEntities [["CAManBase","LandVehicle","Ship","Air"],_radius];
 private _bluforCount = 0;
 private _opforCount = 0;
 

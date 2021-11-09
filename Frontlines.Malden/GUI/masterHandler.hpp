@@ -2,6 +2,7 @@
 #include "buildMenu.hpp"
 #include "deployMenu.hpp"
 #include "factoryMenu.hpp"
+#include "fobNameMenu.hpp"
 #include "guerillaMenu.hpp"
 #include "logisticsMenu.hpp"
 #include "retrieveMenu.hpp"

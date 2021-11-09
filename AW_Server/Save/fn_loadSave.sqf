@@ -8,11 +8,11 @@ params [
 	["_data",[],[[]]]
 ];
 
-_data params ["_version","_date","_fobPositions","_resources","_civRep","_opforThreat","_intel","_bluforSectors","_bluforTowers","_logistics","_factories","_objects","_stats","_sectorDetails"];
+_data params ["_version","_date","_fobPositions","_resources","_civRep","_opforThreat","_intel","_bluforSectors","_logistics","_factories","_objects","_stats","_sectorDetails"];
 
 setDate _date;
-AW_fobPositions = _fobPositions;
-publicVariable "AW_fobPositions";
+AW_fobDetails = _fobPositions;
+publicVariable "AW_fobDetails";
 AW_resourcesAvailable = _resources;
 publicVariable "AW_resourcesAvailable";
 
@@ -34,8 +34,6 @@ publicVariable "AW_bluforSectors";
 {
 	_x setMarkerColor "colorBLUFOR";
 } forEach _bluforSectors;
-AW_bluforRadioTowers = _bluforTowers;
-publicVariable "AW_bluforRadioTowers";
 
 if ((_logistics select 2) isNotEqualTo []) then { //restart routes
 	_logistics params ["_trucksAvailable","_trucksInTransit","_currentRoutes"];
@@ -58,7 +56,7 @@ publicVariable "AW_mobileRespawns";
 {
 	_x params ["_className","_position","_direction","_up",["_damageArray",[]]];
 	private _object = createVehicle [_className,_position,[],0,"CAN_COLLIDE"];
-	_object setPosATL _position;
+	_object setPosWorld _position;
 	_object setVectorDirAndUp [_direction,_up];
 	if (_damageArray isNotEqualTo []) then {
 		{

@@ -166,8 +166,8 @@ class Blufor_Setup {
 	//If first element is array, you can overwrite default name as shown below
 	AW_bluforLogistics[] = {
 		{{"Land_Pallet_MilBoxes_F", "Supply Box"}, {200,0,200}, ""},
-		{{"B_Slingload_01_Cargo_F", "FOB Container"}, {300,500,0}, "(count AW_fobPositions) < (getNumber(missionConfigFile >> 'Core_Settings' >> 'AW_maxFobs'))"},
-		{{"rhsusf_M1078A1P2_B_WD_CP_fmtv_usarmy", "FOB Truck"}, {350,500,0}, "(count AW_fobPositions) < (getNumber(missionConfigFile >> 'Core_Settings' >> 'AW_maxFobs'))"},
+		{{"B_Slingload_01_Cargo_F", "FOB Container"}, {300,500,0}, "(count AW_fobDetails) < (getNumber(missionConfigFile >> 'Core_Settings' >> 'AW_maxFobs'))"},
+		{{"rhsusf_M1078A1P2_B_WD_CP_fmtv_usarmy", "FOB Truck"}, {350,500,0}, "(count AW_fobDetails) < (getNumber(missionConfigFile >> 'Core_Settings' >> 'AW_maxFobs'))"},
 
 		{{"Land_RepairDepot_01_tan_F", "Recycle Building"}, {250,0,0}, ""},
 		{{"B_Radar_System_01_F", "Radar"}, {1000,0,0}, ""},

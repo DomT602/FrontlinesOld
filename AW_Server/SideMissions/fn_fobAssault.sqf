@@ -15,11 +15,12 @@ private _heliCount =  _difficultyModifier;
 
 private _vehicleCounts = [];
 {
-	_vehicleCounts pushBack count(nearestObjects [_x,["AllVehicles"],150,true]);
-} forEach AW_fobPositions;
+	_x params ["","_pos"];
+	_vehicleCounts pushBack count(nearestObjects [_pos,["AllVehicles"],150,true]);
+} forEach AW_fobDetails;
 private _index = (_vehicleCounts call CBA_fnc_findMax) select 1;
 
-private _fobPosition = AW_fobPositions select _index;
+(AW_fobDetails select _index) params ["_fobName","_fobPosition"];
 private _sectors = AW_radioTowerSectors;
 _sectors append AW_militarySectors;
 
@@ -29,8 +30,6 @@ if (_spawnPos isEqualTo [0,0,0]) then {
 	_infantryCount = 0;
 };
 
-private _fobNames = getArray(missionConfigFile >> "Core_Settings" >> "AW_fobNames");
-private _fobName = _fobNames select (AW_fobPositions find _fobPosition);
 [format["Intel suggests the enemy are planning to attack %1 in 10 minutes.",_fobName],"generalNotif","FOB Assault"] remoteExecCall ["AW_fnc_notify",-2];
 
 [

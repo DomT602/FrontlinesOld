@@ -8,6 +8,6 @@ params [
 	["_radius",(getNumber(missionConfigFile >> "Core_Settings" >> "AW_fobBuildRadius")),[0]]
 ];
 
-private _nearFOB = AW_fobPositions findIf {_x distance _startPos < _radius};
+private _nearFOB = AW_fobDetails findIf {(_x select 1) distance _startPos < _radius};
 
 (_nearFob isNotEqualTo -1)

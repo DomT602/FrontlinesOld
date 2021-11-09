@@ -32,7 +32,7 @@ private _text = format ["
 if (_conditions isNotEqualTo "") then {
 	private _extraText = "<t size='2'>Additional Requirements:</t><br/>";
 
-	if ("AW_fobPositions" in _conditions) then {
+	if ("AW_fobDetails" in _conditions) then {
 		private _fobCount = getNumber(missionConfigFile >> "Core_Settings" >> "AW_maxFobs");
 		_extraText = format ["%1Less then %2 FOBs deployed<br/>",_extraText,_fobCount];
 	};

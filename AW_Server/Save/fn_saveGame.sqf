@@ -9,13 +9,12 @@ private _data = [];
 private _version = getText(missionConfigFile >> "Core_Settings" >> "AW_version");
 _data pushBack _version;
 _data pushBack date;
-_data pushBack AW_fobPositions;
+_data pushBack AW_fobDetails;
 _data pushBack AW_resourcesAvailable;
 _data pushBack AW_civRep;
 _data pushBack AW_opforThreat;
 _data pushBack AW_intel;
 _data pushBack AW_bluforSectors;
-_data pushBack AW_bluforRadioTowers;
 _data pushBack AW_logisticsSetup;
 _data pushBack AW_factorySetup;
 
@@ -36,11 +35,12 @@ _bluforBuildables append (getArray(missionConfigFile >> "Blufor_Setup" >> "AW_bl
 _bluforBuildables = _bluforBuildables apply {if (_x select 0 isEqualType []) then {(_x select 0) select 0} else {_x select 0}};
 _bluforBuildables pushBack (getText(missionConfigFile >> "Blufor_Setup" >> "AW_fobBuilding"));
 {
-	private _nearObjects = _x nearObjects (_range * 1.2);
+	_x params ["","_pos"];
+	private _nearObjects = _pos nearObjects (_range * 1.2);
 	{
 		if (alive _x && {(typeOf _x) in _bluforBuildables}) then {
 			private _className = typeOf _x;
-			private _position = getPosATLVisual _x;
+			private _position = getPosWorld _x;
 			private _direction = vectorDirVisual _x;
 			private _up = vectorUpVisual _x;
 
@@ -48,11 +48,11 @@ _bluforBuildables pushBack (getText(missionConfigFile >> "Blufor_Setup" >> "AW_f
 			_savedObjects pushBack _x;
 		};
 	} forEach _nearObjects;
-} forEach AW_fobPositions;
+} forEach AW_fobDetails;
 {
 	private _className = typeOf _x;
 	if (alive _x && {speed _x < 3 && {!(_x in _savedObjects) && {(getPosATL _x select 2) < 5 && (_className in _bluforVehicles || _x getVariable ["AW_playerUsed",false])}}}) then {
-		private _position = getPosATLVisual _x;
+		private _position = getPosWorld _x;
 		private _direction = vectorDirVisual _x;
 		private _up = vectorUpVisual _x;
 		private _damage = getAllHitPointsDamage _x;

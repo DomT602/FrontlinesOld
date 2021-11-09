@@ -92,6 +92,7 @@ class AWClient {
 		class logisticsStartRoute {};
 		class moveObject {};
 		class recycleObject {};
+		class renameFOB {};
 		class retrieveSupplies {};
 		class setupBuild {};
 		class startBuild {};

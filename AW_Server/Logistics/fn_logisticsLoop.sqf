@@ -21,15 +21,15 @@ private _toDelete = [];
 		AW_logisticsSetup set [1,_trucksInUse];
 		_toDelete pushBack _forEachIndex;
 
-		if ("FOB" in _to) then {
-			AW_resourcesAvailable = AW_resourcesAvailable vectorAdd _carrying;
-			publicVariable "AW_resourcesAvailable";
-		} else {
+		if ("factory" in _to) then {
 			private _index = AW_factorySetup findIf {_to == _x select 0};
 			private _factoryInfo = AW_factorySetup select _index;
 			_factoryInfo set [2,((_factoryInfo select 2) vectorAdd _carrying)];
 			AW_factorySetup set [_index,_factoryInfo];
-			publicVariable "AW_factorySetup"; 
+			publicVariable "AW_factorySetup";
+		} else {
+			AW_resourcesAvailable = AW_resourcesAvailable vectorAdd _carrying;
+			publicVariable "AW_resourcesAvailable";
 		};
 	};
 } forEach _currentRoutes;

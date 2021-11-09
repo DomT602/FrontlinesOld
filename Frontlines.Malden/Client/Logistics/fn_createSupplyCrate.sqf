@@ -25,7 +25,7 @@ private _crateClass = switch _type do {
 
 private _crate = objNull;
 if (isNull _unit) then {
-	_target = _target vectorAdd [0,0,150];
+	_target = _target vectorAdd [0,0,100];
 	_crate = createVehicle [_crateClass,_target,[],10];
 	private _chute = createVehicle ["B_Parachute_02_F",_target,[],0,"FLY"];
 	_chute setPosASL (getPosASL _crate);

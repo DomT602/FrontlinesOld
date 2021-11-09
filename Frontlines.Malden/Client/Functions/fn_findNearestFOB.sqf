@@ -13,6 +13,6 @@ private _distance = 99999;
 	if (_testPos < _distance) then {
 		_distance = _testPos;
 	};
-} forEach AW_fobPositions;
+} forEach AW_fobDetails;
 
 _distance;

@@ -199,8 +199,8 @@ class Blufor_Setup {
 	AW_bluforLogistics[] = {
 		{{"Land_Pallet_MilBoxes_F", "Supply Box"}, {200,0,200}, ""},
 		{{"UK3CB_BAF_Vehicles_Servicing_Ground_Point", "BAF Servicing Point"}, {200,0,200}, ""},
-		{{"UK3CB_BAF_MAN_HX58_Container_Green", "FOB Container"}, {300,500,0}, "(count AW_fobPositions) < (getNumber(missionConfigFile >> 'Core_Settings' >> 'AW_maxFobs'))"},
-		{{"UK3CB_BAF_MAN_HX58_Cargo_Green_B", "FOB Truck"}, {350,500,0}, "(count AW_fobPositions) < (getNumber(missionConfigFile >> 'Core_Settings' >> 'AW_maxFobs'))"},
+		{{"UK3CB_BAF_MAN_HX58_Container_Green", "FOB Container"}, {300,500,0}, "(count AW_fobDetails) < (getNumber(missionConfigFile >> 'Core_Settings' >> 'AW_maxFobs'))"},
+		{{"UK3CB_BAF_MAN_HX58_Cargo_Green_B", "FOB Truck"}, {350,500,0}, "(count AW_fobDetails) < (getNumber(missionConfigFile >> 'Core_Settings' >> 'AW_maxFobs'))"},
 
 		{{"Land_RepairDepot_01_tan_F", "Recycle Building"}, {250,0,0}, ""},
 		{{"B_Radar_System_01_F", "Radar"}, {1000,0,0}, ""},

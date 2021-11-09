@@ -1,8 +1,3 @@
-AW_fobBuildRadius = 100;
-AW_maxFobs = 10; //should match number of elements below
-AW_fobNames[] = {"FOB Alpha", "FOB Bravo", "FOB Charlie", "FOB Delta", "FOB Echo", "FOB Foxtrot", "FOB Golf", "FOB Hotel", "FOB India", "FOB Juliet"};
-
-
 AW_sectorActivationRange = 500;
 AW_sectorCaptureRadius[] = {150,200,150,100,150}; //Distance units are taken into account when working out capture ratio in format {Town,City,Military,Radio,Factory}
 AW_sectorSpawnRadius[] = {250,300,250,250,250}; //Distance units can spawn away from a sector centre in format {Town,City,Military,Radio,Factory}

@@ -81,7 +81,7 @@ switch _type do {
 				{lineIntersectsSurfaces [AGLtoASL _testPos,AGLToASL _testPos vectorAdd [0,0,15],objNull,objNull,false,1,"GEOM","NONE"] isNotEqualTo [] &&
 				{nearestTerrainObjects [_testPos,["HIDE","BUILDING","TREE","ROCK","ROCKS"],15,false] isEqualTo [] &&
 				{AW_allSectors findIf {(markerPos _x) distance _testPos < _radius} isEqualTo -1 && 
-				{AW_fobPositions findIf {_x distance _testPos < 1000} isEqualTo -1 &&
+				{AW_fobDetails findIf {(_x select 1) distance _testPos < 1000} isEqualTo -1 &&
 				{_xPos > 0 && {_xPos < worldSize &&
 				{_yPos > 0 && {_yPos < worldSize}}}}}}}}}
 			) exitWith {
@@ -106,7 +106,7 @@ switch _type do {
 					{_testPos isFlatEmpty [-1,-1,0.2,20,0,false,objNull] isNotEqualTo [] &&
 					{nearestTerrainObjects [_testPos,["HIDE","BUILDING","TREE","ROCKS"],30,false] isEqualTo [] &&
 					{AW_allSectors findIf {(markerPos _x) distance _testPos < _radius} isEqualTo -1 && 
-					{AW_fobPositions findIf {_x distance _testPos < 2000} isEqualTo -1 &&
+					{AW_fobDetails findIf {(_x select 1) distance _testPos < 2000} isEqualTo -1 &&
 					{AW_bluforSectors findIf {(markerPos _x) distance _testPos < (_radius * 2)} isEqualTo -1 &&
 					{_xPos > 0 && {_xPos < worldSize &&
 					{_yPos > 0 && {_yPos < worldSize}}}}}}}}}

@@ -100,8 +100,7 @@ switch _action do {
 		_sectorListbox lbSetColor [_index,[0,0.3,0.6,1]];
 
 		if (_sector in AW_radioTowerSectors) then {
-			AW_bluforRadioTowers pushBack _sector;
-			publicVariable "AW_bluforRadioTowers";
+			[_sector,true] remoteExecCall ["AW_fnc_setTower",2];
 		} else {
 			if (_sector in AW_factorySectors) then {
 				AW_factorySetup pushBack [_sector,-1,[0,0,0]];
@@ -130,10 +129,8 @@ switch _action do {
 			AW_factorySetup deleteAt _factoryIndex;
 			publicVariable "AW_factorySetup";
 		} else {
-			if (_sector in AW_bluforRadioTowers) then {
-				private _towerIndex = AW_radioTowerSectors find _sector;
-				AW_bluforRadioTowers deleteAt _towerIndex;
-				publicVariable "AW_bluforRadioTowers";
+			if (_sector in AW_radioTowerSectors) then {
+				[_sector,false] remoteExecCall ["AW_fnc_setTower",2];
 			};
 		};
 	};

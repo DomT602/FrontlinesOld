@@ -7,6 +7,8 @@ params [
 	["_sector","",[""]]
 ];
 private _markerPos = markerPos _sector;
+private _index = AW_sectorDetails findIf {_x select 0 isEqualTo _sector};
+private _towerArray = AW_sectorDetails select _index;
 
 private _fnc_findPos = {
 	params ["_centre","_radius"];
@@ -45,7 +47,7 @@ private _nearTrees = nearestTerrainObjects [_spawnPos,["TREE"],50,false];
 
 {
 	_x params ["_class","_pos","_dir"];
-	if (_class in ["Land_Communication_F","Land_TTowerSmall_2_F","Land_TTowerBig_1_F"] && {_sector in AW_bluforSectors && {!(_sector in AW_bluforRadioTowers)}}) then {continue};
+	if (_class in ["Land_Communication_F","Land_TTowerSmall_2_F","Land_TTowerBig_1_F"] && {(_towerArray select 2) isEqualTo -1}) then {continue};
 	_pos = _pos vectorAdd [_xPos,_yPos,0];
 	private _object = createVehicle [_class,_pos,[],0,"CAN_COLLIDE"];
 	_object setPosATL _pos;
@@ -57,6 +59,10 @@ private _nearTrees = nearestTerrainObjects [_spawnPos,["TREE"],50,false];
 	} else {
 		if (_class in ["Land_Communication_F","Land_TTowerSmall_2_F","Land_TTowerBig_1_F"]) then {
 			_object addEventHandler ["Killed",{_this call AW_fnc_towerDestroyed}];
+			if (_sector in AW_bluforSectors) then {
+				AW_bluforTowerCount = AW_bluforTowerCount + 1;
+				publicVariable "AW_bluforTowerCount";
+			};
 		};
 	};
 } forEach _objects;

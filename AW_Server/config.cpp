@@ -87,6 +87,7 @@ class CfgFunctions {
 			class mainSectorLoop {};
 			class monitorSector {};
 			class setGarrisonStrength {};
+			class setTower {};
 			class spawnCivs {};
 			class spawnGuerillas {};
 			class spawnTower {};

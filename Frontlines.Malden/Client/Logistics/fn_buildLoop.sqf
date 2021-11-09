@@ -40,17 +40,23 @@ if (AW_buildAction > 0 || {!alive player || {!isNull objectParent player}}) then
 
 				private _fobBuildingClassname = getText(missionConfigFile >> "Blufor_Setup" >> "AW_fobBuilding");
 				if (_class isEqualTo _fobBuildingClassname) then {
-					private _index = count AW_fobPositions - 1;
-					AW_fobPositions set [_index,_finalPosition];
-					publicVariable "AW_fobPositions";
+					private _index = count AW_fobDetails - 1;
+					private _fobArray = AW_fobDetails select _index;
+					_fobArray set [1,_finalPosition];
+					publicVariable "AW_fobDetails";
 
-					private _fobNames = getArray(missionConfigFile >> "Core_Settings" >> "AW_fobNames");
+					private _fobName = _fobArray select 0;
 					private _marker = createMarker [format["FOBmarker%1",_index],_finalPosition];
 					_marker setMarkerType "b_hq";
 					_marker setMarkerSize [1.5,1.5];
-					_marker setMarkerText (_fobNames select _index);
+					_marker setMarkerText _fobName;
 
 					["A new FOB has been established.","successNotif","New FOB"] remoteExecCall ["AW_fnc_notify",-2];
+
+					createDialog "AW_fobNameMenu";
+					private _display = findDisplay 9650;
+					(_display displayCtrl 1400) ctrlSetText _fobName;
+					uiNamespace setVariable ["AW_currentFOB",_index];
 				} else {
 					if (AW_postBuildAction > 0 && {!_moving}) then {
 						if (AW_postBuildAction isEqualTo 1) then {
