@@ -29,7 +29,7 @@ if (_unit isKindOf "CAManBase") then {
 		};
 	};
 } else {
-	if (_unit isKindOf "Car" || {_unit isKindOf "Tank" || {_unit isKindOf "Ship" || {_unit isKindOf "Air"}}}) then {
+	if (_unit isKindOf "LandVehicle" || {_unit isKindOf "Ship" || {_unit isKindOf "Air"}}) then {
 		private _class = typeOf _unit;
 		private _bluforVehicles = getArray(missionConfigFile >> "Blufor_Setup" >> "AW_bluforLightVehicles");
 		_bluforVehicles append (getArray(missionConfigFile >> "Blufor_Setup" >> "AW_bluforHeavyVehicles"));

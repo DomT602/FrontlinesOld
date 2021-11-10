@@ -18,7 +18,6 @@ class AWClient {
 		class findFrontlineSectors {};
 		class findNearestFOB {};
 		class findNearestSector {};
-		class firedMan {};
 		class fuelConsumptionLoop {};
 		class gatherIntel {};
 		class getCaptureRatio {};

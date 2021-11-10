@@ -99,7 +99,6 @@ class Blufor_Setup {
 
 
 		{"FlagCarrierNATO_EP1", {5,0,0}, ""},
-		{{"Flag_White_F","Ahoyworld Flag"}, {5,0,0}, ""},
 		{"Flag_RedCrystal_F", {5,0,0}, ""},
 
 		{"Land_CamoNet_NATO", {5,0,0}, ""},
