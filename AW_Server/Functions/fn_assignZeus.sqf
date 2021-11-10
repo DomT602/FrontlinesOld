@@ -25,7 +25,7 @@ if (isNull _zeus) then {
 
 	_unit assignCurator _zeus;
 
-	if !(isClass(configFile >> "CfgPatches" >> "ZEN_main")) then {
+	if !(AW_isZenEnabled) then {
 		_zeus addEventHandler ["Local",{_this call AW_fnc_zeusLocalityChanged}];
 	};
 };

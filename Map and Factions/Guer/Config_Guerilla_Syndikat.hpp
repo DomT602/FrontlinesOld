@@ -1,5 +1,5 @@
 /*
-	Faction: Freedom and Independence Army
+	Faction: Syndikat
 	Author: Dom
 	Requires: None
 */
@@ -20,6 +20,7 @@ class Guerilla_Setup {
 		"I_C_Offroad_02_AT_F"
 	};
 
+	//format {"Title","actionCode",requiredCivRep,cooldown}
 	AW_guerillaSupports[] = {
 		{"Infantry Attack","infAttack",35,45},
 		{"Mechanized Attack","mechAttack",70,60},

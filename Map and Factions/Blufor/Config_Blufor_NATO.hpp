@@ -1,6 +1,6 @@
 /*
-	Faction: CTRG
-	Author: Dom
+	Faction: NATO
+	Author: SiegeSix
 	Requires: TFAR
 */
 class Blufor_Setup {
@@ -28,6 +28,8 @@ class Blufor_Setup {
 
 	//Building menu options below, format {"Classname",{Supplies,Fuel,Ammo},"Any extra conditions"}
 	AW_bluforLightVehicles[] = {
+		{"B_UGV_02_Demining_F", {20,40,0}, ""},									// ED-1D
+
 		{"B_Quadbike_01_F", {50,25,0}, ""},
 
 		{"B_Truck_01_transport_F", {200,50,0}, ""},
@@ -35,21 +37,32 @@ class Blufor_Setup {
 		{"B_MRAP_01_F", {100,25,0}, ""},
 		{"B_MRAP_01_gmg_F", {150,50,75}, ""},
 		{"B_MRAP_01_hmg_F", {150,50,50}, ""},
-		{"B_CTRG_LSV_01_light_F", {75,25,0}, ""}
+		{"B_LSV_01_unarmed_F", {75,25,0}, ""},
+		{"B_LSV_01_armed_F", {100,25,50}, ""},
+		{"B_LSV_01_AT_F", {100,25,100}, ""}	
 	};
 
 	AW_bluforHeavyVehicles[] = {
 		{"B_UGV_01_rcws_F", {400,150,200}, ""},
 
+		{"B_APC_Tracked_01_rcws_F", {200,150,200}, ""},
 		{"B_APC_Tracked_01_CRV_F", {300,200,200}, ""},
 
 		{"B_APC_Wheeled_01_cannon_F", {300,150,250}, ""},
-		{"B_APC_Tracked_01_AA_F", {400,200,400}, ""}
+		{"B_APC_Tracked_01_AA_F", {400,200,400}, ""},
+
+		{"B_AFV_Wheeled_01_cannon_F", {350,200,350}, "AW_civRep > 50 && {call AW_fnc_getMissionProgress > 0.3}"},
+		{"B_AFV_Wheeled_01_up_cannon_F", {350,200,400}, "AW_civRep > 50 && {call AW_fnc_getMissionProgress > 0.3}"},
+		{"B_MBT_01_cannon_F", {400,200,400}, "AW_civRep > 50 && {call AW_fnc_getMissionProgress > 0.3}"},
+		{"B_MBT_01_TUSK_F", {400,200,400}, "AW_civRep > 50 && {call AW_fnc_getMissionProgress > 0.3}"},
+		
+		{"B_MBT_01_arty_F", {500,250,700}, ""},
+		{"B_MBT_01_mlrs_F", {500,250,1000}, ""}
 	};
 
 	AW_bluforAirVehicles[] = {
-		{"B_UAV_01_F", {50,100,0}, ""},
-		{"B_UAV_06_F", {75,100,0}, ""},
+		{"B_UAV_01_F", {50,100,0}, ""},                                             // AR-2 Darter
+		{"B_UAV_06_F", {75,100,0}, ""},                                     		// AL-6 Pelican
 		{"B_UAV_02_dynamicLoadout_F", {300,200,200}, "(nearestObjects [player,['B_Radar_System_01_F'],150]) isNotEqualTo [] && {AW_civRep > 50 && {call AW_fnc_getMissionProgress > 0.35}}"},
 		{"B_UAV_05_F", {300,300,250}, "(nearestObjects [player,['B_Radar_System_01_F'],150]) isNotEqualTo [] && {AW_civRep > 50 && {call AW_fnc_getMissionProgress > 0.35}}"},
 
@@ -57,9 +70,9 @@ class Blufor_Setup {
 		{"B_Heli_Light_01_dynamicLoadout_F", {250,150,150}, "(nearestObjects [player,['B_Radar_System_01_F'],150]) isNotEqualTo [] && {count AW_currentHelicopters < AW_maxHelicopterCount}"},
 		
 		{"B_Heli_Transport_03_F", {300,200,250}, "(nearestObjects [player,['B_Radar_System_01_F'],150]) isNotEqualTo [] && {count AW_currentHelicopters < AW_maxHelicopterCount}"},							
-		{"B_Heli_Transport_01_F", {200,200,100}, "(nearestObjects [player,['B_Radar_System_01_F'],150]) isNotEqualTo [] && {count AW_currentHelicopters < AW_maxHelicopterCount}"},
-		{"B_CTRG_Heli_Transport_01_sand_F", {200,200,100}, "(nearestObjects [player,['B_Radar_System_01_F'],150]) isNotEqualTo [] && {count AW_currentHelicopters < AW_maxHelicopterCount}"},
-		{"B_CTRG_Heli_Transport_01_tropic_F", {200,200,100}, "(nearestObjects [player,['B_Radar_System_01_F'],150]) isNotEqualTo [] && {count AW_currentHelicopters < AW_maxHelicopterCount}"},   
+		{"B_Heli_Transport_01_F", {200,200,100}, "(nearestObjects [player,['B_Radar_System_01_F'],150]) isNotEqualTo [] && {count AW_currentHelicopters < AW_maxHelicopterCount}"},							
+		
+		{"B_Heli_Attack_01_dynamicLoadout_F", {500,200,500}, "(nearestObjects [player,['B_Radar_System_01_F'],150]) isNotEqualTo [] && {count AW_currentHelicopters < AW_maxHelicopterCount}"},                
 
 		{"B_T_VTOL_01_infantry_F", {600,300,0}, "(nearestObjects [player,['B_Radar_System_01_F'],150]) isNotEqualTo [] && {count AW_currentPlanes < AW_maxPlaneCount}"},
         {"B_T_VTOL_01_vehicle_F", {600,300,0}, "(nearestObjects [player,['B_Radar_System_01_F'],150]) isNotEqualTo [] && {count AW_currentPlanes < AW_maxPlaneCount}"},
@@ -75,7 +88,7 @@ class Blufor_Setup {
 		{"B_SDV_01_F", {100,25,0}, ""}
 	};
 
-	AW_bluforDefences[] = {
+	AW_bluforDefences[] = {	
 		{"B_SAM_System_03_F", {400,0,500}, ""},                                       
 		{"B_AAA_System_01_F", {400,0,500}, ""},                                       
 		{"B_static_AA_F", {100,0,50}, ""}                                       
@@ -85,7 +98,8 @@ class Blufor_Setup {
 		{"Land_Medevac_house_V1_F", {30,0,0}, ""},
 
 
-		{"Flag_CTRG_F", {5,0,0}, ""},
+		{"FlagCarrierNATO_EP1", {5,0,0}, ""},
+		{{"Flag_White_F","Ahoyworld Flag"}, {5,0,0}, ""},
 		{"Flag_RedCrystal_F", {5,0,0}, ""},
 
 		{"Land_CamoNet_NATO", {5,0,0}, ""},
@@ -208,8 +222,6 @@ class Blufor_Setup {
 		"hgun_PDW2000_F",
 		"SMG_01_F",
 		"SMG_02_F",
-		"LMG_Mk200_F",
-		"LMG_Mk200_black_F",
 		"arifle_SPAR_01_blk_F",
 		"arifle_SPAR_01_snd_F",
 		"arifle_SPAR_01_GL_blk_F",
@@ -217,17 +229,15 @@ class Blufor_Setup {
 		"arifle_SPAR_02_blk_F",
 		"arifle_SPAR_02_snd_F",
 		"arifle_SPAR_03_blk_F",
-		"arifle_SPAR_03_snd_F",
-		"arifle_SDAR_F"
+		"arifle_SPAR_03_snd_F"
 	};
 
 	AW_arsenalMagazines[] = {
-		"SatchelCharge_Remote_Mag",
-		"DemoCharge_Remote_Mag",
+		"B_IR_Grenade",
 
-		"20Rnd_556x45_UW_mag",
-		"200Rnd_65x39_cased_Box",
-		"200Rnd_65x39_cased_Box_Tracer",
+		"DemoCharge_Remote_Mag",
+		"SatchelCharge_Remote_Mag",
+
 		"30Rnd_65x39_caseless_mag",
 		"30Rnd_65x39_caseless_black_mag",
 		"30Rnd_65x39_caseless_mag_Tracer",
@@ -346,23 +356,14 @@ class Blufor_Setup {
 		"bipod_01_F_blk",
 		"bipod_01_F_snd",
 
-		"H_PilotHelmetHeli_B",
-		"H_CrewHelmetHeli_B",
-		"H_HelmetB_light",
-		"H_HelmetB_light_black",
-		"H_HelmetB_light_desert",
-		"H_HelmetB_light_grass",
-		"H_HelmetB_light_sand",
-		"H_HelmetB_light_snakeskin",
-		"H_HelmetB_Light_tna_F",
 		"H_HelmetSpecB",
 		"H_HelmetSpecB_blk",
 		"H_HelmetSpecB_paint2",
 		"H_HelmetSpecB_paint1",
 		"H_HelmetSpecB_sand",
 		"H_HelmetSpecB_snakeskin",
+		"H_HelmetSpecB_wdl",
 		"H_HelmetB_Enh_tna_F",
-		"H_HelmetCrew_B",
 		"H_HelmetB",
 		"H_HelmetB_black",
 		"H_HelmetB_camo",
@@ -371,50 +372,74 @@ class Blufor_Setup {
 		"H_HelmetB_sand",
 		"H_HelmetB_snakeskin",
 		"H_HelmetB_tna_F",
-		"H_Cap_khaki_specops_UK",
+		"H_HelmetB_plain_wdl",
+		"H_PilotHelmetFighter_B",
+		"H_PilotHelmetHeli_B",
+		"H_CrewHelmetHeli_B","H_HelmetCrew_B",
+		"H_HelmetB_light",
+		"H_HelmetB_light_black",
+		"H_HelmetB_light_desert",
+		"H_HelmetB_light_grass",
+		"H_HelmetB_light_sand",
+		"H_HelmetB_light_snakeskin",
+		"H_HelmetB_Light_tna_F",
+		"H_HelmetB_light_wdl",
 		"H_Booniehat_khk_hs",
 		"H_Booniehat_khk",
-		"H_Booniehat_mcamo",
-		"H_Booniehat_oli",
-		"H_Booniehat_tan",
+		"H_Booniehat_mgrn",
 		"H_Booniehat_tna_F",
-		"H_Booniehat_dgtl",
-		"H_Watchcap_blk",
-		"H_Watchcap_cbr",
-		"H_Watchcap_camo",
-		"H_Watchcap_khk",
-		"H_HelmetB_TI_arid_F",
-		"H_HelmetB_TI_tna_F",
+		"H_Booniehat_wdl",
+		"H_Booniehat_tan",
+		"H_Booniehat_oli",
+		"H_Booniehat_mcamo",
+		"H_Cap_oli",
+		"H_Cap_oli_hs",
+		"H_Cap_khaki_specops_UK",
+		"H_Cap_tan_specops_US",
+		"H_Cap_headphones",
+		"H_Beret_Colonel",
+		"H_Beret_02",
 
-		"U_B_CTRG_1",
-		"U_B_CTRG_3",
-		"U_B_CTRG_2",
-		"U_B_CTRG_Soldier_F",
-		"U_B_CTRG_Soldier_Arid_F",
-		"U_B_CTRG_Soldier_3_F",
-		"U_B_CTRG_Soldier_3_Arid_F",
-		"U_B_CTRG_Soldier_2_F",
-		"U_B_CTRG_Soldier_2_Arid_F",
-		"U_B_CTRG_Soldier_urb_1_F",
-		"U_B_CTRG_Soldier_urb_3_F",
-		"U_B_CTRG_Soldier_urb_2_F",
-		"U_B_HeliPilotCoveralls",
-		"U_B_Wetsuit",
-		"U_B_PilotCoveralls",
 		"U_B_FullGhillie_ard",
-		"U_B_T_FullGhillie_tna_F",
 		"U_B_FullGhillie_lsh",
+		"U_B_T_FullGhillie_tna_F",
 		"U_B_FullGhillie_sard",
 		"U_B_T_Sniper_F",
 		"U_B_GhillieSuit",
+		"U_B_HeliPilotCoveralls",
+		"U_B_PilotCoveralls",
+		"U_B_CombatUniform_mcam_vest",
+		"U_B_CombatUniform_mcam",
+		"U_B_CombatUniform_mcam_tshirt",
+		"U_B_T_Soldier_F",
+		"U_B_T_Soldier_AR_F",
+		"U_B_CombatUniform_mcam_wdl_f",
+		"U_B_CombatUniform_tshirt_mcam_wdL_f",
+		"U_B_Wetsuit",
 
-		"V_PlateCarrierL_CTRG",
-		"V_PlateCarrierH_CTRG",
-		"V_PlateCarrier1_rgr_noflag_F",
 		"V_PlateCarrier1_blk",
+		"V_PlateCarrier1_rgr",
+		"V_PlateCarrier1_rgr_noflag_F",
+		"V_PlateCarrierGL_wdl",
+		"V_PlateCarrierGL_tna_F",
+		"V_PlateCarrierGL_mtp",
+		"V_PlateCarrierGL_rgr",
+		"V_PlateCarrierGL_blk",
+		"V_PlateCarrier1_tna_F",
+		"V_PlateCarrier1_wdl",
 		"V_PlateCarrier2_blk",
+		"V_PlateCarrier2_rgr",
 		"V_PlateCarrier2_rgr_noflag_F",
+		"V_PlateCarrier2_tna_F",
+		"V_PlateCarrier2_wdl",
+		"V_PlateCarrierSpec_blk",
+		"V_PlateCarrierSpec_rgr",
+		"V_PlateCarrierSpec_mtp",
+		"V_PlateCarrierSpec_tna_F",
+		"V_PlateCarrierSpec_wdl",
+		"V_Rangemaster_belt",
 		"V_RebreatherB",
+		"V_TacVest_oli",
 
 		"G_Bandanna_beast",
 		"G_Bandanna_blk",
@@ -431,15 +456,7 @@ class Blufor_Setup {
 		"G_Respirator_white_F",
 		"G_Tactical_Black",
 		"G_Tactical_Clear",
-		"G_AirPurifyingRespirator_01_F",
-		"G_Balaclava_TI_blk_F",
-		"G_Balaclava_TI_G_blk_F",
-		"G_Balaclava_TI_tna_F",
-		"G_Balaclava_TI_G_tna_F",
 
-		"NVGogglesB_blk_F",
-		"NVGogglesB_grn_F",
-		"NVGogglesB_gry_F",
 		"ACE_NVG_Wide_Black",
 		"ACE_NVG_Wide",
 		"ACE_NVG_Wide_Green",
@@ -461,6 +478,7 @@ class Blufor_Setup {
 	};
 
 	AW_arsenalBackpacks[] = {
+		"B_UGV_02_Demining_backpack_F",
 		"B_TacticalPack_blk",
 		"B_TacticalPack_rgr",
 		"B_TacticalPack_mcamo",
@@ -471,6 +489,9 @@ class Blufor_Setup {
 		"TFAR_rt1523g_black",
 		"TFAR_rt1523g_big_bwmod",
 		"TFAR_rt1523g","B_RadioBag_01_wdl_F",
+		"B_RadioBag_01_tropic_F",
+		"B_RadioBag_01_mtp_F",
+		"B_RadioBag_01_black_F",
 		"B_LegStrapBag_black_F",
 		"B_LegStrapBag_coyote_F",
 		"B_LegStrapBag_olive_F",
@@ -492,12 +513,13 @@ class Blufor_Setup {
 	};
 
 	AW_defaultLoadout[] = {
-		{"arifle_MX_F","muzzle_snds_H_snd_F","acc_pointer_IR","optic_DMS",{"30Rnd_65x39_caseless_mag",30},{},"bipod_01_F_snd"},{},{},{"U_B_CTRG_3",{{"ACE_fieldDressing",5},{"ACE_elasticBandage",5},{"ACE_packingBandage",5},{"ACE_quikclot",5},{"ACE_CableTie",2},{"ACE_EarPlugs",1},{"ACE_epinephrine",2},{"ACE_morphine",2},{"ACE_Flashlight_XL50",1},{"ACE_IR_Strobe_Item",2},{"ACE_splint",2},{"ACE_tourniquet",2}}},
-		{"V_PlateCarrierL_CTRG",{{"30Rnd_65x39_caseless_mag",8,30},{"HandGrenade",2,1},{"SmokeShell",2,1}}},
-		{},
+		{"arifle_MX_F","ACE_muzzle_mzls_H","acc_pointer_IR","optic_Arco",{"30Rnd_65x39_caseless_mag",30},{},"bipod_01_F_snd"},{},{},
+		{"U_B_CombatUniform_mcam",{{"ACE_fieldDressing",5},{"ACE_elasticBandage",5},{"ACE_packingBandage",5},{"ACE_quikclot",5},{"ACE_CableTie",2},{"ACE_EarPlugs",1},{"ACE_epinephrine",2},{"ACE_morphine",2},{"ACE_Flashlight_XL50",1},{"ACE_IR_Strobe_Item",2},{"ACE_splint",2},{"ACE_tourniquet",2}}},
+		{"V_PlateCarrier1_rgr",{{"30Rnd_65x39_caseless_mag",8,30},{"HandGrenade",2,1},{"SmokeShell",2,1}}},
+		{"B_AssaultPack_rgr",{}},
 		"H_HelmetB_camo","",
 		{"ACE_Vector","","","",{},{},""},
-		{"ItemMap","ItemGPS","TFAR_anprc152","ItemCompass","ItemWatch","NVGogglesB_blk_F"}
+		{"ItemMap","ItemGPS","TFAR_anprc152","ItemCompass","ItemWatch","ACE_NVG_Wide"}
 	};
 
 	//categories supported: medicalCrateCategory,lightWeaponCrateCategory,heavyWeaponCrateCategory,staticWeaponCrateCategory,miscWeaponCrateCategory
@@ -577,7 +599,7 @@ class Blufor_Setup {
 			{"UGL_FlareGreen_F",10},
 			{"UGL_FlareYellow_F",10},
 			{"1Rnd_Smoke_Grenade_shell",5},
-			{"1Rnd_SmokeRed_Grenade_shell",5}
+			{"1Rnd_SmokeRed_Grenade_shell",5}			
 		}},
 		{"miscWeaponCrateCategory","Explosives","small",{75,0,0},{
 			{"DemoCharge_Remote_Mag",6},

@@ -8,12 +8,24 @@ class Civilian_Setup {
 		"C_Man_casual_1_F_tanoan",
 		"C_Man_casual_2_F_tanoan",
 		"C_Man_casual_3_F_tanoan",
+		"C_Man_casual_4_v2_F_tanoan",
+		"C_Man_casual_5_v2_F_tanoan",
+		"C_Man_casual_6_v2_F_tanoan",
+		"C_Man_casual_7_F_tanoan",
+		"C_Man_casual_8_F_tanoan",
+		"C_Man_casual_9_F_tanoan",
+		"C_Man_formal_1_F_tanoan",
+		"C_Man_formal_2_F_tanoan",
+		"C_Man_formal_3_F_tanoan",
+		"C_Man_formal_4_F_tanoan",
+		"C_Man_smart_casual_1_F_tanoan",
+		"C_Man_smart_casual_2_F_tanoan",
+		"C_man_sport_1_F_tanoan",
+		"C_man_sport_2_F_tanoan",
+		"C_man_sport_3_F_tanoan",
 		"C_Man_casual_4_F_tanoan",
 		"C_Man_casual_5_F_tanoan",
 		"C_Man_casual_6_F_tanoan",
-		"C_man_sport_1_F_tanoan",
-		"C_man_sport_2_F_tanoan",
-		"C_man_sport_3_F_tanoan"
 	};
 
 	AW_civilianVehicleTypes[] = {

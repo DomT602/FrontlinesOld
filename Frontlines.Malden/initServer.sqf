@@ -16,7 +16,11 @@ publicVariable "AW_secondaryActive";
 AW_reliefTrucks = [];
 AW_canGatherIntel = false;
 publicVariable "AW_canGatherIntel";
+
 AW_isLambsEnabled = isClass(configFile >> "CfgPatches" >> "lambs_main");
+AW_isZenEnabled = isClass(configFile >> "CfgPatches" >> "ZEN_main");
+AW_isTFAREnabled = isClass (configFile >> "CfgPatches" >> "task_force_radio");
+publicVariable "AW_isTFAREnabled";
 
 AW_activeIEDs = [];
 AW_iedMonitorHandle = -1;

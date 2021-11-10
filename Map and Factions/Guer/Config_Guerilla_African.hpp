@@ -20,6 +20,7 @@ class Guerilla_Setup {
 		"LOP_AFR_Landrover_SPG9"
 	};
 
+	//format {"Title","actionCode",requiredCivRep,cooldown}
 	AW_guerillaSupports[] = {
 		{"Infantry Attack","infAttack",35,45},
 		{"Mechanized Attack","mechAttack",70,60},

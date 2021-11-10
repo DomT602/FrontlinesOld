@@ -1,106 +1,91 @@
 /*
-	Faction: British Armed Forces
+	Faction: AAF
 	Author: Dom
-	Requires: UK3CB, RHSUSF
+	Requires: None
 */
 class Opfor_Setup {
 	AW_opforBasicSquad[] = {
-		"UK3CB_BAF_SC_MTP",
-		"UK3CB_BAF_FT_MTP",
-		"UK3CB_BAF_FT_MTP",
-		"UK3CB_BAF_Medic_MTP",
-		"UK3CB_BAF_Engineer_MTP",
-		"UK3CB_BAF_LAT_ILAW_MTP",
-		"UK3CB_BAF_Sharpshooter_MTP",
-		"UK3CB_BAF_MGLMG_MTP",
-		"UK3CB_BAF_Rifleman_MTP"
+		"I_Soldier_SL_F",
+		"I_Soldier_TL_F",
+		"I_Soldier_TL_F",
+		"I_medic_F",
+		"I_engineer_F",
+		"I_Soldier_LAT_F",
+		"I_Soldier_M_F",
+		"I_Soldier_AR_F",
+		"I_soldier_F"
 	};
 
 	AW_opforATSquad[] = {
-		"UK3CB_BAF_SC_MTP",
-		"UK3CB_BAF_FT_MTP",
-		"UK3CB_BAF_FT_MTP",
-		"UK3CB_BAF_Medic_MTP",
-		"UK3CB_BAF_Engineer_MTP",
-		"UK3CB_BAF_LAT_762_MTP",
-		"UK3CB_BAF_LAT_762_MTP",
-		"UK3CB_BAF_MGLMG_MTP",
-		"UK3CB_BAF_Rifleman_MTP"
+		"I_Soldier_SL_F",
+		"I_Soldier_TL_F",
+		"I_Soldier_TL_F",
+		"I_medic_F",
+		"I_engineer_F",
+		"I_Soldier_AT_F",
+		"I_Soldier_AT_F",
+		"I_Soldier_AR_F",
+		"I_Soldier_LAT_F"
 	};
 
 	AW_opforAASquad[] = {
-		"UK3CB_BAF_SC_MTP",
-		"UK3CB_BAF_FT_MTP",
-		"UK3CB_BAF_LAT_762_MTP",
-		"UK3CB_BAF_MAT_MTP",
-		"UK3CB_BAF_MAT_MTP",
-		"UK3CB_BAF_Medic_MTP",
-		"UK3CB_BAF_MGLMG_MTP",
-		"UK3CB_BAF_LAT_ILAW_MTP",
-		"UK3CB_BAF_Rifleman_MTP"
+		"I_Soldier_SL_F",
+		"I_Soldier_TL_F",
+		"I_Soldier_LAT_F",
+		"I_Soldier_AA_F",
+		"I_Soldier_AA_F",
+		"I_medic_F",
+		"I_Soldier_AR_F",
+		"I_Soldier_LAT_F",
+		"I_soldier_F"
 	};
 
 	AW_opforBalancedSquad[] = {
-		"UK3CB_BAF_SC_MTP",
-		"UK3CB_BAF_FT_MTP",
-		"UK3CB_BAF_FT_MTP",
-		"UK3CB_BAF_Medic_MTP",
-		"UK3CB_BAF_Engineer_MTP",
-		"UK3CB_BAF_LAT_ILAW_MTP",
-		"UK3CB_BAF_Sharpshooter_MTP",
-		"UK3CB_BAF_MGLMG_MTP",
-		"UK3CB_BAF_MAT_MTP",
-		"UK3CB_BAF_LAT_762_MTP",
-		"UK3CB_BAF_MGLMG_MTP"
+		"I_Soldier_SL_F",
+		"I_Soldier_TL_F",
+		"I_Soldier_TL_F",
+		"I_medic_F",
+		"I_engineer_F",
+		"I_Soldier_LAT_F",
+		"I_Soldier_M_F",
+		"I_Soldier_AR_F",
+		"I_soldier_F",
+		"I_Soldier_LAT_F",
+		"I_Soldier_AR_F"
 	};
 
 	//if the vehicle does not belong to the faction naturally, enclose in {} and add ,true
 	AW_opforLightVehicles[] = {
-		{"UK3CB_BAF_LandRover_WMIK_GPMG_FFR_Green_A",true},
-		{"UK3CB_BAF_LandRover_WMIK_HMG_FFR_Green_A",true},
-		{"UK3CB_BAF_LandRover_WMIK_GMG_FFR_Green_A",true},
-		{"UK3CB_BAF_LandRover_WMIK_Milan_FFR_Green_A",true},
-		{"UK3CB_BAF_Jackal2_L111A1_G",true},
-		{"UK3CB_BAF_Jackal2_L134A1_G",true},
-		{"UK3CB_BAF_Coyote_Passenger_L111A1_G",true},
-		{"UK3CB_BAF_Coyote_Passenger_L134A1_G",true}
+		"I_MRAP_03_hmg_F",
+		"I_MRAP_03_gmg_F",
+		"I_LT_01_scout_F"
 	};
 
 	AW_opforMediumVehicles[] = {
-		{"UK3CB_BAF_Husky_Passenger_GPMG_Green",true},
-		{"UK3CB_BAF_Husky_Passenger_HMG_Green",true},
-		{"UK3CB_BAF_Husky_Passenger_GMG_Green",true},
-		{"UK3CB_BAF_Panther_GPMG_Green_A",true},
-		{"UK3CB_BAF_FV432_Mk3_GPMG_Green",true}
+		"I_APC_tracked_03_cannon_F",
+		"I_APC_Wheeled_03_cannon_F",
+		"I_LT_01_AT_F",
+		"I_LT_01_AA_F",
+		"I_LT_01_cannon_F"
 	};
 
 	AW_opforHeavyVehicles[] = {
-		{"UK3CB_BAF_Warrior_A3_W_Cage",true},
-		{"UK3CB_BAF_Warrior_A3_W_Cage_Camo",true},
-		{"rhsusf_m1a1aim_tuski_wd",true}
+		"I_MBT_03_cannon_F"
 	};
 
 	AW_opforTroopCarriers[] = {
-		{"UK3CB_BAF_Panther_GPMG_Green_A",true},
-		{"UK3CB_BAF_Husky_Passenger_GPMG_Green",true},
-		{"UK3CB_BAF_Husky_Passenger_HMG_Green",true},
-		{"UK3CB_BAF_Husky_Passenger_GMG_Green",true},
-		{"UK3CB_BAF_Jackal2_L111A1_G",true},
-		{"UK3CB_BAF_Jackal2_L134A1_G",true},
-		{"UK3CB_BAF_MAN_HX58_Transport_Green",true},
-		{"UK3CB_BAF_LandRover_Snatch_FFR_Green_A",true},
-		{"UK3CB_BAF_LandRover_WMIK_HMG_FFR_Green_A",true}
+		"I_Truck_02_covered_F",
+		"I_Truck_02_transport_F"
 	};
 
 	//for air vehicles, add the classname of the pilot unit instead
 	AW_opforRotaryVehicles[] = {
-		"UK3CB_BAF_Merlin_HC4_18_GPMG_MTP",
-		"UK3CB_BAF_Wildcat_AH1_CAS_6A",
-		"UK3CB_BAF_Wildcat_AH1_CAS_8A",
-		"UK3CB_BAF_Apache_AH1_DynamicLoadout"
+		"I_Heli_light_03_F",
+		"I_Heli_Transport_02_F"
 	};
 
 	AW_opforFixedWingVehicles[] = {
+		"I_Plane_Fighter_03_CAS_F",
 		"I_Plane_Fighter_04_F"
 	};
 
@@ -540,10 +525,10 @@ class Opfor_Setup {
 				{"Land_BagFence_Round_F",{5.27,-22.40,0.00},0.00}
 			},
 			{
-				{"rhsusf_M977A4_AMMO_usarmy_wd",{1.69,2.99,0.00},181.00,"ammo"},
-				{"rhsusf_M977A4_AMMO_usarmy_wd",{-2.26,3.08,0.01},181.00,"ammo"},
-				{"rhsusf_M977A4_AMMO_usarmy_wd",{5.38,3.15,0.00},181.00,"ammo"},
-				{"UK3CB_BAF_MAN_HX58_Repair_Green",{5.66,-25.45,-0.00},240.43,"supplies"}
+				{"I_Truck_02_ammo_F",{1.69,2.99,0.00},181.00,"ammo"},
+				{"I_Truck_02_ammo_F",{-2.26,3.08,0.01},181.00,"ammo"},
+				{"I_Truck_02_ammo_F",{5.38,3.15,0.00},181.00,"ammo"},
+				{"I_Truck_02_box_F",{5.66,-25.45,-0.00},240.43,"supplies"}
 			}
 		},
 		{
@@ -618,10 +603,10 @@ class Opfor_Setup {
 				{"Land_HBarrier_5_F",{-1.33,24.32,0.00},5.22}
 			},
 			{
-				{"UK3CB_BAF_MAN_HX58_Fuel_Green",{-1.12,9.59,-0.00},99.74,"fuel"},
-				{"UK3CB_BAF_MAN_HX58_Fuel_Green",{9.37,-3.21,0.00},180.87,"fuel"},
-				{"UK3CB_BAF_MAN_HX58_Fuel_Green",{-1.41,13.72,0.00},102.79,"fuel"},
-				{"UK3CB_BAF_MAN_HX58_Fuel_Green",{5.45,-16.60,0.00},91.45,"fuel"}
+				{"I_Truck_02_fuel_F",{-1.12,9.59,-0.00},99.74,"fuel"},
+				{"I_Truck_02_fuel_F",{9.37,-3.21,0.00},180.87,"fuel"},
+				{"I_Truck_02_fuel_F",{-1.41,13.72,0.00},102.79,"fuel"},
+				{"I_Truck_02_fuel_F",{5.45,-16.60,0.00},91.45,"fuel"}
 			}
 		},
 		{
@@ -706,11 +691,11 @@ class Opfor_Setup {
 				{"Land_BagFence_Round_F",{18.28,-24.86,0.78},315.00}
 			},
 			{
-				{"UK3CB_BAF_MAN_HX58_Repair_Green",{5.04,15.71,0.00},181.50,"supplies"},
-				{"UK3CB_BAF_MAN_HX58_Repair_Green",{8.73,15.52,0.00},180.01,"supplies"},
-				{"UK3CB_BAF_MAN_HX58_Fuel_Green",{15.70,3.17,0.00},179.17,"fuel"},
-				{"rhsusf_M977A4_AMMO_usarmy_wd",{16.65,15.49,0.00},182.33,"ammo"},
-				{"UK3CB_BAF_MAN_HX58_Repair_Green",{12.75,15.53,0.00},181.12,"supplies"}
+				{"I_Truck_02_box_F",{5.04,15.71,0.00},181.50,"supplies"},
+				{"I_Truck_02_box_F",{8.73,15.52,0.00},180.01,"supplies"},
+				{"I_Truck_02_fuel_F",{15.70,3.17,0.00},179.17,"fuel"},
+				{"I_Truck_02_ammo_F",{16.65,15.49,0.00},182.33,"ammo"},
+				{"I_Truck_02_box_F",{12.75,15.53,0.00},181.12,"supplies"}
 			}
 		},
 		{
@@ -820,11 +805,11 @@ class Opfor_Setup {
 				{"Land_CncBarrier_stripes_F",{-18.18,-22.47,0.00},231.08}
 			},
 			{
-				{"UK3CB_BAF_MAN_HX58_Fuel_Green",{-0.67,-12.17,0.00},359.78,"fuel"},
-				{"rhsusf_M977A4_AMMO_usarmy_wd",{-4.67,-11.89,0.00},359.56,"ammo"},
-				{"rhsusf_M977A4_AMMO_usarmy_wd",{-8.40,-12.14,0.00},359.11,"ammo"},
-				{"UK3CB_BAF_MAN_HX58_Fuel_Green",{3.18,-12.89,0.00},359.78,"fuel"},
-				{"UK3CB_BAF_MAN_HX58_Repair_Green",{-14.02,-11.80,0.00},15.22,"supplies"}
+				{"I_Truck_02_fuel_F",{-0.67,-12.17,0.00},359.78,"fuel"},
+				{"I_Truck_02_ammo_F",{-4.67,-11.89,0.00},359.56,"ammo"},
+				{"I_Truck_02_ammo_F",{-8.40,-12.14,0.00},359.11,"ammo"},
+				{"I_Truck_02_fuel_F",{3.18,-12.89,0.00},359.78,"fuel"},
+				{"I_Truck_02_box_F",{-14.02,-11.80,0.00},15.22,"supplies"}
 			}
 		}
 	};

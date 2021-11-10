@@ -37,7 +37,6 @@ class Core_Settings {
 	AW_secondaryMapFactor = 3; //The distance an opfor secondary objective can spawn away from the frontline, used with worldSize / factor, smaller maps will need a smaller factor
 
 	AW_sideMissionTimer = 45; //Time in minutes between side objective tries to spawn (if other conditions are also met)
-
 	AW_garrisonUpdateTimer = 60; //Time in minutes between sector garrison strength updates
 
 	AW_maxAmbientCivs = 7; //max ambient civs roaming around
@@ -202,6 +201,7 @@ class Core_Settings {
 		"ACE_Chemlight_IR", "ACE_Chemlight_Orange", "ACE_Chemlight_White", "ACE_Chemlight_Shield", "ACE_Chemlight_Shield_Blue", "ACE_Chemlight_Shield_Green", "ACE_Chemlight_Shield_Orange", "ACE_Chemlight_Shield_Red", "ACE_Chemlight_Shield_White", "ACE_Chemlight_Shield_Yellow",
 		"ACE_HandFlare_Green", "ACE_HandFlare_Red", "ACE_HandFlare_White", "ACE_HandFlare_Yellow", "ACE_IR_Strobe_Item",
 		"SmokeShell", "SmokeShellBlue", "SmokeShellGreen", "SmokeShellOrange", "SmokeShellPurple", "SmokeShellRed", "SmokeShellYellow",
+		"HandGrenade", "MiniGrenade",
 
 		"ACE_RangeTable_82mm", "ACE_artilleryTable", "ACE_RangeCard", "ACE_Tripod", "ACE_ATragMX", "ACE_SpareBarrel", "ACE_SpottingScope", "ACE_Kestrel4500",
 
@@ -222,21 +222,14 @@ class Core_Settings {
 		"G_Balaclava_blk", "G_Balaclava_oli", "G_Balaclava_lowprofile",
 
 		"G_Bandanna_blk", "G_Bandanna_khk", "G_Bandanna_oli", "G_Bandanna_aviator", "G_Bandanna_beast",
-		
-		"rhsusf_shemagh_tan", "rhsusf_shemagh2_tan", "rhsusf_shemagh_gogg_tan", "rhsusf_shemagh2_gogg_tan",
-		"rhsusf_shemagh_grn","rhsusf_shemagh2_grn","rhsusf_shemagh_od","rhsusf_shemagh2_od","rhsusf_shemagh_gogg_grn","rhsusf_shemagh2_gogg_grn",
-		"rhsusf_shemagh_gogg_od","rhsusf_shemagh2_gogg_od", "rhs_balaclava",
 
-		"rhs_ess_black",
 		"G_Combat", "G_Combat_Goggles_tna_F",  "G_Lowprofile",
-		"rhsusf_oakley_goggles_blk", "rhsusf_oakley_goggles_clr", "rhsusf_oakley_goggles_ylw",
 
 		"G_Shades_Black", "G_Shades_Blue", "G_Shades_Green", "G_Shades_Red", "G_Lady_Blue",  "G_Aviator",
 		"G_Sport_Red", "G_Sport_Blackyellow", "G_Sport_BlackWhite", "G_Sport_Checkered", "G_Sport_Blackred", "G_Sport_Greenblack",
 		"G_Spectacles", "G_Spectacles_Tinted", "G_Squares_Tinted", "G_Squares",
 
-		"G_Tactical_Black", "G_Tactical_Clear",
-		"rhs_googles_black", "rhs_googles_yellow", "rhs_googles_clear", "rhs_googles_orange"
+		"G_Tactical_Black", "G_Tactical_Clear"
 	};
 
 	AW_sideMissions[] = { //format {"title","conditions","codeToRun"}

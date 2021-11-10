@@ -478,8 +478,6 @@ class Opfor_Setup {
 				{"Land_Shed_Big_F",{2.56,-2.38,0.01},0.00},
 				{"Land_CncWall4_F",{-5.19,2.09,0.00},90.00},
 				{"Land_CncWall4_F",{-5.19,-3.16,0.00},90.00},
-				{"rhs_spec_weapons_crate",{2.46,-5.99,-0.00},133.62},
-				{"rhs_gear_crate",{3.62,-5.71,-0.00},284.37},
 				{"Land_HBarrier_Big_F",{-6.94,-0.41,0.00},270.00},
 				{"Land_WaterBarrel_F",{3.06,-7.16,0.00},0.00},
 				{"Land_WoodenCrate_01_F",{8.13,-2.01,0.00},274.35},

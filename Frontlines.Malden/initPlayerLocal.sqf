@@ -2,8 +2,6 @@ if !(hasInterface) exitWith {
 	[] remoteExecCall ["AW_fnc_initHC",2];
 };
 
-AW_isTFAREnabled = isClass (configFile >> "CfgPatches" >> "task_force_radio");
-
 waitUntil {!isNil "AW_serverReady" && {AW_serverReady && {!isNull player && {!isNull (findDisplay 46)}}}};
 
 if (AW_isTFAREnabled) then {
