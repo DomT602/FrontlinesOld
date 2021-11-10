@@ -16,7 +16,7 @@ _pages pushBack (format ["<t size='1.5'>Blufor Deaths: %1<br/>Opfor Deaths: %2<b
 _pages pushBack (format ["<t size='1.5'>Blufor Vehicles Destroyed: %1<br/>Blufor Armour Destroyed: %2<br/>Blufor Naval Destroyed: %3<br/>Blufor Air Destroyed: %4",_bluforVehLost,_bluforArmourLost,_bluforNavalLost,_bluforAirLost]);
 _pages pushBack (format ["<t size='1.5'>Opfor Vehicles Destroyed: %1<br/>Opfor Armour Destroyed: %2<br/>Opfor Naval Destroyed: %3<br/>Opfor Air Destroyed: %4",_opforVehLost,_opforArmourLost,_opforNavalLost,_opforAirLost]);
 _pages pushBack (format ["<t size='1.5'>Guerilla Vehicles Destroyed: %1<br/>Civilian Vehicles Destroyed: %2",_guerVehLost,_civVehLost]);
-_pages pushBack ("<t size='1.5'>Thanks for playing Frontlines<br/>A gamemode made by Dom for Ahoyworld<br/>We hope to see you again soon");
+_pages pushBack ("<t size='1.5'>Thanks for playing Frontlines<br/>A gamemode made by Dom<br/>We hope to see you again soon");
 {
 	[
 		_x,

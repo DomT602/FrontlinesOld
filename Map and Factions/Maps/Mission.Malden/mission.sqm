@@ -1958,7 +1958,7 @@ class Mission
 			dataType="Marker";
 			position[]={11620.803,0,4445.5908};
 			name="town_2";
-			text="Ahoyworld Clubhouse";
+			text="Clubhouse";
 			type="n_art";
 			colorName="ColorEAST";
 			id=914;

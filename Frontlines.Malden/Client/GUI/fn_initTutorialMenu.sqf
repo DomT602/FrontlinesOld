@@ -11,7 +11,7 @@ private _listbox = _display displayCtrl 1500;
 //for formatting, no tabs please :)
 private _tutorialArray = [ //due to the nature of the text (using links etc), this can't be done in config and I'm too lazy for a stringtable
 ["Introduction",
-"Welcome to Frontlines, a sector control gamemode developed by <a href='https://forums.ahoyworld.net/' color='#FF0000'>Ahoyworld</a>.<br/>
+"Welcome to Frontlines, a sector control gamemode developed by <a href='https://github.com/DomT602/Frontlines' color='#FF0000'>Dom</a>.<br/>
 You begin with a FOB, a small amount of resources and the ability to create a free mobile respawn vehicle in the build menu.<br/>
 Your overall mission is to capture all sectors in this region.<br/>
 There are a variety of side missions will occur as the enemy resist your efforts.<br/>

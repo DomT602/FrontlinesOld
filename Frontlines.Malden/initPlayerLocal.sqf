@@ -6,7 +6,7 @@ waitUntil {!isNil "AW_serverReady" && {AW_serverReady && {!isNull player && {!is
 
 if (AW_isTFAREnabled) then {
 	if (!call TFAR_fnc_isTeamSpeakPluginEnabled && {!is3DENPreview}) then {
-		titleText ["Please ensure your TFAR plugin is enabled and you are on our teamspeak at ts.ahoyworld.net:9987","BLACK"];
+		titleText ["Please ensure your TFAR plugin is enabled and you are on our teamspeak","BLACK"];
 		waitUntil {call TFAR_fnc_isTeamSpeakPluginEnabled};
 		titleFadeOut 1;
 	};
@@ -48,10 +48,7 @@ if (AW_showIntro) then {
 		<img align='center' size='12' shadow='0' image='\AWMod\addons\AW_UI\misc\AW_members.paa'/>
 		<t align='center' size='6' shadow='0'><br/>Frontlines</t><br/>
 		Welcome to Frontlines, a gamemode made for Ahoyworld by Dom and the Ahoyworld Team.<br/><br/>
-		<a color='#00DFFF'>•</a> Ahoyworld Forums: <a href='https://forums.ahoyworld.net/' color='#56BDD6'> https://forums.ahoyworld.net/</a><br/>
-		<a color='#00DFFF'>•</a> Ahoyworld Enhanced Forums: <a href='https://forums.ahoyworld.net/forum/86-enhanced-server-information-and-discussion/' color='#56BDD6'> https://forums.ahoyworld.net/forum/86-enhanced-server-information-and-discussion/</a><br/>
-		<a color='#00DFFF'>•</a> Teamspeak: <a href='ts.ahoyworld.net' color='#56BDD6'> ts.ahoyworld.net</a><br/>
-		<a color='#00DFFF'>•</a> Discord: <a href='https://discord.gg/N7w3wKj' color='#56BDD6'> https://discord.gg/N7w3wKj</a>
+		<a color='#00DFFF'>•</a> Github: <a href='https://github.com/DomT602/Frontlines' color='#56BDD6'> https://github.com/DomT602/Frontlines</a><br/>
 	";
 
 	_text ctrlSetStructuredText (parseText _message);

@@ -1,9 +1,9 @@
 
-author = "Ahoyworld";
+author = "Dom";
 overviewPicture = "";
 loadScreen = "";
-overviewText = "Game mode created by Dom for Ahoyworld.";
-onLoadMission = "Game mode created by Dom for Ahoyworld.";
+overviewText = "Game mode created by Dom.";
+onLoadMission = "Game mode created by Dom.";
 onLoadName = "Frontlines";
 
 class Header {

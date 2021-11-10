@@ -4,7 +4,7 @@ class CfgPatches {
 		weapons[]={};
 		requiredVersion=2.02;
 		requiredAddons[] = {};
-		author = "Ahoyworld";
+		author = "Dom";
 	};
 };
 
