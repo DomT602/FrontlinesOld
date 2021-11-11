@@ -128,7 +128,7 @@ class AW_zeusMenu {
 			idc = 2409;
 			text = "Call Reinforcements"; //--- ToDo: Localize;
 			x = 0.5825 * safezoneW + safezoneX;
-			y = 0.335 * safezoneH + safezoneY;
+			y = 0.368 * safezoneH + safezoneY;
 			w = 0.118594 * safezoneW;
 			h = 0.022 * safezoneH;
 		};
@@ -139,7 +139,7 @@ class AW_zeusMenu {
 			idc = 2410;
 			text = "Capture Sector"; //--- ToDo: Localize;
 			x = 0.5825 * safezoneW + safezoneX;
-			y = 0.269 * safezoneH + safezoneY;
+			y = 0.302 * safezoneH + safezoneY;
 			w = 0.118594 * safezoneW;
 			h = 0.022 * safezoneH;
 		};
@@ -150,7 +150,7 @@ class AW_zeusMenu {
 			idc = 2411;
 			text = "Lose Sector"; //--- ToDo: Localize;
 			x = 0.5825 * safezoneW + safezoneX;
-			y = 0.302 * safezoneH + safezoneY;
+			y = 0.335 * safezoneH + safezoneY;
 			w = 0.118594 * safezoneW;
 			h = 0.022 * safezoneH;
 		};
@@ -161,7 +161,7 @@ class AW_zeusMenu {
 			idc = 2412;
 			text = "FOB Assault"; //--- ToDo: Localize;
 			x = 0.5825 * safezoneW + safezoneX;
-			y = 0.368 * safezoneH + safezoneY;
+			y = 0.401 * safezoneH + safezoneY;
 			w = 0.118594 * safezoneW;
 			h = 0.022 * safezoneH;
 		};
@@ -172,7 +172,7 @@ class AW_zeusMenu {
 			idc = 2413;
 			text = "Convoy Ambush"; //--- ToDo: Localize;
 			x = 0.5825 * safezoneW + safezoneX;
-			y = 0.401 * safezoneH + safezoneY;
+			y = 0.434 * safezoneH + safezoneY;
 			w = 0.118594 * safezoneW;
 			h = 0.022 * safezoneH;
 		};
@@ -183,7 +183,7 @@ class AW_zeusMenu {
 			idc = 2414;
 			text = "Counter-Attack"; //--- ToDo: Localize;
 			x = 0.5825 * safezoneW + safezoneX;
-			y = 0.434 * safezoneH + safezoneY;
+			y = 0.467 * safezoneH + safezoneY;
 			w = 0.118594 * safezoneW;
 			h = 0.022 * safezoneH;
 		};
@@ -260,6 +260,17 @@ class AW_zeusMenu {
 			x = 0.37625 * safezoneW + safezoneX;
 			y = 0.61 * safezoneH + safezoneY;
 			w = 0.0721875 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
+		class RscButtonMenu_2422: AW_RscButtonGeneral
+		{
+			onButtonClick="[""activateSector""] call AW_fnc_manualZeusAction";
+
+			idc = 2422;
+			text = "Activate Sector"; //--- ToDo: Localize;
+			x = 0.5825 * safezoneW + safezoneX;
+			y = 0.269 * safezoneH + safezoneY;
+			w = 0.118594 * safezoneW;
 			h = 0.022 * safezoneH;
 		};
 		class RscListbox_1500: RscListbox

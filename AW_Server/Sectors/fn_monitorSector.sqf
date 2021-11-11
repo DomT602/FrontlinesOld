@@ -57,7 +57,7 @@ if (_captureRatio > _requiredCaptureRatio) then {
 				[_civilian,0.25,(selectRandom _bodyParts),(selectRandom _damageTypes)] call ace_medical_fnc_addDamageToUnit;
 			};
 			[_civilian,true,150,true] call ace_medical_fnc_setUnconscious;
-			_civilian setVariable ["ace_medical_ai_lastFired",300];
+			_civilian setVariable ["ace_medical_ai_lastFired",(CBA_missionTime + 300)];
 			
 			private _position = (getPosATL _civilian) getPos [random 25,random 360];
 			private _marker = createMarker [format["downedCiv%1",_i],_position];

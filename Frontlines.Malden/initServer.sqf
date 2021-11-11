@@ -1,4 +1,3 @@
-#include "\arma3_readme.txt"
 AW_serverReady = false;
 publicVariable "AW_serverReady";
 

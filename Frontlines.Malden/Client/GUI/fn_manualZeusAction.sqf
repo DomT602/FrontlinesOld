@@ -85,6 +85,17 @@ switch _action do {
 		["Reinforcements have been called in - they will arrive in the configured time."] call AW_fnc_notify;
 	};
 
+	case "activateSector": {
+		private _index = lbCurSel _sectorListbox;
+		if (_index isEqualTo -1) exitWith {};
+
+		private _sector = _sectorListbox lbData _index;
+		if (_sector in AW_bluforSectors) exitWith {["This sector is already captured."] call AW_fnc_notify};
+		if (_sector in AW_activeSectors) exitWith {["Sector must be inactive."] call AW_fnc_notify};
+
+		[_sector] remoteExecCall ["AW_fnc_activateSector",2];
+	};
+
 	case "captureSector": {
 		private _index = lbCurSel _sectorListbox;
 		if (_index isEqualTo -1) exitWith {};
