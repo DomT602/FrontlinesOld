@@ -2,7 +2,7 @@
 
 <p align="center">
     <a href="https://github.com/DomT602/Frontlines/releases/tag/Latest">
-        <img src="https://img.shields.io/badge/Version-v5.0.1-blue" alt="Frontlines Version">
+        <img src="https://img.shields.io/badge/Version-v0.5.1-blue" alt="Frontlines Version">
     </a>
     <a href="https://github.com/DomT602/Frontlines/issues">
         <img src="https://img.shields.io/github/issues/DomT602/Frontlines" alt="Frontlines Issues">
