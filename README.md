@@ -1,8 +1,8 @@
-# Frontlines - A sector control gamemode made for Arma 3
+# <p align="center">Frontlines - A sector control gamemode made for Arma 3</p>
 
 <p align="center">
     <a href="https://github.com/DomT602/Frontlines/releases/tag/Latest">
-        <img src="https://img.shields.io/badge/Version-v0.5.1-blue" alt="Frontlines Version">
+        <img src="https://img.shields.io/github/v/release/DomT602/Frontlines" alt="Frontlines Version">
     </a>
     <a href="https://github.com/DomT602/Frontlines/issues">
         <img src="https://img.shields.io/github/issues/DomT602/Frontlines" alt="Frontlines Issues">
@@ -27,7 +27,7 @@ Frontlines is a highly configurable persistent sector control gamemode to invade
 - <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1779063631">ZEN</a>
 - <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=894678801">TFAR Beta</a>
 
-## Reccommended Mods
+## Recommended Mods
 - <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2512672547">View Distance Menu</a>
 - <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1638341685">DUI - Squad Radar</a>
 
@@ -47,6 +47,10 @@ Begin an invasion to take over a region, securing all its objectives and buildin
 - All features seemlessly integrated into ACE providing a consistent experience
 - Various user settings which can be customised via CBA Addon Options
 - In-built support for 1 headless client
+- Simple config design to aid users in setting up and customising the gamemode.
+
+## Mission Setup
+The gamemode requires a small amount of setup and is best ran on a dedicated server with a headless client to aid in performance. More details on the specific setup can be found in this <a href="https://github.com/DomT602/Frontlines/blob/main/Mission_Setup_Guide.md">guide</a>.
 
 ## Factions
 Each faction provided in the Map and Factions folder has differing mod requirements, so please check what they use and edit as necessary. You can make your own factions which is detailed in this <a href="https://github.com/DomT602/Frontlines/blob/DomT602-patch-1/Map%20and%20Factions/New_Config_Map_Guide.md">guide</a>.
