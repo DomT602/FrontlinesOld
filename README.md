@@ -1,7 +1,22 @@
-# Frontlines - A sector control game-mode made for Arma 3
+# Frontlines - A sector control gamemode made for Arma 3
+
+<p align="center">
+    <a href="https://github.com/DomT602/Frontlines/releases/tag/Latest">
+        <img src="https://img.shields.io/badge/Version-v5.0.1-blue" alt="Frontlines Version">
+    </a>
+    <a href="https://github.com/DomT602/Frontlines/issues">
+        <img src="https://img.shields.io/github/issues/DomT602/Frontlines" alt="Frontlines Issues">
+    </a>
+    <a href="https://github.com/DomT602/Frontlines/pulls">
+        <img src="https://img.shields.io/github/issues-pr/DomT602/Frontlines" alt="Frontlines PRs">
+    </a>
+    <a href="https://discord.gg/82tAKdsT79">
+        <img src="https://img.shields.io/discord/908047463141761036" alt="Frontlines Discord">
+    </a>
+</p>
 
 ## Summary
-Frontlines is a highly configurable persistent sector control game-mode to invade and conquer a region.
+Frontlines is a highly configurable persistent sector control gamemode to invade and conquer a region.
 
 ## Requirements
 - <a href="https://steamcommunity.com/workshop/filedetails/?id=450814997">CBA A3</a>
@@ -17,7 +32,7 @@ Frontlines is a highly configurable persistent sector control game-mode to invad
 - <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1638341685">DUI - Squad Radar</a>
 
 ## Features
-Need 1 line Intro here
+Begin an invasion to take over a region, securing all its objectives and building FOBs in this persistent campaign.
 - Fight along the Frontline, with all activity focused around this area to provide logical progress
 - Different sector types which all have specific characteristics and interactions
 - A simple building system to enable FOBs to be built and expanded upon, utilising three different resources
@@ -35,7 +50,3 @@ Need 1 line Intro here
 
 ## Factions
 Each faction provided in the Map and Factions folder has differing mod requirements, so please check what they use and edit as necessary. You can make your own factions which is detailed in this <a href="https://github.com/DomT602/Frontlines/blob/DomT602-patch-1/Map%20and%20Factions/New_Config_Map_Guide.md">guide</a>.
-
-<p align="center">
-	![Discord Banner 2](https://discordapp.com/api/guilds/908047463141761036/widget.png?style=banner2)
-</p>
