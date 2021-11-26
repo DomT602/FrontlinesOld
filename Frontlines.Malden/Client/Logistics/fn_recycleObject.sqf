@@ -10,7 +10,7 @@ params [
 private _className = typeOf _object;
 private _resourcesToReturn = [0,0,0];
 
-if (_object isKindOf "Car" || {_object isKindOf "Tank" || {_object isKindOf "Ship" || {_object isKindOf "Air"}}}) then {
+if (_object isKindOf "LandVehicle" || {_object isKindOf "Ship" || {_object isKindOf "Air"}}) then {
 	private _multiplier = 50;
 	if (_object isKindOf "Tank" || {(_object isKindOf "Air" && !("UAV" in _className))}) then {_multiplier = 150};
 

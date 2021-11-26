@@ -295,7 +295,16 @@ class Blufor_Setup {
 		"MRAWS_HEAT_F",
 		"9Rnd_45ACP_Mag",
 		"11Rnd_45ACP_Mag",
-		"20Rnd_762x51_Mag"
+		"20Rnd_762x51_Mag",
+		"16Rnd_9x21_green_Mag",
+		"16Rnd_9x21_red_Mag",
+		"16Rnd_9x21_yellow_Mag",
+		"16Rnd_9x21_Mag",
+		"30Rnd_9x21_Green_Mag",
+		"30Rnd_9x21_Red_Mag",
+		"30Rnd_9x21_Yellow_Mag",
+		"7Rnd_408_Mag",
+		"ACE_7Rnd_408_305gr_Mag"
 	};
 
 	AW_arsenalItems[] = {
@@ -492,7 +501,7 @@ class Blufor_Setup {
 	};
 
 	AW_defaultLoadout[] = {
-		{"arifle_MX_F","muzzle_snds_H_snd_F","acc_pointer_IR","optic_DMS",{"30Rnd_65x39_caseless_mag",30},{},"bipod_01_F_snd"},{},{},{"U_B_CTRG_3",{{"ACE_fieldDressing",5},{"ACE_elasticBandage",5},{"ACE_packingBandage",5},{"ACE_quikclot",5},{"ACE_CableTie",2},{"ACE_EarPlugs",1},{"ACE_epinephrine",2},{"ACE_morphine",2},{"ACE_Flashlight_XL50",1},{"ACE_IR_Strobe_Item",2},{"ACE_splint",2},{"ACE_tourniquet",2}}},
+		{"arifle_MX_F","muzzle_snds_H_snd_F","acc_pointer_IR","optic_DMS",{"30Rnd_65x39_caseless_mag",30},{},"bipod_01_F_snd"},{},{},{"U_B_CTRG_3",{{"ACE_fieldDressing",5},{"ACE_elasticBandage",5},{"ACE_packingBandage",5},{"ACE_quikclot",5},{"ACE_CableTie",2},{"ACE_EarPlugs",1},{"ACE_epinephrine",2},{"ACE_morphine",2},{"ACE_Flashlight_XL50",1},{"ACE_IR_Strobe_Item",1},{"ACE_splint",2},{"ACE_tourniquet",2}}},
 		{"V_PlateCarrierL_CTRG",{{"30Rnd_65x39_caseless_mag",8,30},{"HandGrenade",2,1},{"SmokeShell",2,1}}},
 		{},
 		"H_HelmetB_camo","",

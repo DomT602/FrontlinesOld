@@ -224,9 +224,9 @@ private _retrieveCrates = [
 	"\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\getout_ca.paa",
 	{call AW_fnc_initRetrieveMenu},
 	{
-		[getPosATL player,100] call AW_fnc_isNearFOB ||
+		[getPosATL player,50] call AW_fnc_isNearFOB ||
 		{([getPosATL player,AW_factorySectors] call AW_fnc_findNearestSector) params ["_sector","","_distance"];
-		_sector in AW_bluforSectors && {_distance < 100}}
+		_sector in AW_bluforSectors && {_distance < 50}}
 	}
 ] call ace_interact_menu_fnc_createAction;
 
@@ -259,7 +259,7 @@ private _recycleObject = [
 	{[_target] spawn AW_fnc_recycleObject},
 	{
 		isNull objectParent player &&
-		{crew _target isEqualTo [] &&
+		{(crew _target isEqualTo [] || {unitIsUAV _target}) &&
 		{[getPosATL player] call AW_fnc_isNearFOB &&
 		{(nearestObjects [player,["Land_RepairDepot_01_tan_F"],150]) isNotEqualTo []}}}
 	},
