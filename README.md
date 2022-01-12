@@ -1,7 +1,7 @@
 # <p align="center">Frontlines - A sector control gamemode made for Arma 3</p>
 
 <p align="center">
-    <a href="https://github.com/DomT602/Frontlines/releases/tag/Latest">
+    <a href="https://github.com/DomT602/Frontlines/releases/latest">
         <img src="https://img.shields.io/github/v/release/DomT602/Frontlines" alt="Frontlines Version">
     </a>
     <a href="https://github.com/DomT602/Frontlines/issues">
