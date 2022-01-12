@@ -10,7 +10,7 @@ _args params ["_lastData","_sectorShown","_marker"];
 private _hud = uiNamespace getVariable ["AW_HUD",displayNull];
 private _pos = getPosATL player;
 
-if (visibleMap && {AW_showUiOnMap} || {[_pos] call AW_fnc_isNearFOB}) then {
+if (visibleMap && {AW_showUiOnMap} || {[_pos] call AW_fnc_isNearFOB && {AW_showUiAtFOB}}) then {
 	private _currentData = +AW_resourcesAvailable;
 	_currentData pushBack count AW_currentHelicopters;
 	_currentData pushBack AW_maxHelicopterCount;
@@ -59,7 +59,7 @@ if (_distance < _radius) then {
 		_args set [2,_marker];
 	};
 
-	private _ratio = [markerPos _sector,_sector] call AW_fnc_getCaptureRatio;
+	private _ratio = [markerPos _sector,_radius] call AW_fnc_getCaptureRatio;
 	if (AW_showCaptureBar) then {
 		if !(_sectorShown) then {
 			(_hud displayCtrl 1000) ctrlShow true;

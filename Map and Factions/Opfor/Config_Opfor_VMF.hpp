@@ -42,14 +42,13 @@ class Opfor_Setup {
 
 	AW_opforBalancedSquad[] = {
 		"rhs_vmf_recon_sergeant",
-		"rhs_vmf_recon_grenadier",
-		"rhs_vmf_recon_grenadier",
+		"rhs_vmf_flora_junior_sergeant",
+		"rhs_vmf_flora_junior_sergeant",
 		"rhs_vmf_recon_medic",
-		"rhs_vmf_recon_marksman_vss",
+		"rhs_vmf_flora_engineer",
 		"rhs_vmf_recon_rifleman_lat",
 		"rhs_vmf_recon_marksman",
-		"rhs_vmf_recon_arifleman_scout",
-		"rhs_vmf_recon_rifleman_lat",
+		"rhs_vmf_flora_aa",
 		"rhs_vmf_recon_rifleman_lat",
 		"rhs_vmf_machinegunner"
 	};

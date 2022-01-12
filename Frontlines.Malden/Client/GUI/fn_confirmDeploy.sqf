@@ -10,8 +10,7 @@ private _index = lbCurSel _listbox;
 private _position = parseSimpleArray (_listbox lbData _index);
 private _isMobileRespawn = (_listbox lbValue _index) isEqualTo 1;
 
-private _randomSpawnPos = _position getPos [3 + (random 5),random 360];
-player setVehiclePosition [_randomSpawnPos,[],0];
+player setVehiclePosition [_position,[],3 + (random 5)];
 
 if (_isMobileRespawn) then {
 	missionNamespace setVariable ["AW_lastMobileRespawn",CBA_missionTime];

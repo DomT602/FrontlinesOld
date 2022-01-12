@@ -59,6 +59,14 @@ AW_buildRotation = 0;
 ] call CBA_fnc_addSetting;
 
 [
+	"AW_showUiAtFOB",
+	"CHECKBOX",
+	["Show the Frontlines UI when near a FOB","When near a FOB, whether the UI containing resources, assets and current mission environment should be shown."],
+	["Frontlines","User Interface"],
+	true
+] call CBA_fnc_addSetting;
+
+[
 	"AW_mapUpdateInterval",
 	"SLIDER",
 	["Map Update Interval","Choose the time interval between blufor map marker updates."],

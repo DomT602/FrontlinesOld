@@ -34,7 +34,7 @@ Each of these has different defences and can provide different benefits once cap
 Each sector has a garrison of enemy units, this garrison is affected by the enemies overall strength on the island as well as any military activity against them.<br/>
 A weakened garrison will no longer be able to field forces at their full strength.<br/>
 The enemy will look to move their forces around to enable weaker garrisons to be reinforced.<br/>
-Radio towers provide additional functionality. There is a laptop at each tower, which as long as the tower remains standing, which can be used to gather intelligence from the network of friendly towers, the more towers, the more intel gained. However, the towers can be destroyed to reduce the threat level, further explained in Opfor Threat."],
+Radio towers provide additional functionality. There is a laptop at each tower, which as long as the tower remains standing, which can be used to gather intelligence from the network of friendly towers, the more towers, the more intel gained. Intelligence becomes available whenever a sector is captured. However, the towers can be destroyed to reduce the threat level, further explained in Opfor Threat."],
 ["Opfor Threat",
 "The enemy forces threat level is displayed when you are at the FOB or looking at the map.<br/>
 The threat level determines how difficult your mission will be, with a higher quantity of enemies present, with superior equipment.<br/>
