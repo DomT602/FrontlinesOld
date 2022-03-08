@@ -12,4 +12,4 @@ To setup your mission, follow these steps:
 
 # Setting up your server:
 
-Your server will need to run a mod for the mission to function. This mod is included here and is AW_Server. You can either pack it yourself and add it to an existing mod/your .bat file for starting your server, or can use the mod uploaded on the steam workshop here: https://steamcommunity.com/sharedfiles/filedetails/?id=2425534442
+Your server will need to run a mod for the mission to function. This mod is included here and is AW_Server. You can either pack it yourself and add it to an existing mod/your .bat file for starting your server, or can use the mod uploaded on the steam workshop here: https://steamcommunity.com/sharedfiles/filedetails/?id=2745517474
