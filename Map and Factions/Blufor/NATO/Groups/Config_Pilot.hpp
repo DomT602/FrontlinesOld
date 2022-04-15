@@ -19,7 +19,7 @@ class pilot {
 		{},
 		{},
 		{"U_B_HeliPilotCoveralls",{{"ACE_elasticBandage",5},{"ACE_packingBandage",5},{"ACE_fieldDressing",5},{"ACE_EarPlugs",1},{"ACE_tourniquet",2},{"ACE_splint",2},{"ACE_morphine",1},{"ACE_CableTie",2},{"ACE_EntrenchingTool",1}}},
-		{"V_PlateCarrierL_CTRG",{{"30Rnd_45ACP_Mag_SMG_01",5,30},{"SmokeShellGreen",1,1},{"SmokeShellBlue",1,1},{"SmokeShellOrange",1,1},{"Chemlight_green",1,1}}},
+		{"V_PlateCarrier1_rgr",{{"30Rnd_45ACP_Mag_SMG_01",5,30},{"SmokeShellGreen",1,1},{"SmokeShellBlue",1,1},{"SmokeShellOrange",1,1},{"Chemlight_green",1,1}}},
 		{},
 		"H_PilotHelmetHeli_B","",{},
 		{"ItemMap","ItemGPS","TFAR_anprc154","ItemCompass","ItemWatch","NVGoggles"}
