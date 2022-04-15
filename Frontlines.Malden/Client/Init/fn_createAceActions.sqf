@@ -3,14 +3,6 @@
 	Author: Dom
 	Description: Sets up the ACE actions for the player
 */
-private _roleDescription = roleDescription player;
-private _isAdmin = (getPlayerUID player) in AW_staffUIDs;
-private _isLeader = "Leader" in _roleDescription;
-private _isPilot = "Pilot" in _roleDescription;
-private _isCommander = "Commander" in _roleDescription;
-private _isLogistics = "Logistics" in _roleDescription;
-private _isEngineer = "Engineer" in _roleDescription;
-private _isPlatoon = "Platoon" in _roleDescription;
 private _fobClass = getText(missionConfigFile >> "Blufor_Setup" >> "AW_fobBuilding");
 
 private _bluforBuildables = getArray(missionConfigFile >> "Blufor_Setup" >> "AW_bluforLightVehicles");
@@ -21,6 +13,17 @@ _bluforBuildables append (getArray(missionConfigFile >> "Blufor_Setup" >> "AW_bl
 _bluforBuildables append (getArray(missionConfigFile >> "Blufor_Setup" >> "AW_bluforBuildings"));
 _bluforBuildables append (getArray(missionConfigFile >> "Blufor_Setup" >> "AW_bluforLogistics"));
 _bluforBuildables = _bluforBuildables apply {if (_x select 0 isEqualType []) then {(_x select 0) select 0} else {_x select 0}};
+
+private _groupCategory = [
+	"groupCategory",
+	"Group Menu",
+	"\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\meet_ca.paa",
+	{[] call DT_fnc_initGroupMenu},
+	{
+		[getPosATL player] call AW_fnc_isNearFOB
+	}
+] call ace_interact_menu_fnc_createAction;
+[player,1,["ACE_SelfActions"],_groupCategory] call ace_interact_menu_fnc_addActionToObject;
 
 private _baseCategory = [
 	"baseCategory",
@@ -73,7 +76,8 @@ private _arsenalCategory = [
 	{[player,player,false] call ace_arsenal_fnc_openBox},
 	{
 		isNull objectParent player &&
-		{[getPosATL player,50] call AW_fnc_isNearFOB}
+		{player getVariable ["ace_arsenal_virtualItems",[]] isNotEqualTo [] &&
+		{[getPosATL player,50] call AW_fnc_isNearFOB}}
 	}
 ] call ace_interact_menu_fnc_createAction;
 
@@ -192,7 +196,10 @@ private _logisticsCategory = [
 	"Logistics",
 	"\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\use_ca.paa",
 	{},
-	{isNull objectParent player}
+	{
+		(player getVariable ["DT_role","rifleman"] in ["pilot","squadlead","teamlead","commander","officer","rto","uavop","logiengineer"]) || ((getPlayerUID player) in AW_staffUIDs) &&
+		{isNull objectParent player}
+	}
 ] call ace_interact_menu_fnc_createAction;
 
 private _buildMenu = [
@@ -212,9 +219,10 @@ private _factoryMenu = [
 	"\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\box_ca.paa",
 	{call AW_fnc_initFactoryMenu},
 	{
-		AW_factorySetup isNotEqualTo [] &&
+		player getVariable ["DT_role","rifleman"] in ["pilot","squadlead","commander","officer","rto","uavop","logiengineer"] || ((getPlayerUID player) in AW_staffUIDs) &&
+		{AW_factorySetup isNotEqualTo [] &&
 		{[getPosATL player] call AW_fnc_isNearFOB ||
-		{[getPosATL player,AW_factorySectors] call AW_fnc_isNearSector}}
+		{[getPosATL player,AW_factorySectors] call AW_fnc_isNearSector}}}
 	}
 ] call ace_interact_menu_fnc_createAction;
 
@@ -236,8 +244,9 @@ private _logisticMenu = [
 	"\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\truck_ca.paa",
 	{[true] call AW_fnc_initLogisticsMenu},
 	{
-		[getPosATL player] call AW_fnc_isNearFOB ||
-		{[getPosATL player,AW_factorySectors] call AW_fnc_isNearSector}
+		player getVariable ["DT_role","rifleman"] in ["pilot","squadlead","commander","officer","rto","uavop","logiengineer"] || ((getPlayerUID player) in AW_staffUIDs) &&
+		{[getPosATL player] call AW_fnc_isNearFOB ||
+		{[getPosATL player,AW_factorySectors] call AW_fnc_isNearSector}}
 	}
 ] call ace_interact_menu_fnc_createAction;
 
@@ -247,8 +256,9 @@ private _createNewFOB = [
 	"\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\container_ca.paa",
 	{[_target] spawn AW_fnc_createNewFOB},
 	{
-		isNull objectParent player &&
-		{!([getPosATL player] call AW_fnc_isNearFOB)}
+		player getVariable ["DT_role","rifleman"] in ["pilot","squadlead","commander","officer","rto","uavop","logiengineer"] || ((getPlayerUID player) in AW_staffUIDs) &&
+		{isNull objectParent player &&
+		{!([getPosATL player] call AW_fnc_isNearFOB)}}
 	}
 ] call ace_interact_menu_fnc_createAction;
 
@@ -277,63 +287,50 @@ private _moveObject = [
 	}
 ] call ace_interact_menu_fnc_createAction;
 
-if (_isLogistics || {_isLeader || {_isPilot || {_isCommander || {_isPlatoon || {_isAdmin}}}}}) then {
-	[player,1,["ACE_SelfActions","baseCategory"],_logisticsCategory] call ace_interact_menu_fnc_addActionToObject;
-	[player,1,["ACE_SelfActions","baseCategory","logisticsCategory"],_buildMenu] call ace_interact_menu_fnc_addActionToObject;
+[player,1,["ACE_SelfActions","baseCategory"],_logisticsCategory] call ace_interact_menu_fnc_addActionToObject;
+[player,1,["ACE_SelfActions","baseCategory","logisticsCategory"],_buildMenu] call ace_interact_menu_fnc_addActionToObject;
 
-	["AllVehicles",0,["ACE_MainActions"],_recycleObject,true] call ace_interact_menu_fnc_addActionToClass;
-	{
-		if !(_x isKindOf "Car" || {_x isKindOf "Tank" || {_x isKindOf "Ship" || {_x isKindOf "Air"}}}) then {
-			[_x,0,["ACE_MainActions"],_recycleObject] call ace_interact_menu_fnc_addActionToClass;
-			[_x,0,["ACE_MainActions"],_moveObject] call ace_interact_menu_fnc_addActionToClass;
-		};
-	} forEach _bluforBuildables; //add to any blufor buildables
-	if (!_isAdmin && {"Team" in _roleDescription}) exitWith {};
-
-	[player,1,["ACE_SelfActions","baseCategory","logisticsCategory"],_factoryMenu] call ace_interact_menu_fnc_addActionToObject;
-	[player,1,["ACE_SelfActions","baseCategory","logisticsCategory"],_logisticMenu] call ace_interact_menu_fnc_addActionToObject;
-	[player,1,["ACE_SelfActions","baseCategory","logisticsCategory"],_retrieveCrates] call ace_interact_menu_fnc_addActionToObject;
-
-	{
-		[_x,0,["ACE_MainActions"],_createNewFOB] call ace_interact_menu_fnc_addActionToClass;
-	} forEach (getArray(missionConfigFile >> "Blufor_Setup" >> "AW_fobBoxes"));
-
-	private _skipTime = [
-		"skipTimeAction",
-		"Skip 2 hours",
-		"\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\wait_ca.paa",
-		{
-			[2] remoteExecCall ["skipTime",2];
-		},
-		{true}
-	] call ace_interact_menu_fnc_createAction;
-
-	private _guerillaMenu = [
-		"guerillaMenu",
-		"Guerilla Support",
-		"\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\help_ca.paa",
-		{[] call AW_fnc_initGuerillaMenu},
-		{AW_civRep > 0}
-	] call ace_interact_menu_fnc_createAction;
-
-	if (_isAdmin || {_isLeader}) then {
-		[_fobClass,0,["ACE_MainActions"],_skipTime] call ace_interact_menu_fnc_addActionToClass;
-		[player,1,["ACE_SelfActions","baseCategory"],_guerillaMenu] call ace_interact_menu_fnc_addActionToObject;
+["AllVehicles",0,["ACE_MainActions"],_recycleObject,true] call ace_interact_menu_fnc_addActionToClass;
+{
+	if !(_x isKindOf "Car" || {_x isKindOf "Tank" || {_x isKindOf "Ship" || {_x isKindOf "Air"}}}) then {
+		[_x,0,["ACE_MainActions"],_recycleObject] call ace_interact_menu_fnc_addActionToClass;
+		[_x,0,["ACE_MainActions"],_moveObject] call ace_interact_menu_fnc_addActionToClass;
 	};
-};
+} forEach _bluforBuildables; //add to any blufor buildables
 
-private _emergencyRefuel = [
-	"emergencyRefuel",
-	"Emergency refuel",
-	"\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\refuel_ca.paa",
+[player,1,["ACE_SelfActions","baseCategory","logisticsCategory"],_factoryMenu] call ace_interact_menu_fnc_addActionToObject;
+[player,1,["ACE_SelfActions","baseCategory","logisticsCategory"],_logisticMenu] call ace_interact_menu_fnc_addActionToObject;
+[player,1,["ACE_SelfActions","baseCategory","logisticsCategory"],_retrieveCrates] call ace_interact_menu_fnc_addActionToObject;
+
+{
+	[_x,0,["ACE_MainActions"],_createNewFOB] call ace_interact_menu_fnc_addActionToClass;
+} forEach (getArray(missionConfigFile >> "Blufor_Setup" >> "AW_fobBoxes"));
+
+private _skipTime = [
+	"skipTimeAction",
+	"Skip 2 hours",
+	"\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\wait_ca.paa",
 	{
-		[_target,0.2] remoteExecCall ["setFuel",_target]; ["Vehicle fueled."] call AW_fnc_notify
+		[2] remoteExecCall ["skipTime",2];
 	},
 	{
-		isNull objectParent player && 
-		{fuel _target < 0.1}
+		player getVariable ["DT_role","rifleman"] in ["squadlead","officer"] || ((getPlayerUID player) in AW_staffUIDs)
 	}
 ] call ace_interact_menu_fnc_createAction;
+
+private _guerillaMenu = [
+	"guerillaMenu",
+	"Guerilla Support",
+	"\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\help_ca.paa",
+	{[] call AW_fnc_initGuerillaMenu},
+	{
+		player getVariable ["DT_role","rifleman"] in ["pilot","squadlead","commander","officer"] || ((getPlayerUID player) in AW_staffUIDs) &&
+		{AW_civRep > 0}
+	}
+] call ace_interact_menu_fnc_createAction;
+
+[_fobClass,0,["ACE_MainActions"],_skipTime] call ace_interact_menu_fnc_addActionToClass;
+[player,1,["ACE_SelfActions","baseCategory"],_guerillaMenu] call ace_interact_menu_fnc_addActionToObject;
 
 private _pushVehicle = [
 	"pushVehicle",
@@ -382,9 +379,6 @@ private _destroyWheelTrack = [
 	{true}
 ] call ace_interact_menu_fnc_createAction;
 
-if (_isEngineer || {_isPilot}) then {
-	["AllVehicles",0,["ACE_MainActions"],_emergencyRefuel,true] call ace_interact_menu_fnc_addActionToClass;
-};
 {
 	[_x,0,["ACE_MainActions"],_pushVehicle,true] call ace_interact_menu_fnc_addActionToClass;
 } forEach ["Car","Tank"];
@@ -492,14 +486,3 @@ private _cleanBase = [
 ] call ace_interact_menu_fnc_createAction;
 
 [_fobClass,0,["ACE_MainActions"],_cleanBase] call ace_interact_menu_fnc_addActionToClass;
-
-if (_isAdmin) then {
-	private _zeusMenu = [
-		"zeusMenu",
-		"Zeus Suite",
-		"\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\navigate_ca.paa",
-		{call AW_fnc_initZeusMenu},
-		{true}
-	] call ace_interact_menu_fnc_createAction;
-	[player,1,["ACE_SelfActions"],_zeusMenu] call ace_interact_menu_fnc_addActionToObject;
-};

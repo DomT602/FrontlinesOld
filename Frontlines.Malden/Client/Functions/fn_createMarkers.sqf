@@ -38,14 +38,13 @@ if (AW_showEmptyOwnedVehicles) then {
 private _movingMarkers = [];
 {
 	if (leader (group _x) isEqualTo _x) then {
-		private _roleDescription = roleDescription _x;
-		_roleDescription = _roleDescription select [0,_roleDescription find "@"];
+		private _roleName = getText(missionConfigFile >> "Dynamic_Roles" >> (_x getVariable ["DT_role","rifleman"]) >> "name");
 
 		private _marker = createMarkerLocal [format["grpLdr%1",_forEachIndex],_x];
 		_marker setMarkerColorLocal "ColorBLUFOR";
 		if (isNull objectParent _x) then {
 			_marker setMarkerTypeLocal "b_inf";
-			_marker setMarkerTextLocal format ["%1 - %2",_roleDescription,name _x];
+			_marker setMarkerTextLocal format ["%1 - %2",_roleName,name _x];
 		} else {
 			private _vehicle = objectParent _x;
 			if (_vehicle isKindOf "Tank") then {
@@ -66,7 +65,7 @@ private _movingMarkers = [];
 				};
 			};
 			private _vehName = getText(configOf _vehicle >> "displayName");
-			_marker setMarkerTextLocal format ["%1 - %2 - %3",_vehName,_roleDescription,name _x];
+			_marker setMarkerTextLocal format ["%1 - %2 - %3",_vehName,_roleName,name _x];
 		};
 		_movingMarkers pushBack [_marker,_x];
 	};

@@ -10,6 +10,8 @@ import RscCombo;
 import RscMapControl;
 import RscEdit;
 import RscToolbox;
+import RscDisplayTeamSwitch;
+import RscControlsGroup;
 
 class AW_RscButtonGeneral: RscButtonMenu
 {

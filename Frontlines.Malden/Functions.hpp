@@ -3,7 +3,6 @@ class AWClient {
 	
 	class functions {
 		file = "Client\Functions";
-		class checkGroup {};
 		class checkMap {};
 		class checkNumber {};
 		class checkVehicleAccess {};
@@ -44,7 +43,6 @@ class AWClient {
 		class guerillaAction {};
 		class guerillaMenuTvChange {};
 		class guerillaOnMouseButtonDown {};
-		class hideMarkers {};
 		class initDeployMenu {};
 		class initGuerillaMenu {};
 		class initRetrieveMenu {};
@@ -65,7 +63,6 @@ class AWClient {
 		class createAceActions {};
 		class initArsenal {};
 		class initCBAsettings {};
-		class initDiary {};
 		class initialiseObject {};
 		class initLrRadio {};
 		class initSupplyCrate {};
@@ -97,5 +94,21 @@ class AWClient {
 		class startBuild {};
 		class unloadCrate {};
 		class updateFactoryProduction {};
+	};
+};
+
+class DT_Core {
+	tag = "DT";
+
+	class Groups {
+		file = "Client\Groups";
+		class assignPlayer {};
+		class handleDisconnect {};
+		class initGroupMenu {};
+		class onGroupMenuTvSelectChange {};
+		class removeFromGroup {};
+		class selectPosition {};
+		class setupPlayer {};
+		class updateGroups {};
 	};
 };

@@ -55,6 +55,7 @@ However, if the civilian reputation is negative, none of these support actions w
 ["Secondary Objectives",
 "During the campaign, intelligence can be found that will allow completion of secondary objectives.<br/>
 Intelligence can be found through secret documents, interrogating the enemy (or civilians) and harvesting data from the communications network (laptops at captured radio towers).<br/>
+To interrogate an enemy, you need to bring them back to a FOB and make sure they are medically stable.<br/>
 These can be used to increase civilian reputation, gain more intel and gain resources.<br/>
 These can be accessed through the Secondary Mission Menu which is available at any FOB.<br/>
 The missions try to find a suitable position each time its ran, so if it cannot find a position, try again (max 5 times). It may fail because there is no suitable area on the map left at all."],

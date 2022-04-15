@@ -35,10 +35,7 @@ disableChannels[] = {{0,true,true},{1,false,true},{2,true,true},{3,false,true},{
 disabledAI = 1;
 //enableDebugConsole = 1;
 enableDebugConsole[] = {"76561198071007604"};
-forceRotorLibSimulation = 0;
-joinUnassigned = 1;
-skipLobby = 0;
-showMap = 1;
+skipLobby = 1;
 unsafeCVL = 1;
 
 #include "GUI\masterHandler.hpp"

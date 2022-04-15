@@ -3,21 +3,28 @@
 	Author: Dom
 	Description: Runs on player respawn
 */
-params ["_unit","_corpse"];
+params [
+	["_unit",objNull,[objNull]],
+	["_corpse",objNull,[objNull]]
+];
 
-[_unit] call AW_fnc_checkGroup;
+private _oldPath = [];
+private _oldRole = "";
 
-if (isNil "AW_respawnLoadout") then {
-	private _defaultLoadout = getArray(missionConfigFile >> "Blufor_Setup" >> "AW_defaultLoadout");
-	_unit setUnitLoadout _defaultLoadout;
-} else {
-	_unit setUnitLoadout AW_respawnLoadout;
-};
+{
+	_x params ["","_roles","","_group","_units"];
+	private _groupIndex = _forEachIndex;
+	{
+		if (_x isEqualTo _corpse) exitWith {
+			_oldPath = [_groupIndex,_forEachIndex];
+			_oldRole = _roles select _forEachIndex;
+		};
+	} forEach _units;
+} forEach DT_dynamicGroups;
 
-private _roleDescription = roleDescription _unit;
-if ("Logistics Engineer" in _roleDescription) then {
-	_unit setVariable ["ACE_IsEngineer",2,true];
-};
+if (_oldPath isEqualTo []) exitWith {[] call DT_fnc_initGroupMenu};
+
+[_unit,_oldPath,_oldRole,true] remoteExecCall ["DT_fnc_assignPlayer",2];
 
 if (AW_isTFAREnabled && {call TFAR_fnc_haveLRRadio}) then {call AW_fnc_initLrRadio};
 

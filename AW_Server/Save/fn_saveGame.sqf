@@ -52,7 +52,7 @@ _bluforBuildables pushBack (getText(missionConfigFile >> "Blufor_Setup" >> "AW_f
 {
 	private _className = typeOf _x;
 	private _position = getPosWorld _x;
-	if (alive _x && {speed _x < 3 && {!(_x in _savedObjects) && {(_position select 2) < 5 && (_className in _bluforVehicles || {_x getVariable ["AW_playerUsed",false] || {[_position] call AW_fnc_isNearFOB}})}}}) then {
+	if (alive _x && {speed _x < 3 && {!(_x in _savedObjects) && {((getPosATL _x) select 2) < 5 && (_className in _bluforVehicles || {_x getVariable ["AW_playerUsed",false] || {[_position] call AW_fnc_isNearFOB}})}}}) then {
 		private _direction = vectorDirVisual _x;
 		private _up = vectorUpVisual _x;
 		private _damage = getAllHitPointsDamage _x;

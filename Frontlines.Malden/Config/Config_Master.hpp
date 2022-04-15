@@ -256,3 +256,4 @@ class Core_Settings {
 #include "Config_Civilian.hpp"
 #include "Config_Guerilla.hpp"
 #include "Config_Opfor.hpp"
+#include "Groups\Config_Groups.hpp"

@@ -6,20 +6,21 @@ waitUntil {!isNil "AW_serverReady" && {AW_serverReady && {!isNull player && {!is
 
 if (AW_isTFAREnabled) then {
 	if (!call TFAR_fnc_isTeamSpeakPluginEnabled && {!is3DENPreview}) then {
-		titleText ["Please ensure your TFAR plugin is enabled and you are on our teamspeak","BLACK"];
+		titleText ["Please ensure your TFAR plugin is enabled and you are on our teamspeak.","BLACK"];
 		waitUntil {call TFAR_fnc_isTeamSpeakPluginEnabled};
 		titleFadeOut 1;
 	};
-	["radioSetup","OnRadiosReceived",{_this call AW_fnc_initSwRadios}] call TFAR_fnc_addEventHandler;
+	["radioSetup","OnRadiosReceived",AW_fnc_initSwRadios] call TFAR_fnc_addEventHandler;
 };
 
-addMissionEventHandler ["HandleChatMessage",{_this call AW_fnc_handleChatMessage}];
-addMissionEventHandler ["Map",{_this call AW_fnc_checkMap}];
+addMissionEventHandler ["HandleChatMessage",AW_fnc_handleChatMessage];
+addMissionEventHandler ["Map",AW_fnc_checkMap];
 player addEventHandler ["HandleRating",{0}];
-player addEventHandler ["GetInMan",{_this call AW_fnc_getInMan}];
-player addEventHandler ["SeatSwitchedMan",{_this call AW_fnc_seatSwitchedMan}];
-player addEventHandler ["GetOutMan",{_this call AW_fnc_getOutMan}];
-player addEventHandler ["Respawn",{_this call AW_fnc_respawn}];
+player addEventHandler ["GetInMan",AW_fnc_getInMan];
+player addEventHandler ["SeatSwitchedMan",AW_fnc_seatSwitchedMan];
+player addEventHandler ["GetOutMan",AW_fnc_getOutMan];
+player addEventHandler ["FiredMan",{_this spawn AW_fnc_firedMan}];
+player addEventHandler ["Respawn",AW_fnc_respawn];
 ["ace_medical_woundReceived",{
 	params ["_unit","","","_instigator","_typeOfDamage"];
 	if (isNull _instigator || {!isPlayer _instigator || {!isPlayer _unit}}) exitWith {};
@@ -30,12 +31,16 @@ player addEventHandler ["Respawn",{_this call AW_fnc_respawn}];
 	};
 }] call CBA_fnc_addEventHandler;
 
-call AW_fnc_initArsenal;
+["ace_arsenal_displayClosed",{
+	if (AW_isTFAREnabled && !([player] call TFAR_fnc_hasRadio)) then {["You have left the arsenal without a radio."] call AW_fnc_notify};
+	if (AW_isTFAREnabled && {call TFAR_fnc_haveLRRadio}) then {call AW_fnc_initLrRadio};
+	if (parseNumber([player] call ace_common_fnc_getWeight) > 45) then {["You are carrying a lot of equipment which will affect your ability to operate. It may be worth reviewing your loadout to reduce your weight."] call AW_fnc_notify};
+}] call CBA_fnc_addEventHandler;
+
 call AW_fnc_initCBAsettings;
-call AW_fnc_initDiary;
 call AW_fnc_createAceActions;
 
-private _defaultLoadout = getArray(missionConfigFile >> "Blufor_Setup" >> "AW_defaultLoadout");
+private _defaultLoadout = getArray(missionConfigFile >> "Dynamic_Roles" >> "rifleman" >> "defaultLoadout");
 ["Default",_defaultLoadout] call ace_arsenal_fnc_addDefaultLoadout;
 player setUnitLoadout _defaultLoadout;
 
@@ -65,6 +70,20 @@ AW_uiHandle = [AW_fnc_updateUI,AW_uiUpdateInterval,[[0],true,""]] call CBA_fnc_a
 
 if (getPlayerUID player in AW_staffUIDs) then {
 	[player] remoteExecCall ["AW_fnc_assignZeus",2];
+
+	private _zeusMenu = [
+		"zeusMenu",
+		"Zeus Suite",
+		"\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\navigate_ca.paa",
+		{call AW_fnc_initZeusMenu},
+		{true}
+	] call ace_interact_menu_fnc_createAction;
+	[player,1,["ACE_SelfActions"],_zeusMenu] call ace_interact_menu_fnc_addActionToObject;
 };
 
 call AW_fnc_initDeployMenu;
+
+private _display = findDisplay 9640;
+waitUntil {isNull _display};
+
+[] call DT_fnc_initGroupMenu;
