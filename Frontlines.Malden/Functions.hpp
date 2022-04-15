@@ -47,13 +47,10 @@ class AWClient {
 		class initGuerillaMenu {};
 		class initRetrieveMenu {};
 		class initSecondaryMenu {};
-		class initSquadMenu {};
 		class initTutorialMenu {};
 		class initZeusMenu {};
-		class manageSquad {};
 		class manualZeusAction {};
 		class secondaryMenuLBChange {};
-		class squadManagementLBChange {};
 		class tutorialMenuLBChange {};
 		class updateUI {};
 	};

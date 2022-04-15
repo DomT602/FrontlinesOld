@@ -8,6 +8,5 @@
 #include "logisticsMenu.hpp"
 #include "retrieveMenu.hpp"
 #include "secondaryMenu.hpp"
-#include "squadManagement.hpp"
 #include "tutorialMenu.hpp"
 #include "zeusMenu.hpp"

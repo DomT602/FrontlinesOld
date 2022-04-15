@@ -9,7 +9,7 @@ onLoadName = "Frontlines";
 class Header {
 	gameType = Coop;
 	minPlayers = 1;
-	maxPlayers = 49;
+	maxPlayers = 46;
 };
 
 respawnButton = 1;

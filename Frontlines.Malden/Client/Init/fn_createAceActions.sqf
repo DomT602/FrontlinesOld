@@ -46,15 +46,6 @@ private _tutorialMenu = [
 ] call ace_interact_menu_fnc_createAction;
 [player,1,["ACE_SelfActions","baseCategory"],_tutorialMenu] call ace_interact_menu_fnc_addActionToObject;
 
-private _squadMenu = [
-	"squadMenu",
-	"Squad menu",
-	"\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\meet_ca.paa",
-	{call AW_fnc_initSquadMenu},
-	{true}
-] call ace_interact_menu_fnc_createAction;
-[player,1,["ACE_SelfActions","ACE_TeamManagement"],_squadMenu] call ace_interact_menu_fnc_addActionToObject;
-
 private _secondaryMenu = [
 	"secondaryMenu",
 	"Secondary Missions",
