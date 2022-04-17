@@ -37,7 +37,7 @@ if (_sector in AW_townSectors || {_sector in AW_citySectors || {_sector in AW_fa
 private _garrisonStrength = [_sector] call AW_fnc_getGarrisonStrength;
 
 private _allSectorGroups = [];
-private _squadCount = round(AW_opforThreat / 25) max 2;
+private _squadCount = round(AW_opforThreat / 25) max 1;
 if (_sector in AW_militarySectors || {_sector in AW_citySectors}) then {
 	_squadCount = _squadCount + 2;
 };
