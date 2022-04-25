@@ -17,7 +17,6 @@ class Guerilla_Setup {
 	};
 
 	AW_guerillaVehicles[] = {
-		"LOP_UN_Offroad",
 		"LOP_UN_UAZ_DshKM",
 		"LOP_UN_BTR70"
 	};

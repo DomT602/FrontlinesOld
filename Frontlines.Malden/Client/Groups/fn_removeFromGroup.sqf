@@ -7,18 +7,15 @@ params [
 	["_unit",objNull,[objNull]]
 ];
 
-private _group = group _unit;
 private _oldPath = [];
 
-private _groupIndex = DT_dynamicGroups findIf {_x select 3 isEqualTo _group};
-if (_groupIndex isNotEqualTo -1) then {
-	private _groupToUpdate = DT_dynamicGroups select _groupIndex;
-	private _unitsInGroup = _groupToUpdate select 4;
-	private _unitIndex = _unitsInGroup find _unit;
-	_unitsInGroup set [_unitIndex,objNull];
-	_groupToUpdate set [4,_unitsInGroup];
-	DT_dynamicGroups set [_groupIndex,_groupToUpdate];
-	_oldPath = [_groupIndex,_unitIndex];
-};
+{
+	_x params ["_groupName","_roles","_conditions","_group","_units"];
+	if (_unit in _units) exitWith {
+		private _unitIndex = _units find _unit;
+		_units set [_unitIndex,objNull];
+		_oldPath = [_forEachIndex,_unitIndex];
+	};
+} forEach DT_dynamicGroups;
 
 _oldPath

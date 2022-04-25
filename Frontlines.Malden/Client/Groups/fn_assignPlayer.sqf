@@ -31,7 +31,23 @@ if (isNull _selectedGroup) then {
 [_unit] joinSilent _selectedGroup;
 
 _unitsInGroup set [_unitIndex,_unit];
-_groupToUpdate set [4,_unitsInGroup];
-DT_dynamicGroups set [_groupIndex,_groupToUpdate];
+
+private _fnc_getRankNumber = {
+	params ["_rankString"];
+
+	switch _rankString do {
+		case "CORPORAL": {2};
+		case "SERGEANT": {3};
+		case "LIEUTENANT": {4};
+		case "CAPTAIN": {5};
+		case "MAJOR": {6};
+		case "COLONEL": {7};
+		default {1};
+	};
+};
+
+if ([getText(missionConfigFile >> "Dynamic_Roles" >> _desiredRole >> "rank")] call _fnc_getRankNumber > [rank (leader _selectedGroup)] call _fnc_getRankNumber) then {
+	[_selectedGroup,_unit] remoteExecCall ["selectLeader",groupOwner _selectedGroup];
+};
 
 [DT_dynamicGroups,_oldSelectionPath,_selectionPath,_unit] remoteExecCall ["DT_fnc_updateGroups",-2,"DT_DG_JIP"];

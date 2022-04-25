@@ -26,7 +26,7 @@ if (_vehicle isKindOf "Air" && {_isPilot}) exitWith {
 };
 
 if (_vehicle isKindOf "Tank" && {!(_vehicle isKindOf "APC_Tracked_02_base_F")}) exitWith {
-	if (player getVariable ["DT_role","rifleman"] in ["commander","crewman","engineer"]) exitWith {
+	if (player getVariable ["DT_role","rifleman"] in ["commander","crewman","engineer","logiengineer"]) exitWith {
 		true;
 	};
 	["You must be in Hammer, Anvil or Logistics to use this vehicle."] call AW_fnc_notify;

@@ -259,10 +259,11 @@ private _recycleObject = [
 	"\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\use_ca.paa",
 	{[_target] spawn AW_fnc_recycleObject},
 	{
-		isNull objectParent player &&
+		player getVariable ["DT_role","rifleman"] in ["pilot","squadlead","commander","officer","logiengineer"] || ((getPlayerUID player) in AW_staffUIDs) &&
+		{isNull objectParent player &&
 		{(crew _target isEqualTo [] || {unitIsUAV _target}) &&
 		{[getPosATL player] call AW_fnc_isNearFOB &&
-		{(nearestObjects [player,["Land_RepairDepot_01_tan_F"],150]) isNotEqualTo []}}}
+		{(nearestObjects [player,["Land_RepairDepot_01_tan_F"],150]) isNotEqualTo []}}}}
 	},
 	nil,nil,nil,8
 ] call ace_interact_menu_fnc_createAction;
@@ -273,8 +274,9 @@ private _moveObject = [
 	"\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\use_ca.paa",
 	{[_target] call AW_fnc_moveObject},
 	{
-		isNull objectParent player &&
-		{[getPosATL player] call AW_fnc_isNearFOB}
+		player getVariable ["DT_role","rifleman"] in ["pilot","squadlead","commander","officer","logiengineer"] || ((getPlayerUID player) in AW_staffUIDs) &&
+		{isNull objectParent player &&
+		{[getPosATL player] call AW_fnc_isNearFOB}}
 	}
 ] call ace_interact_menu_fnc_createAction;
 
