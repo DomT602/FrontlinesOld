@@ -8,7 +8,7 @@ private _pos = getPosATL player;
 if ([_pos,100] call AW_fnc_isNearFOB) then {
 	_storedResources = +AW_resourcesAvailable;
 } else {
-	([_pos,AW_factorySectors] call AW_fnc_findNearestSector) params ["_sector"];
+	([_pos,["factory"] call AW_fnc_getSectorsByType] call AW_fnc_findNearestSector) params ["_sector"];
 	private _factoryIndex = AW_factorySetup findIf {_x select 0 isEqualTo _sector};
 	if (_factoryIndex isEqualTo -1) exitWith {};
 

@@ -34,7 +34,7 @@ _backpacks append getArray(missionConfigFile >> "Common_Arsenal" >> "backpacks")
 } forEach [_weapons,_magazines,_items,_backpacks];
 
 private _roleRank = getText(_roleConfig >> "rank");
-player setUnitRank _roleRank;
+[player,_roleRank] remoteExecCall ["setUnitRank",0,player];
 
 private _roleTraits = getArray(_roleConfig >> "traits");
 {

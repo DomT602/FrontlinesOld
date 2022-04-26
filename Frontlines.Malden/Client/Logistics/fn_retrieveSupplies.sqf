@@ -24,7 +24,7 @@ private "_factoryData";
 if (_isAtFOB) then {
 	_storedResources = +AW_resourcesAvailable;
 } else {
-	([_pos,AW_factorySectors] call AW_fnc_findNearestSector) params ["_sector"];
+	([_pos,["factory"] call AW_fnc_getSectorsByType] call AW_fnc_findNearestSector) params ["_sector"];
 	_factoryIndex = AW_factorySetup findIf {_x select 0 isEqualTo _sector};
 	_factoryData = AW_factorySetup select _factoryIndex;
 	_storedResources = _factoryData select 2;

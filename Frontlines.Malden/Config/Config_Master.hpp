@@ -234,7 +234,7 @@ class Core_Settings {
 
 	AW_sideMissions[] = { //format {"title","conditions","codeToRun"}
 		{"Convoy Ambush","AW_opforThreat > 66 && {(AW_logisticsSetup select 2) isNotEqualTo []}","[count playableUnits] call AW_fnc_logisticsAmbush"},
-		{"FOB Assault","AW_opforThreat > 90 && {(count playableUnits) > 10 && {(AW_radioTowerSectors arrayIntersect AW_bluforSectors) isNotEqualTo (count AW_radioTowerSectors)}}","[count playableUnits] call AW_fnc_fobAssault"},
+		{"FOB Assault","AW_opforThreat > 90 && {(count playableUnits) > 10 && {({'tower' in _x} count AW_bluforSectors) isNotEqualTo ({'tower' in _x} count AW_allSectors)}}","[count playableUnits] call AW_fnc_fobAssault"},
 		{"Repair Request","AW_civRep < 50 && {AW_sectorDetails select {_x select 2 > 0 && {_x select 0 in AW_bluforSectors}} isNotEqualTo []}","[] call AW_fnc_repairSector"},
 		{"Sector Attack","AW_opforThreat > 33 && {AW_bluforSectors isNotEqualTo [] && {(count playableUnits) > 3}}","[] call AW_fnc_sectorCounterAttack"}
 	};
@@ -243,12 +243,12 @@ class Core_Settings {
 		{"FOB Hunt","AW_intel >= 25","[] remoteExecCall [""AW_fnc_fobHunt"",2]"},
 		{"Protect Heritage Site","AW_intel >= 10","[] remoteExecCall [""AW_fnc_protectSite"",2]"},
 		{"Secure Downed UAV","AW_intel >= 10","[] remoteExecCall [""AW_fnc_captureUAV"",2]"},
-		{"Clear UXOs","private _array = (AW_citySectors arrayIntersect AW_bluforSectors); _array append (AW_townSectors arrayIntersect AW_bluforSectors); _array isNotEqualTo []","[] remoteExecCall [""AW_fnc_clearUXOs"",2]"},
+		{"Clear UXOs","(AW_bluforSectors findIf {'city' in _x || {'town' in _x}}) isNotEqualTo -1","[] remoteExecCall [""AW_fnc_clearUXOs"",2]"},
 		{"Destroy IED Factory","AW_intel >= 15","[] remoteExecCall [""AW_fnc_IEDFactory"",2]"},
-		{"Humanitarian Relief","private _array = (AW_citySectors arrayIntersect AW_bluforSectors); _array append (AW_townSectors arrayIntersect AW_bluforSectors); _array isNotEqualTo [] && {AW_resourcesAvailable select 0 >= 100}","[""init""] remoteExecCall [""AW_fnc_humanitarianRelief"",2]"},
+		{"Humanitarian Relief","(AW_bluforSectors findIf {'city' in _x || {'town' in _x}}) isNotEqualTo -1 && {AW_resourcesAvailable select 0 >= 100}","[""init""] remoteExecCall [""AW_fnc_humanitarianRelief"",2]"},
 		{"Raid Enemy Depot","AW_intel >= 15","[] remoteExecCall [""AW_fnc_raidSupplyDepot"",2]"},
 		{"Setup Listening Post","AW_bluforSectors isNotEqualTo []","[""init""] remoteExecCall [""AW_fnc_listeningPost"",2]"},
-		{"Provide Medical Aid","private _array = (AW_citySectors arrayIntersect AW_bluforSectors); _array append (AW_townSectors arrayIntersect AW_bluforSectors); _array isNotEqualTo []","[] remoteExecCall [""AW_fnc_provideAid"",2]"}
+		{"Provide Medical Aid","(AW_bluforSectors findIf {'city' in _x || {'town' in _x}}) isNotEqualTo -1","[] remoteExecCall [""AW_fnc_provideAid"",2]"}
 	};
 };
 

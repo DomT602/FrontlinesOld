@@ -36,32 +36,23 @@ publicVariable "AW_guerillaCooldown";
 [] call AW_fnc_addClassEventHandlers;
 
 AW_allSectors = [];
-AW_militarySectors = [];
-AW_townSectors = [];
-AW_citySectors = [];
-AW_radioTowerSectors = [];
-AW_factorySectors = [];
+AW_bluforTowerCount = 0;
 {
 	if ("tower" in _x) then {
-		AW_radioTowerSectors pushBack _x; 
 		AW_allSectors pushBack _x;
 		_x setMarkerText format ["%1 - %2",markerText _x,mapGridPosition (markerPos _x)];
+		[AW_fnc_spawnTower,[_x],5] call CBA_fnc_waitAndExecute;
 	} else {
-		if ("factory" in _x) then {AW_factorySectors pushBack _x; AW_allSectors pushBack _x} else {
-			if ("military" in _x) then {AW_militarySectors pushBack _x; AW_allSectors pushBack _x} else {
-				if ("city" in _x) then {AW_citySectors pushBack _x; AW_allSectors pushBack _x} else {
-					if ("town" in _x) then {AW_townSectors pushBack _x; AW_allSectors pushBack _x};
+		if ("factory" in _x) then {AW_allSectors pushBack _x} else {
+			if ("military" in _x) then {AW_allSectors pushBack _x} else {
+				if ("city" in _x) then {AW_allSectors pushBack _x} else {
+					if ("town" in _x) then {AW_allSectors pushBack _x};
 				};
 			};
 		};
 	};
 } forEach allMapMarkers;
 publicVariable "AW_allSectors";
-publicVariable "AW_militarySectors";
-publicVariable "AW_townSectors";
-publicVariable "AW_citySectors";
-publicVariable "AW_radioTowerSectors";
-publicVariable "AW_factorySectors";
 AW_activeSectors = [];
 publicVariable "AW_activeSectors";
 
@@ -71,11 +62,6 @@ if (_saveArray isEqualTo []) then {
 } else {
 	[_saveArray] call AW_fnc_loadSave;
 };
-
-AW_bluforTowerCount = 0;
-{
-	[AW_fnc_spawnTower,[_x],5] call CBA_fnc_waitAndExecute;
-} forEach AW_radioTowerSectors;
 
 addMissionEventHandler ["BuildingChanged",{_this call AW_fnc_buildingChanged}];
 addMissionEventHandler ["EntityKilled",{_this call AW_fnc_entityKilled}];

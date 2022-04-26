@@ -12,7 +12,7 @@ class Opfor_Setup {
 		"rhsgref_hidf_grenadier_m79",
 		"rhsgref_hidf_teamleader",
 		"rhsgref_hidf_autorifleman",
-		"rhsgref_hidf_grenadier_m79",
+		"rhsgref_hidf_rifleman",
 		"rhsgref_hidf_rifleman_m72"
 	};
 
@@ -22,14 +22,15 @@ class Opfor_Setup {
         "rhsgref_hidf_grenadier_m79",
         "rhsgref_hidf_rifleman_m72",
         "rhsgref_hidf_rifleman_m72",
-        "rhsgref_hidf_grenadier_m79"
+        "rhsgref_hidf_rifleman"
 	};
 
 	AW_opforAASquad[] = {
 		"rhsgref_hidf_teamleader",
         "rhsgref_hidf_machinegunner",
         "rhsgref_hidf_grenadier_m79",
-        "rhsgref_hidf_machinegunner_assist"
+        "rhsgref_hidf_machinegunner_assist",
+        "rhsgref_hidf_rifleman"
 	};
 
 	AW_opforBalancedSquad[] = {
@@ -40,7 +41,7 @@ class Opfor_Setup {
         "rhsgref_hidf_grenadier_m79",
         "rhsgref_hidf_teamleader",
         "rhsgref_hidf_autorifleman",
-        "rhsgref_hidf_grenadier_m79",
+        "rhsgref_hidf_rifleman",
 		"rhsgref_hidf_rifleman_m72"
 	};
 

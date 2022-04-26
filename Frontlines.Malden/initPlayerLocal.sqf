@@ -19,7 +19,6 @@ player addEventHandler ["HandleRating",{0}];
 player addEventHandler ["GetInMan",AW_fnc_getInMan];
 player addEventHandler ["SeatSwitchedMan",AW_fnc_seatSwitchedMan];
 player addEventHandler ["GetOutMan",AW_fnc_getOutMan];
-player addEventHandler ["FiredMan",{_this spawn AW_fnc_firedMan}];
 player addEventHandler ["Respawn",AW_fnc_respawn];
 ["ace_medical_woundReceived",{
 	params ["_unit","","","_instigator","_typeOfDamage"];
@@ -35,6 +34,10 @@ player addEventHandler ["Respawn",AW_fnc_respawn];
 	if (AW_isTFAREnabled && !([player] call TFAR_fnc_hasRadio)) then {["You have left the arsenal without a radio."] call AW_fnc_notify};
 	if (AW_isTFAREnabled && {call TFAR_fnc_haveLRRadio}) then {call AW_fnc_initLrRadio};
 	if (parseNumber([player] call ace_common_fnc_getWeight) > 45) then {["You are carrying a lot of equipment which will affect your ability to operate. It may be worth reviewing your loadout to reduce your weight."] call AW_fnc_notify};
+	if (AW_autoSaveLoadout) then {
+		AW_respawnLoadout = getUnitLoadout player;
+		["Loadout saved."] call AW_fnc_notify;
+	};
 }] call CBA_fnc_addEventHandler;
 
 call AW_fnc_initCBAsettings;
@@ -50,7 +53,6 @@ if (AW_showIntro) then {
 	private _display = findDisplay 999999;
 	private _text = _display displayCtrl 1100;
 	private _message = "
-		<img align='center' size='12' shadow='0' image='\AWMod\addons\AW_UI\misc\AW_members.paa'/>
 		<t align='center' size='6' shadow='0'><br/>Frontlines</t><br/>
 		Welcome to Frontlines, a gamemode made for Ahoyworld by Dom and the Ahoyworld Team.<br/><br/>
 		<a color='#00DFFF'>•</a> Github: <a href='https://github.com/DomT602/Frontlines' color='#56BDD6'> https://github.com/DomT602/Frontlines</a><br/>

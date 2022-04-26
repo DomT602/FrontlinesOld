@@ -4,7 +4,8 @@
 	Description: Secondary objective to provide medical aid to a front line sector
 */
 if (AW_secondaryActive isNotEqualTo "") exitWith {["A secondary mission is in already progress."] remoteExecCall ["AW_fnc_notify",remoteExecutedOwner]};
-private _targetSector = [AW_bluforSectors] call AW_fnc_findFrontlineSector;
+private _array = [["city","town"],true] call AW_fnc_getSectorsByType;
+private _targetSector = [_array] call AW_fnc_findFrontlineSector;
 private _sectorCentre = markerPos _targetSector;
 
 AW_secondaryActive = "medicalAid";

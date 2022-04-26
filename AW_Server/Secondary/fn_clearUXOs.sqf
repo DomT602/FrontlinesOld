@@ -7,8 +7,7 @@ if (AW_secondaryActive isNotEqualTo "") exitWith {["A secondary mission is in al
 AW_secondaryActive = "UXOs";
 publicVariable "AW_secondaryActive";
 
-private _sectors = AW_citySectors arrayIntersect AW_bluforSectors;
-_sectors append (AW_townSectors arrayIntersect AW_bluforSectors);
+private _sectors = [["city","town"],true] call AW_fnc_getSectorsByType;
 private _chosenSector = selectRandom _sectors;
 
 private _sectorName = markerText _chosenSector;

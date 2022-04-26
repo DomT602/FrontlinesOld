@@ -110,10 +110,10 @@ switch _action do {
 		[_sector,0] remoteExecCall ["AW_fnc_setGarrisonStrength",2];
 		_sectorListbox lbSetColor [_index,[0,0.3,0.6,1]];
 
-		if (_sector in AW_radioTowerSectors) then {
+		if ("tower" in _sector) then {
 			[_sector,true] remoteExecCall ["AW_fnc_setTower",2];
 		} else {
-			if (_sector in AW_factorySectors) then {
+			if ("factory" in _sector) then {
 				AW_factorySetup pushBack [_sector,-1,[0,0,0]];
 				publicVariable "AW_factorySetup";
 			};
@@ -140,7 +140,7 @@ switch _action do {
 			AW_factorySetup deleteAt _factoryIndex;
 			publicVariable "AW_factorySetup";
 		} else {
-			if (_sector in AW_radioTowerSectors) then {
+			if ("tower" in _sector) then {
 				[_sector,false] remoteExecCall ["AW_fnc_setTower",2];
 			};
 		};

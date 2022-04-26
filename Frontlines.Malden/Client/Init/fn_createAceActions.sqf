@@ -122,7 +122,7 @@ private _deploy = [
 	{call AW_fnc_initDeployMenu},
 	{
 		private _pos = getPosATL player;
-		private _isNearMobileRespawn = (AW_mobileRespawns findIf {_pos distance _x < 10}) isNotEqualTo -1;
+		private _isNearMobileRespawn = (AW_mobileRespawns findIf {_pos distance (getPosATL _x) < 10}) isNotEqualTo -1;
 		isNull objectParent player &&
 		{[_pos,50] call AW_fnc_isNearFOB || _isNearMobileRespawn || player distance (markerPos "respawn") < 50}
 	}
@@ -165,7 +165,7 @@ private _storeCrate = [
 	{
 		isNull (attachedTo _target) && 
 		{[getPosATL player] call AW_fnc_isNearFOB || 
-		{[getPosATL player,AW_factorySectors,100] call AW_fnc_isNearSector}}
+		{[getPosATL player,["factory"] call AW_fnc_getSectorsByType,100] call AW_fnc_isNearSector}}
 	}
 ] call ace_interact_menu_fnc_createAction;
 
@@ -188,7 +188,7 @@ private _logisticsCategory = [
 	"\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\use_ca.paa",
 	{},
 	{
-		(player getVariable ["DT_role","rifleman"] in ["pilot","squadlead","teamlead","commander","officer","rto","uavop","logiengineer"]) || ((getPlayerUID player) in AW_staffUIDs) &&
+		(player getVariable ["DT_role","rifleman"] in ["pilot","squadlead","teamlead","commander","officer","rto","uavop","logiengineer"] || ((getPlayerUID player) in AW_staffUIDs)) &&
 		{isNull objectParent player}
 	}
 ] call ace_interact_menu_fnc_createAction;
@@ -210,10 +210,10 @@ private _factoryMenu = [
 	"\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\box_ca.paa",
 	{call AW_fnc_initFactoryMenu},
 	{
-		player getVariable ["DT_role","rifleman"] in ["pilot","squadlead","commander","officer","rto","uavop","logiengineer"] || ((getPlayerUID player) in AW_staffUIDs) &&
+		(player getVariable ["DT_role","rifleman"] in ["pilot","squadlead","commander","officer","rto","uavop","logiengineer"] || ((getPlayerUID player) in AW_staffUIDs)) &&
 		{AW_factorySetup isNotEqualTo [] &&
 		{[getPosATL player] call AW_fnc_isNearFOB ||
-		{[getPosATL player,AW_factorySectors] call AW_fnc_isNearSector}}}
+		{[getPosATL player,["factory"] call AW_fnc_getSectorsByType] call AW_fnc_isNearSector}}}
 	}
 ] call ace_interact_menu_fnc_createAction;
 
@@ -224,7 +224,7 @@ private _retrieveCrates = [
 	{call AW_fnc_initRetrieveMenu},
 	{
 		[getPosATL player,50] call AW_fnc_isNearFOB ||
-		{([getPosATL player,AW_factorySectors] call AW_fnc_findNearestSector) params ["_sector","","_distance"];
+		{([getPosATL player,["factory"] call AW_fnc_getSectorsByType] call AW_fnc_findNearestSector) params ["_sector","","_distance"];
 		_sector in AW_bluforSectors && {_distance < 50}}
 	}
 ] call ace_interact_menu_fnc_createAction;
@@ -235,9 +235,9 @@ private _logisticMenu = [
 	"\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\truck_ca.paa",
 	{[true] call AW_fnc_initLogisticsMenu},
 	{
-		player getVariable ["DT_role","rifleman"] in ["pilot","squadlead","commander","officer","rto","uavop","logiengineer"] || ((getPlayerUID player) in AW_staffUIDs) &&
+		(player getVariable ["DT_role","rifleman"] in ["pilot","squadlead","commander","officer","rto","uavop","logiengineer"] || ((getPlayerUID player) in AW_staffUIDs)) &&
 		{[getPosATL player] call AW_fnc_isNearFOB ||
-		{[getPosATL player,AW_factorySectors] call AW_fnc_isNearSector}}
+		{[getPosATL player,["factory"] call AW_fnc_getSectorsByType] call AW_fnc_isNearSector}}
 	}
 ] call ace_interact_menu_fnc_createAction;
 
@@ -247,7 +247,7 @@ private _createNewFOB = [
 	"\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\container_ca.paa",
 	{[_target] spawn AW_fnc_createNewFOB},
 	{
-		player getVariable ["DT_role","rifleman"] in ["pilot","squadlead","commander","officer","rto","uavop","logiengineer"] || ((getPlayerUID player) in AW_staffUIDs) &&
+		(player getVariable ["DT_role","rifleman"] in ["pilot","squadlead","commander","officer","rto","uavop","logiengineer"] || ((getPlayerUID player) in AW_staffUIDs)) &&
 		{isNull objectParent player &&
 		{!([getPosATL player] call AW_fnc_isNearFOB)}}
 	}
@@ -259,7 +259,7 @@ private _recycleObject = [
 	"\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\use_ca.paa",
 	{[_target] spawn AW_fnc_recycleObject},
 	{
-		player getVariable ["DT_role","rifleman"] in ["pilot","squadlead","commander","officer","logiengineer"] || ((getPlayerUID player) in AW_staffUIDs) &&
+		(player getVariable ["DT_role","rifleman"] in ["pilot","squadlead","commander","officer","logiengineer"] || ((getPlayerUID player) in AW_staffUIDs)) &&
 		{isNull objectParent player &&
 		{(crew _target isEqualTo [] || {unitIsUAV _target}) &&
 		{[getPosATL player] call AW_fnc_isNearFOB &&
@@ -274,7 +274,7 @@ private _moveObject = [
 	"\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\use_ca.paa",
 	{[_target] call AW_fnc_moveObject},
 	{
-		player getVariable ["DT_role","rifleman"] in ["pilot","squadlead","commander","officer","logiengineer"] || ((getPlayerUID player) in AW_staffUIDs) &&
+		(player getVariable ["DT_role","rifleman"] in ["pilot","squadlead","commander","officer","logiengineer"] || ((getPlayerUID player) in AW_staffUIDs)) &&
 		{isNull objectParent player &&
 		{[getPosATL player] call AW_fnc_isNearFOB}}
 	}
@@ -317,7 +317,7 @@ private _guerillaMenu = [
 	"\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\help_ca.paa",
 	{[] call AW_fnc_initGuerillaMenu},
 	{
-		player getVariable ["DT_role","rifleman"] in ["pilot","squadlead","commander","officer"] || ((getPlayerUID player) in AW_staffUIDs) &&
+		(player getVariable ["DT_role","rifleman"] in ["pilot","squadlead","commander","officer"] || ((getPlayerUID player) in AW_staffUIDs)) &&
 		{AW_civRep > 0}
 	}
 ] call ace_interact_menu_fnc_createAction;

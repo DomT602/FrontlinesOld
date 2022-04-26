@@ -23,6 +23,7 @@ class AWClient {
 		class getInMan {};
 		class getMissionProgress {};
 		class getOutMan {};
+		class getSectorsByType {};
 		class getSectorTypeIndex {};
 		class handleChatMessage {};
 		class isNearFOB {};
@@ -58,7 +59,6 @@ class AWClient {
 	class init {
 		file = "Client\Init";
 		class createAceActions {};
-		class initArsenal {};
 		class initCBAsettings {};
 		class initialiseObject {};
 		class initLrRadio {};

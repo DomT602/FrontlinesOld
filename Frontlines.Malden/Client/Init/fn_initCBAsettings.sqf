@@ -125,3 +125,11 @@ AW_buildRotation = 0;
 		};
 	}
 ] call CBA_fnc_addSetting;
+
+[
+	"AW_autoSaveLoadout",
+	"CHECKBOX",
+	["Automatically save loadout","Automatically saves your loadout when the arsenal is closed."],
+	["Frontlines","Arsenal"],
+	true
+] call CBA_fnc_addSetting;
