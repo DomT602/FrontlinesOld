@@ -133,7 +133,6 @@ class Blufor_Setup {
 		{"Land_GuardTower_02_F", {10,0,0}, ""},
 
 		{"lop_Flag_cdf_F", {5,0,0}, ""},
-		{{"Flag_White_F","Ahoyworld Flag"}, {5,0,0}, ""},
 		{"Flag_RedCrystal_F", {5,0,0}, ""},
 
 		{"Land_CamoNet_NATO", {5,0,0}, ""},
