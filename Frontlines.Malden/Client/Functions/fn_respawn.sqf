@@ -10,6 +10,7 @@ params [
 
 private _oldPath = [];
 private _oldRole = "";
+private _oldTeam = assignedTeam _unit;
 
 {
 	_x params ["","_roles","","_group","_units"];
@@ -24,7 +25,7 @@ private _oldRole = "";
 
 if (_oldPath isEqualTo []) exitWith {[] call DT_fnc_initGroupMenu};
 
-[_unit,_oldPath,_oldRole,true] remoteExecCall ["DT_fnc_assignPlayer",2];
+[_unit,_oldPath,_oldRole,true,_oldTeam] remoteExecCall ["DT_fnc_assignPlayer",2];
 
 if (AW_isTFAREnabled && {call TFAR_fnc_haveLRRadio}) then {call AW_fnc_initLrRadio};
 

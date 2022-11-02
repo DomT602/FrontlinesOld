@@ -13,12 +13,10 @@ if (_desiredTypes isEqualType "") then {
 	_sectors = AW_allSectors select {_desiredTypes in _x};
 } else {
 	{
-		private _sector = _x;
-		{
-			if (_x in _sector) exitWith {
-				_sectors pushBack _sector;
-			};
-		} forEach _desiredTypes;
+		(_x splitString "_") params ["_type"];
+		if (_type in _desiredTypes) then {
+			_sectors pushBack _x;
+		};
 	} forEach AW_allSectors;
 };
 

@@ -9,6 +9,9 @@ createDialog "DT_groupMenu";
 private _display = findDisplay 9702;
 private _tree = _display displayCtrl 1500;
 
+private _factionName = getText(missionConfigFile >> "Dynamic_Groups" >> "faction_name");
+(_display displayCtrl 1000) ctrlSetText format ["%1 %2",_factionName,localize "STR_DT_Role_Menu_Title"];
+
 private _rolesArray = missionConfigFile >> "Dynamic_Roles";
 private _myPath = [0,0];
 

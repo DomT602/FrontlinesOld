@@ -44,7 +44,7 @@ _marker setMarkerSize [1.5,1.5];
 			for "_i" from 1 to _woundCount do {
 				[_civilian,0.25,(selectRandom _bodyParts),(selectRandom _damageTypes)] call ace_medical_fnc_addDamageToUnit;
 			};
-			[_civilian,true,150,true] call ace_medical_fnc_setUnconscious;
+			[_civilian,true,300,true] call ace_medical_fnc_setUnconscious;
 			_civilian setVariable ["ace_medical_ai_lastFired",(CBA_missionTime + 300)];
 		};
 		[[_group],_sectorCentre] call AW_fnc_initSectorPatrol;

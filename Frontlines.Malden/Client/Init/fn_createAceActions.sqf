@@ -30,7 +30,7 @@ private _baseCategory = [
 	"Frontlines",
 	"",
 	{},
-	{alive player}
+	{true}
 ] call ace_interact_menu_fnc_createAction;
 
 [player,1,["ACE_SelfActions"],_baseCategory] call ace_interact_menu_fnc_addActionToObject;
@@ -188,8 +188,7 @@ private _logisticsCategory = [
 	"\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\use_ca.paa",
 	{},
 	{
-		(player getVariable ["DT_role","rifleman"] in ["pilot","squadlead","teamlead","commander","officer","rto","uavop","logiengineer"] || ((getPlayerUID player) in AW_staffUIDs)) &&
-		{isNull objectParent player}
+		(player getVariable ["DT_role","rifleman"] in ["pilot","squadlead","teamlead","commander","officer","rto","uavop","logiengineer"] || ((getPlayerUID player) in AW_staffUIDs))
 	}
 ] call ace_interact_menu_fnc_createAction;
 
@@ -212,8 +211,7 @@ private _factoryMenu = [
 	{
 		(player getVariable ["DT_role","rifleman"] in ["pilot","squadlead","commander","officer","rto","uavop","logiengineer"] || ((getPlayerUID player) in AW_staffUIDs)) &&
 		{AW_factorySetup isNotEqualTo [] &&
-		{[getPosATL player] call AW_fnc_isNearFOB ||
-		{[getPosATL player,["factory"] call AW_fnc_getSectorsByType] call AW_fnc_isNearSector}}}
+		{([getPosATL player,50] call AW_fnc_isNearFOB || {[getPosATL player,["factory",true] call AW_fnc_getSectorsByType] call AW_fnc_isNearSector})}}
 	}
 ] call ace_interact_menu_fnc_createAction;
 
@@ -221,11 +219,10 @@ private _retrieveCrates = [
 	"retrieveCrates",
 	"Withdraw resources",
 	"\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\getout_ca.paa",
-	{call AW_fnc_initRetrieveMenu},
+	{call AW_fnc_initRetrieveMenu}, 
 	{
-		[getPosATL player,50] call AW_fnc_isNearFOB ||
-		{([getPosATL player,["factory"] call AW_fnc_getSectorsByType] call AW_fnc_findNearestSector) params ["_sector","","_distance"];
-		_sector in AW_bluforSectors && {_distance < 50}}
+		isNull objectParent player && 
+		([getPosATL player,50] call AW_fnc_isNearFOB || {[getPosATL player,["factory",true] call AW_fnc_getSectorsByType] call AW_fnc_isNearSector})
 	}
 ] call ace_interact_menu_fnc_createAction;
 
@@ -236,8 +233,7 @@ private _logisticMenu = [
 	{[true] call AW_fnc_initLogisticsMenu},
 	{
 		(player getVariable ["DT_role","rifleman"] in ["pilot","squadlead","commander","officer","rto","uavop","logiengineer"] || ((getPlayerUID player) in AW_staffUIDs)) &&
-		{[getPosATL player] call AW_fnc_isNearFOB ||
-		{[getPosATL player,["factory"] call AW_fnc_getSectorsByType] call AW_fnc_isNearSector}}
+		{[getPosATL player] call AW_fnc_isNearFOB || {[getPosATL player,["factory"] call AW_fnc_getSectorsByType] call AW_fnc_isNearSector}}
 	}
 ] call ace_interact_menu_fnc_createAction;
 
@@ -248,8 +244,7 @@ private _createNewFOB = [
 	{[_target] spawn AW_fnc_createNewFOB},
 	{
 		(player getVariable ["DT_role","rifleman"] in ["pilot","squadlead","commander","officer","rto","uavop","logiengineer"] || ((getPlayerUID player) in AW_staffUIDs)) &&
-		{isNull objectParent player &&
-		{!([getPosATL player] call AW_fnc_isNearFOB)}}
+		{!([getPosATL player] call AW_fnc_isNearFOB)}
 	}
 ] call ace_interact_menu_fnc_createAction;
 
@@ -260,10 +255,9 @@ private _recycleObject = [
 	{[_target] spawn AW_fnc_recycleObject},
 	{
 		(player getVariable ["DT_role","rifleman"] in ["pilot","squadlead","commander","officer","logiengineer"] || ((getPlayerUID player) in AW_staffUIDs)) &&
-		{isNull objectParent player &&
 		{(crew _target isEqualTo [] || {unitIsUAV _target}) &&
 		{[getPosATL player] call AW_fnc_isNearFOB &&
-		{(nearestObjects [player,["Land_RepairDepot_01_tan_F"],150]) isNotEqualTo []}}}}
+		{(nearestObjects [player,["Land_RepairDepot_01_base_F"],150]) isNotEqualTo []}}}
 	},
 	nil,nil,nil,8
 ] call ace_interact_menu_fnc_createAction;
@@ -275,8 +269,7 @@ private _moveObject = [
 	{[_target] call AW_fnc_moveObject},
 	{
 		(player getVariable ["DT_role","rifleman"] in ["pilot","squadlead","commander","officer","logiengineer"] || ((getPlayerUID player) in AW_staffUIDs)) &&
-		{isNull objectParent player &&
-		{[getPosATL player] call AW_fnc_isNearFOB}}
+		{[getPosATL player] call AW_fnc_isNearFOB}
 	}
 ] call ace_interact_menu_fnc_createAction;
 
@@ -334,11 +327,10 @@ private _pushVehicle = [
 		[_target,[sin _dir * 10,cos _dir * 10,0]] remoteExecCall ["setVelocity",_target];
 	},
 	{
-		isNull objectParent player && 
-		{!canMove _target &&
+		!canMove _target &&
 		{alive _target &&
 		{crew _target isEqualTo [] && 
-		{locked _target < 2}}}}
+		{locked _target < 2}}}
 	}
 ] call ace_interact_menu_fnc_createAction;
 

@@ -178,7 +178,10 @@ class Core_Settings {
 		"B_Mortar_01_F",
 		"ACE_friesAnchorBar",
 		"ACE_friesGantryReverse",
-		"ACE_friesGantry"
+		"ACE_friesGantry",
+		"Land_CamoNet_NATO",
+		"Land_CamoNetVar_NATO",
+		"Land_CamoNetB_NATO"
 	};
 
 	AW_objectInits[] = { //special vehicle inits in format {"classname","code"} or {{"classnames","classnames"},"code"} - for when CBA Class EVH's arent appropriate, namely children of 'Static'

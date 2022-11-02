@@ -5,7 +5,8 @@
 */
 params [
 	["_desiredRole","rifleman",[""]],
-	["_isRespawn",false,[true]]
+	["_isRespawn",false,[true]],
+	["_team","MAIN",[""]]
 ];
 
 private _roleConfig = missionConfigFile >> "Dynamic_Roles" >> _desiredRole;
@@ -16,6 +17,7 @@ if (isNil "AW_respawnLoadout") then {
 } else {
 	player setUnitLoadout AW_respawnLoadout;
 };
+player assignTeam _team;
 if (_isRespawn) exitWith {};
 
 private _weapons = getArray(_roleConfig >> "arsenalWeapons");
@@ -34,7 +36,7 @@ _backpacks append getArray(missionConfigFile >> "Common_Arsenal" >> "backpacks")
 } forEach [_weapons,_magazines,_items,_backpacks];
 
 private _roleRank = getText(_roleConfig >> "rank");
-[player,_roleRank] remoteExecCall ["setUnitRank",0,player];
+player setUnitRank _roleRank;
 
 private _roleTraits = getArray(_roleConfig >> "traits");
 {
@@ -45,9 +47,9 @@ private _roleTraits = getArray(_roleConfig >> "traits");
 } forEach (getAllUnitTraits player);
 
 {
-	_x params ["_trait","_value",["_custom",false]];
+	_x params ["_trait","_value",["_custom","false"]];
 	if (_value isEqualTo "true") then {_value = true} else {if (_value isEqualTo "false") then {_value = false}};
-	player setUnitTrait [_trait,_value,_custom];
+	player setUnitTrait [_trait,_value,call compile _custom];
 } forEach _roleTraits;
 
 private _customVariables = getArray(_roleConfig >> "customVariables");

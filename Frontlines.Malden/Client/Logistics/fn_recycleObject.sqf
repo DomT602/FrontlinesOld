@@ -11,7 +11,7 @@ private _className = typeOf _object;
 private _resourcesToReturn = [0,0,0];
 
 if (_object isKindOf "LandVehicle" || {_object isKindOf "Ship" || {_object isKindOf "Air"}}) then {
-	if (_object in AW_mobileRespawns && {count AW_mobileRespawns isEqualType 1}) exitWith {}; //the free respawn
+	if (_object in AW_mobileRespawns && {count AW_mobileRespawns isEqualTo 1}) exitWith {}; //the free respawn
 	private _multiplier = 50;
 	if (_object isKindOf "Tank" || {(_object isKindOf "Air" && !("UAV" in _className))}) then {_multiplier = 150};
 
@@ -84,7 +84,7 @@ if (_action) then {
 		};
 	};
 
-	if (_class in ["Land_HelipadSquare_F","Land_HelipadCircle_F","Land_HelipadRescue_F"]) then {
+	if (_className in ["Land_HelipadSquare_F","Land_HelipadCircle_F","Land_HelipadRescue_F"]) then {
 		AW_maxHelicopterCount = AW_maxHelicopterCount - 1;
 		publicVariable "AW_maxHelicopterCount";
 	};

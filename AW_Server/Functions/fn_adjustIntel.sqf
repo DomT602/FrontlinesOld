@@ -8,7 +8,7 @@ params [
 ];
 if (_amount isEqualType true) then {
 	_amount = round ((ln (AW_bluforTowerCount ^ 2)) + 1);
-	[format["%1 intel was obtained from the communications network.",_intelGained]] remoteExecCall ["AW_fnc_notify",-2];
+	[format["%1 intel was obtained from the communications network.",_amount]] remoteExecCall ["AW_fnc_notify",-2];
 };
 if (_amount isEqualTo 0) exitWith {};
 

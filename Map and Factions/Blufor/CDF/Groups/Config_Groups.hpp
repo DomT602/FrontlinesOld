@@ -1,4 +1,5 @@
 class Dynamic_Groups { //format: {"Group Name",{"Group","Roles","Matching","Role","Configs"},"Conditions for the group to be shown"}
+	faction_name = "CDF";
 	group_setup[] = {
 		{"Platoon",{"officer","rto","uavop"},"true"},
 		{"Alpha",{"squadlead","teamlead","medic","rifleman","rifleman","teamlead","engineer","rifleman","rifleman"},"true"},

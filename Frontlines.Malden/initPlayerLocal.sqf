@@ -20,15 +20,6 @@ player addEventHandler ["GetInMan",AW_fnc_getInMan];
 player addEventHandler ["SeatSwitchedMan",AW_fnc_seatSwitchedMan];
 player addEventHandler ["GetOutMan",AW_fnc_getOutMan];
 player addEventHandler ["Respawn",AW_fnc_respawn];
-["ace_medical_woundReceived",{
-	params ["_unit","","","_instigator","_typeOfDamage"];
-	if (isNull _instigator || {!isPlayer _instigator || {!isPlayer _unit}}) exitWith {};
-
-	if (_instigator isNotEqualTo _unit) then {
-		["You are hitting friendlies, watch your fire."] remoteExecCall ["AW_fnc_notify",_instigator];
-		[format["%1 (%2) injured %3 (%4) with %5 damage.",name _instigator,getPlayerUID _instigator,profileName,getPlayerUID player,_typeOfDamage]] remoteExecCall ["AW_fnc_logIt",2];
-	};
-}] call CBA_fnc_addEventHandler;
 
 ["ace_arsenal_displayClosed",{
 	if (AW_isTFAREnabled && !([player] call TFAR_fnc_hasRadio)) then {["You have left the arsenal without a radio."] call AW_fnc_notify};
