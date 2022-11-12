@@ -13,11 +13,13 @@ private _initConfig = getArray(missionConfigFile >> "Core_Settings" >> "AW_objec
 private _class = typeOf _object;
 
 if !(_moving) then {
-	if (_class in ["Land_HelipadSquare_F","Land_HelipadCircle_F","Land_HelipadRescue_F"]) then {
+	private _helipads = getArray(missionConfigFile >> "Blufor_Setup" >> "AW_helipads");
+	if (_class in _helipads) then {
 		AW_maxHelicopterCount = AW_maxHelicopterCount + 1; 
 		publicVariable "AW_maxHelicopterCount";
 	} else {
-		if (_class isEqualTo "Land_TentHangar_V1_F") then {
+		private _hangars = getArray(missionConfigFile >> "Blufor_Setup" >> "AW_hangars");
+		if (_class isEqualTo _hangars) then {
 			AW_maxPlaneCount = AW_maxPlaneCount + 1; 
 			publicVariable "AW_maxPlaneCount";
 		};

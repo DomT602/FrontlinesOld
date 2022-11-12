@@ -208,10 +208,10 @@ class Blufor_Setup {
 
 		{{"Land_RepairDepot_01_tan_F", "Recycle Building"}, {250,0,0}, ""},
 		{{"B_Radar_System_01_F", "Radar"}, {1000,0,0}, ""},
-		{"Land_HelipadSquare_F", {250,0,0}, ""}, //Helipads to increase rotary capacity
+		{"Land_HelipadSquare_F", {250,0,0}, ""},
 		{"Land_HelipadCircle_F", {250,0,0}, ""},
 		{"Land_HelipadRescue_F", {250,0,0}, ""},
-		{"Land_TentHangar_V1_F", {500,0,0}, ""}, //Hangar to increase fixed wing capacity
+		{"Land_TentHangar_V1_F", {500,0,0}, ""},
 
 		{"Box_Syndicate_Ammo_F", {5,0,0}, ""},
 
@@ -234,7 +234,15 @@ class Blufor_Setup {
 		{{"Land_PortableWeatherStation_01_olive_F", "Listening Post"}, {250,0,0}, "AW_secondaryActive isEqualTo ""listeningPost"" && {nearestObjects [player,[""Land_PortableWeatherStation_01_olive_F""],100] isEqualTo []}"}
 
 	};
+	AW_helipads[] = {"Land_HelipadSquare_F", "Land_HelipadCircle_F", "Land_HelipadRescue_F"}; //Helipads to increase rotary capacity
+	AW_hangars[] = {"Land_TentHangar_V1_F"}; //Hangar to increase fixed wing capacity
 
+	AW_supplyCrateTypes[] = { //crate types to be used below, format {sizeName, classname}
+		{"medical", "ACE_medicalSupplyCrate_advanced"},
+		{"small", "Box_IND_Ammo_F"},
+		{"medium", "Box_IND_Wps_F"},
+		{"large", "Box_IND_WpsSpecial_F"},
+	};
 	//categories supported: medicalCrateCategory,lightWeaponCrateCategory,heavyWeaponCrateCategory,staticWeaponCrateCategory,miscWeaponCrateCategory
 	AW_supplyCrates[] = { //format {"category","title","box size",{resources},{contents}}
 		{"medicalCrateCategory","Medical Crate","medical",{25,0,0},{

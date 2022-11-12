@@ -16,12 +16,9 @@ if (_supplies > _currentSupplies || {_fuel > _currentFuel || {_ammo > _currentAm
 	["You don't have enough resources."] call AW_fnc_notify;
 };
 
-private _crateClass = switch _type do {
-	case "medical": {"ACE_medicalSupplyCrate_advanced"};
-	case "small": {"Box_NATO_Ammo_F"};
-	case "medium": {"Box_NATO_Wps_F"};
-	case "large": {"Box_NATO_WpsSpecial_F"};
-};
+private _allSupplyClasses = getArray(missionConfigFile >> "Blufor_Setup" >> "AW_supplyCrateTypes");
+private _crateIndex = _allSupplyClasses findIf {_x select 0 == _type};
+private _crateClass = (_allSupplyClasses select _crateIndex) select 1;
 
 private _crate = objNull;
 if (isNull _unit) then {
