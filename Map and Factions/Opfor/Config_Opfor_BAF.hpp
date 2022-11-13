@@ -56,40 +56,40 @@ class Opfor_Setup {
 
 	//if the vehicle does not belong to the faction naturally, enclose in {} and add ,true
 	AW_opforLightVehicles[] = {
-		{"UK3CB_BAF_LandRover_WMIK_GPMG_FFR_Green_A",true},
-		{"UK3CB_BAF_LandRover_WMIK_HMG_FFR_Green_A",true},
-		{"UK3CB_BAF_LandRover_WMIK_GMG_FFR_Green_A",true},
-		{"UK3CB_BAF_LandRover_WMIK_Milan_FFR_Green_A",true},
-		{"UK3CB_BAF_Jackal2_L111A1_G",true},
-		{"UK3CB_BAF_Jackal2_L134A1_G",true},
-		{"UK3CB_BAF_Coyote_Passenger_L111A1_G",true},
-		{"UK3CB_BAF_Coyote_Passenger_L134A1_G",true}
+		"UK3CB_BAF_LandRover_WMIK_GPMG_FFR_Green_A",
+		"UK3CB_BAF_LandRover_WMIK_HMG_FFR_Green_A",
+		"UK3CB_BAF_LandRover_WMIK_GMG_FFR_Green_A",
+		"UK3CB_BAF_LandRover_WMIK_Milan_FFR_Green_A",
+		"UK3CB_BAF_Jackal2_L111A1_G",
+		"UK3CB_BAF_Jackal2_L134A1_G",
+		"UK3CB_BAF_Coyote_Passenger_L111A1_G",
+		"UK3CB_BAF_Coyote_Passenger_L134A1_G"
 	};
 
 	AW_opforMediumVehicles[] = {
-		{"UK3CB_BAF_Husky_Passenger_GPMG_Green",true},
-		{"UK3CB_BAF_Husky_Passenger_HMG_Green",true},
-		{"UK3CB_BAF_Husky_Passenger_GMG_Green",true},
-		{"UK3CB_BAF_Panther_GPMG_Green_A",true},
-		{"UK3CB_BAF_FV432_Mk3_GPMG_Green",true}
+		"UK3CB_BAF_Husky_Passenger_GPMG_Green",
+		"UK3CB_BAF_Husky_Passenger_HMG_Green",
+		"UK3CB_BAF_Husky_Passenger_GMG_Green",
+		"UK3CB_BAF_Panther_GPMG_Green_A",
+		"UK3CB_BAF_FV432_Mk3_GPMG_Green"
 	};
 
 	AW_opforHeavyVehicles[] = {
-		{"UK3CB_BAF_Warrior_A3_W_Cage",true},
-		{"UK3CB_BAF_Warrior_A3_W_Cage_Camo",true},
+		"UK3CB_BAF_Warrior_A3_W_Cage",
+		"UK3CB_BAF_Warrior_A3_W_Cage_Camo",
 		{"rhsusf_m1a1aim_tuski_wd",true}
 	};
 
 	AW_opforTroopCarriers[] = {
-		{"UK3CB_BAF_Panther_GPMG_Green_A",true},
-		{"UK3CB_BAF_Husky_Passenger_GPMG_Green",true},
-		{"UK3CB_BAF_Husky_Passenger_HMG_Green",true},
-		{"UK3CB_BAF_Husky_Passenger_GMG_Green",true},
-		{"UK3CB_BAF_Jackal2_L111A1_G",true},
-		{"UK3CB_BAF_Jackal2_L134A1_G",true},
-		{"UK3CB_BAF_MAN_HX58_Transport_Green",true},
-		{"UK3CB_BAF_LandRover_Snatch_FFR_Green_A",true},
-		{"UK3CB_BAF_LandRover_WMIK_HMG_FFR_Green_A",true}
+		"UK3CB_BAF_Panther_GPMG_Green_A",
+		"UK3CB_BAF_Husky_Passenger_GPMG_Green",
+		"UK3CB_BAF_Husky_Passenger_HMG_Green",
+		"UK3CB_BAF_Husky_Passenger_GMG_Green",
+		"UK3CB_BAF_Jackal2_L111A1_G",
+		"UK3CB_BAF_Jackal2_L134A1_G",
+		"UK3CB_BAF_MAN_HX58_Transport_Green",
+		"UK3CB_BAF_LandRover_Snatch_FFR_Green_A",
+		"UK3CB_BAF_LandRover_WMIK_HMG_FFR_Green_A"
 	};
 
 	//for air vehicles, add the classname of the pilot unit instead
@@ -101,7 +101,7 @@ class Opfor_Setup {
 	};
 
 	AW_opforFixedWingVehicles[] = {
-		"I_Plane_Fighter_04_F"
+		{"I_Plane_Fighter_04_F","UK3CB_BAF_HeliPilot_RAF_MTP"}
 	};
 
 	AW_opforMines[] = {

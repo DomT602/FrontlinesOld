@@ -19,7 +19,7 @@ if !(_moving) then {
 		publicVariable "AW_maxHelicopterCount";
 	} else {
 		private _hangars = getArray(missionConfigFile >> "Blufor_Setup" >> "AW_hangars");
-		if (_class isEqualTo _hangars) then {
+		if (_class in _hangars) then {
 			AW_maxPlaneCount = AW_maxPlaneCount + 1; 
 			publicVariable "AW_maxPlaneCount";
 		};
