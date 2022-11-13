@@ -1,5 +1,5 @@
 class Core_Settings {
-	AW_version = "0.5.2";
+	AW_version = "1.0.0";
 	AW_adminUIDs[] = { //Add admin UIDs here to be auto-assigned zeus and be given all ACE actions for Frontlines
 		"76561198071007604"
 	};
