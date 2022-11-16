@@ -77,7 +77,7 @@ private _saveRespawnLoadout = [
 	"Save respawn loadout",
 	"\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\download_ca.paa",
 	{
-		AW_respawnLoadout = getUnitLoadout player;
+		AW_respawnLoadout = [player] call CBA_fnc_getLoadout;
 		["Loadout saved."] call AW_fnc_notify;
 	},
 	{true}
@@ -88,7 +88,7 @@ private _loadRespawnLoadout = [
 	"Load respawn loadout",
 	"\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\rearm_ca.paa",
 	{
-		player setUnitLoadout AW_respawnLoadout;
+		[player,AW_respawnLoadout,true] call CBA_fnc_setLoadout;
 	},
 	{!isNil "AW_respawnLoadout"}
 ] call ace_interact_menu_fnc_createAction;
@@ -98,7 +98,7 @@ private _copyLoadout = [
 	"Copy loadout",
 	"\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\download_ca.paa",
 	{
-		player setUnitLoadout (getUnitLoadout _target);
+		[player,[_target] call CBA_fnc_getLoadout,true] call CBA_fnc_setLoadout;
 	},
 	{	
 		isPlayer _target &&
@@ -257,7 +257,7 @@ private _recycleObject = [
 		(player getVariable ["DT_role","rifleman"] in ["pilot","squadlead","commander","officer","logiengineer"] || ((getPlayerUID player) in AW_staffUIDs)) &&
 		{(crew _target isEqualTo [] || {unitIsUAV _target}) &&
 		{[getPosATL player] call AW_fnc_isNearFOB &&
-		{(nearestObjects [player,["Land_RepairDepot_01_base_F"],150]) isNotEqualTo []}}}
+		{(nearestObjects [player,["Land_RepairDepot_01_base_F","Land_WeldingTrolley_01_F"],150]) isNotEqualTo []}}}
 	},
 	nil,nil,nil,8
 ] call ace_interact_menu_fnc_createAction;

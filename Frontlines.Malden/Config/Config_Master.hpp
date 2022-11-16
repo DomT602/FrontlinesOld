@@ -39,9 +39,9 @@ class Core_Settings {
 	AW_sideMissionTimer = 45; //Time in minutes between side objective tries to spawn (if other conditions are also met)
 	AW_garrisonUpdateTimer = 60; //Time in minutes between sector garrison strength updates
 
-	AW_maxAmbientCivs = 7; //max ambient civs roaming around
-	AW_maxAmbientCivAir = 1; //max ambient civs flying around (only if map supports airports)
-	AW_maxAmbientOpforPatrols = 6; //max ambient enemy vehicles roaming around, actual number is reduced as enemy lose strength
+	AW_maxAmbientCivs = 7; //max ambient civs roaming around, 0 disables this feature
+	AW_maxAmbientCivAir = 1; //max ambient civs flying around (only if map supports airports), 0 disables this feature
+	AW_maxAmbientOpforPatrols = 6; //max ambient enemy vehicles roaming around, actual number is reduced as enemy lose strength, 0 disables this feature
 
 	AW_maxSectorIntel = 5; //Max intel pieces spawned in a sector
 	AW_maxIntelFromPOW = 7; //Max intel gained from interrogating PoW before applying the threat level modifier

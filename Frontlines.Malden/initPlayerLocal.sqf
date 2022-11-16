@@ -13,7 +13,6 @@ if (AW_isTFAREnabled) then {
 	["radioSetup","OnRadiosReceived",AW_fnc_initSwRadios] call TFAR_fnc_addEventHandler;
 };
 
-addMissionEventHandler ["HandleChatMessage",AW_fnc_handleChatMessage];
 addMissionEventHandler ["Map",AW_fnc_checkMap];
 player addEventHandler ["HandleRating",{0}];
 player addEventHandler ["GetInMan",AW_fnc_getInMan];
@@ -26,7 +25,7 @@ player addEventHandler ["Respawn",AW_fnc_respawn];
 	if (AW_isTFAREnabled && {call TFAR_fnc_haveLRRadio}) then {call AW_fnc_initLrRadio};
 	if (parseNumber([player] call ace_common_fnc_getWeight) > 45) then {["You are carrying a lot of equipment which will affect your ability to operate. It may be worth reviewing your loadout to reduce your weight."] call AW_fnc_notify};
 	if (AW_autoSaveLoadout) then {
-		AW_respawnLoadout = getUnitLoadout player;
+		AW_respawnLoadout = [player] call CBA_fnc_getLoadout;
 		["Loadout saved."] call AW_fnc_notify;
 	};
 }] call CBA_fnc_addEventHandler;
@@ -36,7 +35,7 @@ call AW_fnc_createAceActions;
 
 private _defaultLoadout = getArray(missionConfigFile >> "Dynamic_Roles" >> "rifleman" >> "defaultLoadout");
 ["Default",_defaultLoadout] call ace_arsenal_fnc_addDefaultLoadout;
-player setUnitLoadout _defaultLoadout;
+[player,_defaultLoadout,true] call CBA_fnc_setLoadout;
 
 waitUntil {time > 0};
 if (AW_showIntro) then {

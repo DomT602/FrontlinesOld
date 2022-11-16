@@ -11,12 +11,8 @@ params [
 
 private _roleConfig = missionConfigFile >> "Dynamic_Roles" >> _desiredRole;
 
-if (isNil "AW_respawnLoadout") then {
-	private _defaultLoadout = getArray(_roleConfig >> "defaultLoadout");
-	player setUnitLoadout _defaultLoadout;
-} else {
-	player setUnitLoadout AW_respawnLoadout;
-};
+private _loadout = missionNamespace getVariable ["AW_respawnLoadout",getArray(_roleConfig >> "defaultLoadout")];
+[player,_loadout,true] call CBA_fnc_setLoadout;
 player assignTeam _team;
 if (_isRespawn) exitWith {};
 
@@ -34,6 +30,8 @@ _backpacks append getArray(missionConfigFile >> "Common_Arsenal" >> "backpacks")
 {
 	[player,_x,false] call ace_arsenal_fnc_addVirtualItems;
 } forEach [_weapons,_magazines,_items,_backpacks];
+private _roleName = getText(_roleConfig >> "name");
+[_roleName,_loadout] call ace_arsenal_fnc_addDefaultLoadout;
 
 private _roleRank = getText(_roleConfig >> "rank");
 player setUnitRank _roleRank;

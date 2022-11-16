@@ -25,7 +25,6 @@ class AWClient {
 		class getOutMan {};
 		class getSectorsByType {};
 		class getSectorTypeIndex {};
-		class handleChatMessage {};
 		class isNearFOB {};
 		class isNearSector {};
 		class notify {};

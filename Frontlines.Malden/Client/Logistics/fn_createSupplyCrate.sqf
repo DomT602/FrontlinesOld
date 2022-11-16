@@ -27,19 +27,6 @@ if (isNull _unit) then {
 	private _chute = createVehicle ["B_Parachute_02_F",_target,[],0,"FLY"];
 	_chute setPosASL (getPosASL _crate);
 	_crate attachTo [_chute];
-
-	[
-		{
-			params ["_crate"];
-			(getPosASL _crate select 2) < 3
-		},
-		{
-			params ["_crate","_chute"];
-			detach _crate;
-			deleteVehicle _chute;
-		},
-		[_crate,_chute]
-	] call CBA_fnc_waitUntilAndExecute;
 } else {
 	private _action = [
 		format ["This crate required %1 supplies, %2 fuel and %3 ammunition.",_supplies,_fuel,_ammo],
