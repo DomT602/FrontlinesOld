@@ -22,7 +22,7 @@ class officer {
 		{"V_PlateCarrier1_rgr",{{"30Rnd_65x39_caseless_mag",5,30},{"11Rnd_45ACP_Mag",2,11},{"SmokeShell",1,1},{"SmokeShellGreen",1,1},{"Chemlight_green",1,1}}},
 		{},
 		"H_Beret_Colonel","",{},
-		{"ItemMap","ItemGPS","TFAR_anprc154","ItemCompass","ItemWatch",""}
+		{"ItemMap","ItemGPS","TFAR_anprc152","ItemCompass","ItemWatch",""}
 	};
 
 	arsenalWeapons[] = {

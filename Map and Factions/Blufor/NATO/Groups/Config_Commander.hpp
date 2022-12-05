@@ -22,7 +22,7 @@ class commander {
 		{"V_PlateCarrier1_rgr",{{"30Rnd_65x39_caseless_mag",5,30},{"16Rnd_9x21_Mag",2,16},{"HandGrenade",2,1},{"SmokeShell",1,1},{"SmokeShellGreen",1,1},{"Chemlight_green",1,1}}},
 		{},
 		"H_HelmetCrew_B","",{},
-		{"ItemMap","ItemGPS","TFAR_anprc154","ItemCompass","ItemWatch","NVGoggles"}
+		{"ItemMap","ItemGPS","TFAR_anprc152","ItemCompass","ItemWatch","ACE_NVG_Gen4"}
 	};
 
 	arsenalWeapons[] = {

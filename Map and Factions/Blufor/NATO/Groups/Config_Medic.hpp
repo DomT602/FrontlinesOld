@@ -22,7 +22,7 @@ class medic {
 		{"V_PlateCarrier2_rgr",{{"30Rnd_65x39_caseless_mag",5,30},{"16Rnd_9x21_Mag",2,16},{"SmokeShell",1,1},{"SmokeShellGreen",1,1},{"SmokeShellBlue",1,1},{"SmokeShellOrange",1,1},{"Chemlight_green",1,1}}},
 		{"B_Kitbag_cbr",{{"ACE_epinephrine",10},{"ACE_bloodIV",7},{"ACE_bloodIV_500",8},{"ACE_fieldDressing",30},{"ACE_elasticBandage",25},{"ACE_packingBandage",30},{"ACE_quikclot",25},{"ACE_morphine",10},{"ACE_surgicalKit",1},{"ACE_splint",10},{"ACE_tourniquet",5}}},
 		"H_HelmetB_light_desert","",{},
-		{"ItemMap","ItemGPS","TFAR_anprc154","ItemCompass","ItemWatch","NVGoggles"}
+		{"ItemMap","ItemGPS","TFAR_anprc152","ItemCompass","ItemWatch","ACE_NVG_Gen4"}
 	};
 
 	arsenalWeapons[] = {

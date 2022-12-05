@@ -22,7 +22,7 @@ class teamlead {
 		{"V_PlateCarrier2_rgr",{{"30Rnd_65x39_caseless_mag",5,30},{"30Rnd_65x39_caseless_mag_Tracer",2,30},{"16Rnd_9x21_Mag",2,16},{"MiniGrenade",2,1},{"1Rnd_HE_Grenade_shell",5,1},{"SmokeShell",1,1},{"SmokeShellGreen",1,1},{"SmokeShellBlue",1,1},{"SmokeShellOrange",1,1},{"Chemlight_green",1,1},{"1Rnd_Smoke_Grenade_shell",2,1},{"1Rnd_SmokeBlue_Grenade_shell",1,1},{"1Rnd_SmokeGreen_Grenade_shell",1,1},{"1Rnd_SmokeOrange_Grenade_shell",1,1}}},
 		{},
 		"H_HelmetSpecB","",{"Binocular","","","",{},{},""},
-		{"ItemMap","ItemGPS","TFAR_anprc154","ItemCompass","ItemWatch","NVGoggles"}
+		{"ItemMap","ItemGPS","TFAR_anprc152","ItemCompass","ItemWatch","ACE_NVG_Gen4"}
 	};
 
 	arsenalWeapons[] = {

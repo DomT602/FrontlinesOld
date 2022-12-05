@@ -23,7 +23,7 @@ class logiengineer {
 		{"V_PlateCarrier1_rgr",{{"30Rnd_65x39_caseless_mag",5,30},{"16Rnd_9x21_Mag",2,16},{"HandGrenade",2,1},{"SmokeShell",1,1},{"SmokeShellGreen",1,1},{"SmokeShellBlue",1,1},{"SmokeShellOrange",1,1},{"Chemlight_green",1,1}}},
 		{"B_Kitbag_cbr",{{"ToolKit",1},{"ACE_DefusalKit",1},{"ACE_M26_Clacker",1},{"MineDetector",1},{"DemoCharge_Remote_Mag",3,1},{"ACE_wirecutter",1}}},
 		"H_HelmetB_desert","G_Tactical_Clear",{},
-		{"ItemMap","ItemGPS","TFAR_anprc154","ItemCompass","ItemWatch","NVGoggles"}
+		{"ItemMap","ItemGPS","TFAR_anprc152","ItemCompass","ItemWatch","ACE_NVG_Gen4"}
 	};
 
 	arsenalWeapons[] = {

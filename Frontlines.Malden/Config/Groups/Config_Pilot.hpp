@@ -1,5 +1,5 @@
 /*
-	Faction: Squad Leader
+	Faction: Pilot
 	Author: Dom
 */
 class pilot {
@@ -23,7 +23,7 @@ class pilot {
 		{"V_PlateCarrierL_CTRG",{{"30Rnd_45ACP_Mag_SMG_01",5,30},{"SmokeShellGreen",1,1},{"SmokeShellBlue",1,1},{"SmokeShellOrange",1,1},{"Chemlight_green",1,1}}},
 		{},
 		"H_PilotHelmetHeli_B","",{},
-		{"ItemMap","ItemGPS","TFAR_anprc154","ItemCompass","ItemWatch","NVGoggles"}
+		{"ItemMap","ItemGPS","TFAR_anprc152","ItemCompass","ItemWatch","NVGogglesB_blk_F"}
 	};
 
 	arsenalWeapons[] = {

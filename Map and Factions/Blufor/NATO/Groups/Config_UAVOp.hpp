@@ -22,7 +22,7 @@ class uavop {
 		{"V_PlateCarrier2_rgr",{{"30Rnd_65x39_caseless_mag",7,30},{"16Rnd_9x21_Mag",2,16},{"SmokeShell",1,1},{"SmokeShellGreen",1,1},{"Chemlight_green",1,1}}},
 		{},
 		"H_HelmetB","",{},
-		{"ItemMap","B_UavTerminal","TFAR_anprc154","ItemCompass","ItemWatch","NVGoggles"}
+		{"ItemMap","B_UavTerminal","TFAR_anprc152","ItemCompass","ItemWatch","ACE_NVG_Gen4"}
 	};
 
 	arsenalWeapons[] = {

@@ -20,9 +20,7 @@ private _listbox = _display displayCtrl 1500;
 lbClear _listbox;
 {
 	_x params ["_from","_to"];
-	if ("factory" in _from) then {_from = markerText _from};
-	if ("factory" in _to) then {_to = markerText _to};
-	_listbox lbAdd format ["%1 to %2",_from,_to];
+	_listbox lbAdd format ["%1 to %2",markerText _from,markerText _to];
 	_listbox lbSetData [_forEachIndex,str(_x)];
 } forEach _currentRoutes;
 
@@ -34,9 +32,9 @@ lbClear _toComboBox;
 {
 	_x params ["_name","_pos"];
 	_fromComboBox lbAdd _name;
-	_fromComboBox lbSetData [_forEachIndex,str(_x)];
+	_fromComboBox lbSetData [_forEachIndex,str([format["FOBmarker%1",_forEachIndex],_pos])];
 	_toComboBox lbAdd _name;
-	_toComboBox lbSetData [_forEachIndex,str(_x)];
+	_toComboBox lbSetData [_forEachIndex,str([format["FOBmarker%1",_forEachIndex],_pos])];
 } forEach AW_fobDetails;
 
 {

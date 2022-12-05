@@ -23,7 +23,7 @@ class commander {
 		{"TFAR_anprc155_coyote",{}},
 		"rhs_tsh4","",
 		{"ACE_Vector","","","",{},{},""},
-		{"ItemMap","ItemGPS","TFAR_anprc154","ItemCompass","ItemWatch","rhs_1PN138"}
+		{"ItemMap","ItemGPS","TFAR_anprc152","ItemCompass","ItemWatch","rhs_1PN138"}
 	};
 
 	arsenalWeapons[] = {

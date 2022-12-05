@@ -27,6 +27,7 @@ class Common_Arsenal {
 		"srifle_LRR_F",
 		"hgun_ACPC2_F",
 		"hgun_Pistol_heavy_01_F",
+		"hgun_P07_F",
 		"arifle_MXC_F",
 		"arifle_MX_F",
 		"arifle_MX_GL_F",
@@ -126,6 +127,7 @@ class Common_Arsenal {
 		"MRAWS_HEAT_F",
 		"9Rnd_45ACP_Mag",
 		"11Rnd_45ACP_Mag",
+		"16Rnd_9x21_Mag",
 		"20Rnd_762x51_Mag"
 	};
 	items[] = {

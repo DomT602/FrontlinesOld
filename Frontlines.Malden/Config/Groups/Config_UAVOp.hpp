@@ -21,8 +21,8 @@ class uavop {
 		{"U_B_CTRG_3",{{"ACE_elasticBandage",5},{"ACE_packingBandage",5},{"ACE_fieldDressing",5},{"ACE_EarPlugs",1},{"ACE_tourniquet",2},{"ACE_splint",2},{"ACE_morphine",1},{"ACE_CableTie",2},{"ACE_EntrenchingTool",1}}},
 		{"V_PlateCarrierH_CTRG",{{"30Rnd_65x39_caseless_mag",7,30},{"16Rnd_9x21_Mag",2,16},{"SmokeShell",1,1},{"SmokeShellGreen",1,1},{"Chemlight_green",1,1}}},
 		{},
-		"H_HelmetB","",{},
-		{"ItemMap","B_UavTerminal","TFAR_anprc154","ItemCompass","ItemWatch","NVGoggles"}
+		"H_HelmetB_desert","",{},
+		{"ItemMap","B_UavTerminal","TFAR_anprc152","ItemCompass","ItemWatch","NVGogglesB_blk_F"}
 	};
 
 	arsenalWeapons[] = {

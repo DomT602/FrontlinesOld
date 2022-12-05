@@ -11,10 +11,8 @@ params [
 private _display = findDisplay 9643;
 (parseSimpleArray (_control lbData _index)) params ["_from","_to","_truckCount","_startTransitTime","_endTransitTime","_carrying"];
 
-if ("factory" in _from) then {_from = markerText _from};
-if ("factory" in _to) then {_to = markerText _to};
-(_display displayCtrl 1002) ctrlSetText format ["Pickup: %1",_from];
-(_display displayCtrl 1003) ctrlSetText format ["Drop-off: %1",_to];
+(_display displayCtrl 1002) ctrlSetText format ["Pickup: %1",markerText _from];
+(_display displayCtrl 1003) ctrlSetText format ["Drop-off: %1",markerText _to];
 (_display displayCtrl 1004) ctrlSetText format ["Trucks assigned: %1",_truckCount];
 private _timeRemaining = ceil ((_endTransitTime - CBA_missionTime) / 60);
 (_display displayCtrl 1005) ctrlSetText format ["Time remaining: %1 minutes",_timeRemaining];
