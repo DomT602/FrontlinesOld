@@ -36,7 +36,7 @@ _unitsInGroup set [_unitIndex,_unit];
 private _fnc_getRankNumber = {
 	params ["_rankString"];
 
-	switch _rankString do {
+	switch (toUpper _rankString) do {
 		case "CORPORAL": {2};
 		case "SERGEANT": {3};
 		case "LIEUTENANT": {4};

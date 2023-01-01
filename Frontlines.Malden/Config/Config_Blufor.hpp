@@ -52,6 +52,7 @@ class Blufor_Setup {
 		{"B_UAV_06_F", {75,100,0}, ""},
 		{"B_UAV_02_dynamicLoadout_F", {300,200,200}, "(nearestObjects [player,['B_Radar_System_01_F'],150]) isNotEqualTo [] && {AW_civRep > 50 && {call AW_fnc_getMissionProgress > 0.35}}"},
 		{"B_UAV_05_F", {300,300,250}, "(nearestObjects [player,['B_Radar_System_01_F'],150]) isNotEqualTo [] && {AW_civRep > 50 && {call AW_fnc_getMissionProgress > 0.35}}"},
+		{"B_T_UAV_03_dynamicLoadout_F", {500,300,350}, "(nearestObjects [player,['B_Radar_System_01_F'],150]) isNotEqualTo [] && {AW_civRep > 50 && {call AW_fnc_getMissionProgress > 0.35  && {count AW_currentHelicopters < AW_maxHelicopterCount}}}"},
 
 		{"B_Heli_Light_01_F", {200,150,0}, "(nearestObjects [player,['B_Radar_System_01_F'],150]) isNotEqualTo [] && {count AW_currentHelicopters < AW_maxHelicopterCount}"},                      
 		{"B_Heli_Light_01_dynamicLoadout_F", {250,150,150}, "(nearestObjects [player,['B_Radar_System_01_F'],150]) isNotEqualTo [] && {count AW_currentHelicopters < AW_maxHelicopterCount}"},

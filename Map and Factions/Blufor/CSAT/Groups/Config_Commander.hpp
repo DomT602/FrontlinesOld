@@ -22,7 +22,7 @@ class commander {
 		{"V_HarnessO_brn",{{"30Rnd_65x39_caseless_green",8,30},{"16Rnd_9x21_Mag",2,17},{"SmokeShell",2,1},{"HandGrenade",2,1}}},{},
 		{},
 		"H_HelmetCrew_O","",{},
-		{"ItemMap","ItemGPS","TFAR_fadak","ItemCompass","ItemWatch","NVGoggles"}
+		{"ItemMap","ItemGPS","TFAR_fadak","ItemCompass","ItemWatch","O_NVGoggles_hex_F"}
 	};
 
 	arsenalWeapons[] = {

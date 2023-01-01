@@ -81,8 +81,7 @@ switch _action do {
 
 		private _sector = _sectorListbox lbData _index;
 		if !(_sector in AW_activeSectors) exitWith {["Sector is not active."] call AW_fnc_notify};
-		[_sector,markerPos _sector] remoteExecCall ["AW_fnc_callReinforcements",2];
-		["Reinforcements have been called in - they will arrive in the configured time."] call AW_fnc_notify;
+		[_sector,markerPos _sector,1] remoteExecCall ["AW_fnc_callReinforcements",2];
 	};
 
 	case "activateSector": {

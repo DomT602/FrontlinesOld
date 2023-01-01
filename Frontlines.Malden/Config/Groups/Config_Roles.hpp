@@ -56,6 +56,7 @@ class Common_Arsenal {
 	magazines[] = {
 		"SatchelCharge_Remote_Mag",
 		"DemoCharge_Remote_Mag",
+		"B_IR_Grenade",
 
 		"20Rnd_556x45_UW_mag",
 		"200Rnd_65x39_cased_Box",
@@ -128,7 +129,9 @@ class Common_Arsenal {
 		"9Rnd_45ACP_Mag",
 		"11Rnd_45ACP_Mag",
 		"16Rnd_9x21_Mag",
-		"20Rnd_762x51_Mag"
+		"20Rnd_762x51_Mag",
+		"30Rnd_45ACP_Mag_SMG_01",
+		"7Rnd_408_Mag"
 	};
 	items[] = {
 		"optic_DMS",
@@ -150,6 +153,7 @@ class Common_Arsenal {
 		"optic_ERCO_blk_F",
 		"optic_AMS",
 		"optic_AMS_snd",
+		"optic_MRD",
 
 		"acc_flashlight",
 		"acc_flashlight_smg_01",

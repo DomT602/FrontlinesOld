@@ -23,7 +23,7 @@ class pilot {
 		{"V_TacVest_khk",{{"30Rnd_9x21_Mag_SMG_02_Tracer_Green",5,30},{"SmokeShellGreen",1,1},{"SmokeShellBlue",1,1},{"SmokeShellOrange",1,1},{"Chemlight_green",1,1}}},
 		{},
 		"H_PilotHelmetHeli_O","",{},
-		{"ItemMap","ItemGPS","TFAR_fadak","ItemCompass","ItemWatch","NVGoggles"}
+		{"ItemMap","ItemGPS","TFAR_fadak","ItemCompass","ItemWatch","O_NVGoggles_hex_F"}
 	};
 
 	arsenalWeapons[] = {

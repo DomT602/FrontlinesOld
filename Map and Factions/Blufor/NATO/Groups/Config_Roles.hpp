@@ -50,10 +50,9 @@ class Common_Arsenal {
 		"arifle_SPAR_03_snd_F"
 	};
 	magazines[] = {
-		"B_IR_Grenade",
-
 		"DemoCharge_Remote_Mag",
 		"SatchelCharge_Remote_Mag",
+		"B_IR_Grenade",
 
 		"30Rnd_65x39_caseless_mag",
 		"30Rnd_65x39_caseless_black_mag",
@@ -131,7 +130,9 @@ class Common_Arsenal {
 		"30Rnd_9x21_Red_Mag",
 		"30Rnd_9x21_Yellow_Mag",
 		"7Rnd_408_Mag",
-		"ACE_7Rnd_408_305gr_Mag"
+		"ACE_7Rnd_408_305gr_Mag",
+		"30Rnd_45ACP_Mag_SMG_01",
+		"7Rnd_408_Mag"
 	};
 	items[] = {
 		"optic_DMS",
@@ -153,6 +154,7 @@ class Common_Arsenal {
 		"optic_ERCO_blk_F",
 		"optic_AMS",
 		"optic_AMS_snd",
+		"optic_MRD",
 
 		"acc_flashlight",
 		"acc_flashlight_smg_01",
