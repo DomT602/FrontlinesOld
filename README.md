@@ -11,7 +11,7 @@
         <img src="https://img.shields.io/github/issues-pr/DomT602/Frontlines" alt="Frontlines PRs">
     </a>
     <a href="https://discord.gg/82tAKdsT79">
-        <img src="https://img.shields.io/discord/908047463141761036" alt="Frontlines Discord">
+        <img src="https://img.shields.io/discord/1060865184236834856" alt="Frontlines Discord">
     </a>
 </p>
 
