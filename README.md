@@ -10,7 +10,7 @@
     <a href="https://github.com/DomT602/Frontlines/pulls">
         <img src="https://img.shields.io/github/issues-pr/DomT602/Frontlines" alt="Frontlines PRs">
     </a>
-    <a href="https://discord.gg/82tAKdsT79">
+    <a href="https://discord.gg/FewM2Wfc9y">
         <img src="https://img.shields.io/discord/1060865184236834856" alt="Frontlines Discord">
     </a>
 </p>
