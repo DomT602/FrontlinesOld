@@ -18,7 +18,7 @@ private _nearRoads = _sectorCentre nearRoads 150;
 private _uxoArray = [];
 for "_i" from 1 to ((7 + round random 5) min (count _nearRoads)) do {
 	private _className = format ["BombCluster_0%1_UXO%2_F",ceil (random 3),ceil (random 3)];
-	private _uxo = createMine [_className,(_nearRoads select (_i - 1)),[],0];
+	private _uxo = createMine [_className,(_nearRoads select (_i - 1)),[],2];
 	_uxo setDir (random 360);
 	_uxoArray pushBack _uxo;
 };

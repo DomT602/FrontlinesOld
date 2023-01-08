@@ -15,7 +15,7 @@ private _roads = _position nearRoads 150;
 for "_i" from 1 to _count do {
 	private _iedClass = selectRandom _iedTypes;
 	private _chosenRoad = selectRandom _roads;
-	private _ied = createMine [_iedClass,(_chosenRoad getPos [random 5,random 360]),[],0];
+	private _ied = createMine [_iedClass,_chosenRoad,[],5];
 	_ied setDir (random 360);
 	AW_activeIEDs pushBack [_ied,_sector];
 };

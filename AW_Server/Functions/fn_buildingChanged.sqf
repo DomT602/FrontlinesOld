@@ -6,7 +6,7 @@
 params ["_previousObject","_newObject","_isRuin"];
 
 private _class = typeOf _previousObject;
-if (_class isEqualTo "") exitWith {};
+if (_class isEqualTo "" || {_previousObject isKindOf "Wall"}) exitWith {};
 
 private _pos = getPosATL _previousObject;
 if ([_pos] call AW_fnc_isNearFOB) then {

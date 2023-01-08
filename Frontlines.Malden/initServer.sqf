@@ -84,7 +84,7 @@ publicVariable "AW_staffUIDs";
 
 DT_dynamicGroups = getArray(missionConfigFile >> "Dynamic_Groups" >> "group_setup");
 {
-    _x params ["_name","_roles","_conditions"];
+    _x params ["","_roles"];
     _x pushBack grpNull;
 
     private _roleCount = count _roles;

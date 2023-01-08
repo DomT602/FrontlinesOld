@@ -47,7 +47,7 @@ private _roleTraits = getArray(_roleConfig >> "traits");
 
 {
 	_x params ["_trait","_value",["_custom","false"]];
-	if (_value isEqualTo "true") then {_value = true} else {if (_value isEqualTo "false") then {_value = false}};
+	if (_value in ["true","false"]) then {_value = call compile _value};
 	player setUnitTrait [_trait,_value,call compile _custom];
 } forEach _roleTraits;
 
@@ -59,6 +59,7 @@ private _customVariables = getArray(_roleConfig >> "customVariables");
 DT_myCustomVariables = [];
 {
 	_x params ["_variable","_value","_global"];
+	if (_value in ["true","false"]) then {_value = call compile _value};
 	player setVariable [_variable,_value,call compile _global];
 	DT_myCustomVariables pushBack _variable;
 } forEach _customVariables;
