@@ -71,7 +71,7 @@ class Opfor_Setup {
 
 	AW_opforHeavyVehicles[] = {
 		"B_MBT_01_cannon_F",
-		"B_MBT_01_TUSK_F",
+		"B_MBT_01_TUSK_F"
 	};
 
 	AW_opforTroopCarriers[] = {
