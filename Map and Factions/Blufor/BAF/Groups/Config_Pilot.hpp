@@ -16,14 +16,15 @@ class pilot {
 	icon = "a3\ui_f\data\map\vehicleicons\iconManOfficer_ca.paa";
 
 	defaultLoadout[] = {
-		{"SMG_01_Holo_F","","","optic_Holosight_smg",{"30Rnd_45ACP_Mag_SMG_01",30},{},""},
+		{"UK3CB_BAF_L22A2_SUSAT","","","UK3CB_BAF_SUSAT",{"UK3CB_BAF_556_30Rnd",30},{},""},
 		{},
+		{"UK3CB_BAF_L131A1","","","",{"UK3CB_BAF_9_17Rnd",17},{},""},
+		{"UK3CB_BAF_U_HeliPilotCoveralls_Army",{{"ACE_EarPlugs",1},{"ACE_quikclot",2},{"ACE_elasticBandage",1},{"UK3CB_BAF_9_17Rnd",1,17},{"Chemlight_green",1,1},{"Chemlight_blue",1,1},{"UK3CB_BAF_SmokeShellBlue",1,1},{"UK3CB_BAF_SmokeShellRed",1,1},{"UK3CB_BAF_SmokeShell",2,1},{"HandGrenade",1,1}}},
+		{"UK3CB_BAF_V_Pilot_A",{{"ACE_elasticBandage",2},{"ACE_packingBandage",2},{"ACE_tourniquet",2},{"ACE_morphine",2},{"ACE_epinephrine",3},{"ACE_microDAGR",1},{"ACE_MapTools",1},{"ACE_Flashlight_XL50",1},{"ACE_IR_Strobe_Item",1},{"HandGrenade",1,1},{"UK3CB_BAF_556_30Rnd",3,30},{"UK3CB_BAF_556_30Rnd_T",1,30}}},
 		{},
-		{"U_B_HeliPilotCoveralls",{{"ACE_elasticBandage",5},{"ACE_packingBandage",5},{"ACE_fieldDressing",5},{"ACE_EarPlugs",1},{"ACE_tourniquet",2},{"ACE_splint",2},{"ACE_morphine",1},{"ACE_CableTie",2},{"ACE_EntrenchingTool",1}}},
-		{"V_PlateCarrierL_CTRG",{{"30Rnd_45ACP_Mag_SMG_01",5,30},{"SmokeShellGreen",1,1},{"SmokeShellBlue",1,1},{"SmokeShellOrange",1,1},{"Chemlight_green",1,1}}},
-		{},
-		"H_PilotHelmetHeli_B","",{},
-		{"ItemMap","ItemGPS","TFAR_anprc154","ItemCompass","ItemWatch","UK3CB_BAF_HMNVS"}
+		"UK3CB_BAF_H_PilotHelmetHeli_A","",
+		{"ACE_Vector","","","",{},{},""},
+		{"ItemMap","ItemGPS","TFAR_anprc152","ItemCompass","ItemWatch",""}
 	};
 
 	arsenalWeapons[] = {

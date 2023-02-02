@@ -133,3 +133,5 @@ AW_buildRotation = 0;
 	["Frontlines","Arsenal"],
 	true
 ] call CBA_fnc_addSetting;
+
+[["Frontlines","Building"],"buildMenu","Open Build Menu",{if (dialog) exitWith {}; if (isNull objectParent player && {[getPosATL player] call AW_fnc_isNearFOB}) then {[] call AW_fnc_initBuildMenu}},"",[DIK_B,[false,true,false]]] call CBA_fnc_addKeybind;

@@ -61,7 +61,7 @@ switch _stage do {
 		[
 			{
 				params ["_args","_handle"];
-				_args params ["_post","_count","_counterAttack"];
+				_args params ["_post","_count"];
 
 				if !(alive _post) exitWith {
 					[_handle] call CBA_fnc_removePerFrameHandler;
