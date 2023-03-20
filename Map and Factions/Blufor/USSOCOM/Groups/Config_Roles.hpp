@@ -184,6 +184,7 @@ class Common_Arsenal {
 		"rhsusf_hgu56p_mask_tan",
 		"rhsusf_hgu56p_tan",
 		"RHS_jetpilot_usaf",
+		"rhsusf_ihadss",
 
 		"rhsusf_mbav_light",		
 		"rhsusf_mbav_grenadier",		

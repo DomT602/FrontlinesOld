@@ -5,8 +5,7 @@
 */
 params [
 	["_desiredRole","rifleman",[""]],
-	["_isRespawn",false,[true]],
-	["_team","MAIN",[""]]
+	["_isRespawn",false,[true]]
 ];
 
 private _roleConfig = missionConfigFile >> "Dynamic_Roles" >> _desiredRole;
@@ -14,7 +13,6 @@ private _defaultLoadout = getArray(_roleConfig >> "defaultLoadout");
 
 private _loadout = missionNamespace getVariable ["AW_respawnLoadout",_defaultLoadout];
 [player,_loadout,true] call CBA_fnc_setLoadout;
-player assignTeam _team;
 if (_isRespawn) exitWith {};
 
 private _weapons = getArray(_roleConfig >> "arsenalWeapons");

@@ -46,7 +46,7 @@ if (AW_showIntro) then {
 		<t align='center' size='6' shadow='0'><br/>Frontlines</t><br/>
 		Welcome to Frontlines, a gamemode made for Ahoyworld by Dom and the Ahoyworld Team.<br/><br/>
 		<a color='#00DFFF'>•</a> Github: <a href='https://github.com/DomT602/Frontlines' color='#56BDD6'> https://github.com/DomT602/Frontlines</a><br/>
-		<a color='#00DFFF'>•</a> Discord: <a href='https://discord.gg/82tAKdsT79' color='#56BDD6'> https://discord.gg/82tAKdsT79</a>
+		<a color='#00DFFF'>•</a> Discord: <a href='https://discord.gg/FewM2Wfc9y' color='#56BDD6'> https://discord.gg/82tAKdsT79</a>
 	";
 
 	_text ctrlSetStructuredText (parseText _message);
